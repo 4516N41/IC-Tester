@@ -7,17 +7,15 @@ void flow()
   TSPoint p = ts.getPoint();
   pinMode(XM, OUTPUT);
   pinMode(YP, OUTPUT);
+  
   bool pressed = false;
   switches.pushed = 0;
   if (p.z > MINPRESSURE && p.z < MAXPRESSURE)
   {
     // scale from 0->1023 to tft.width
-    //p.y = map(p.y, TS_MINX, TS_MAXX, tft.height(), 0);
-    //p.x = map(p.x, TS_MINY, TS_MAXY, 0,tft.width());
-
-    p.y = map(p.y, TS_MINX, TS_MAXX, 0,tft.height());
-    p.x = map(p.x, TS_MINY, TS_MAXY, tft.width(), 0);
-    
+    p.y = map(p.y, TS_MINX, TS_MAXX, tft.height(), 0);
+    p.x = map(p.x, TS_MINY, TS_MAXY, 0,tft.width());
+   
     delay(150);//eh...lets see if this is really needed the debounce is shitty even so
     pressed = true; switches.pushed = 1;
   }

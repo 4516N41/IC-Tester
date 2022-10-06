@@ -26,19 +26,19 @@
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 
-//#include <pin_magic.h>
-//#include <registers.h>
-//#include <SPFD5408_Adafruit_GFX.h>
-//#include <SPFD5408_Adafruit_TFTLCD.h>
-//#include <SPFD5408_TouchScreen.h>
-//#include <SPFD5408_Util.h>
-//#include <pins_arduino.h>
+#include <pin_magic.h>
+#include <registers.h>
+#include <SPFD5408_Adafruit_GFX.h>
+#include <SPFD5408_Adafruit_TFTLCD.h>
+#include <SPFD5408_TouchScreen.h>
+#include <SPFD5408_Util.h>
+#include <pins_arduino.h>
 #include "KickSort.h" //to sort the references alphabetically 
 
 
-#include <Adafruit_GFX.h>    // Core graphics library
-#include <Adafruit_TFTLCD.h> // Hardware-specific library
-#include <TouchScreen.h> //Touch Screen Library
+//#include <Adafruit_GFX.h>    // Core graphics library
+//#include <Adafruit_TFTLCD.h> // Hardware-specific library
+//#include <TouchScreen.h> //Touch Screen Library
 //SD CARD
 #include <SPI.h>
 #include <SD.h> //need to override the default SD library with the adafruit SD library C:\Users\username\AppData\Local\Arduino15\libraries on win 10
@@ -50,17 +50,17 @@
 #define LCD_RD A0     // LCD Read goes to Analog 0
 #define LCD_RESET A4  // LCD RESET goes to Analog 4
 
-#define YP A3  // must be an analog pin, use "An" notation!
+#define YP A3  // must be an analog pin, use "An" notation!, Screen 1 = A3 // screen 2 = A1
 #define XM A2  // must be an analog pin, use "An" notation!
-#define YM 9   // can be a digital pin
-#define XP 8   // can be a digital pin
+#define YM 9   // can be a digital pin, Screen 1 = 9 // Screen 2 = 7
+#define XP 8   // can be a digital pin, Screen 1 = 8 //Screen 2 = 6
 
 #define TS_MINX 150  //150
 #define TS_MINY 120  //120
 #define TS_MAXX 920  //920
 #define TS_MAXY 940  //940
 
-#define MINPRESSURE 20//was originally 10
+#define MINPRESSURE 10//was originally 10
 #define MAXPRESSURE 1000
 
 // Assign human-readable names to some common 16-bit color values:
