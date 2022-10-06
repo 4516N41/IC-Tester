@@ -21,12 +21,12 @@ void Test_init(int pins)
   {   
     while (dataFile.available())
     {               
-//--------------------------------------Looking for the right chip ----------------------------------------------              
+//------------------------------------------Looking for the right chip -------------------------------------------------//              
       dataFile.readStringUntil('$');   
       *testPositionPointer = dataFile.position(); //this variable gets set to start of each line of the test routines, here it´s set to the start of the test sequence        
       newChip.num = dataFile.readStringUntil('\n'); //chip id
-      if(newChip.num.toInt() != numberRouting.toInt()){dataFile.seek(*testPositionPointer + 210);}//this "scrolls/jumps" through the test lines       
-//-----------------------------When the right chip has been identified routine------------------------------------
+      if(newChip.num.toInt() != numberRouting.toInt()){dataFile.seek(*testPositionPointer + 210);}//this "scrolls/jumps" through the Pinout lines       
+//--------------------------------When the right chip has been identified routine---------------------------------------//
       if(newChip.num.toInt() == numberRouting.toInt()) //comparing IC number to the one chosen by the user
       {      
       numberofIcs = 1;   
@@ -48,7 +48,7 @@ void Test_init(int pins)
             break;
           }      
         }         
-//----------------------------------------Graphics body routine---------------------------------------------------          
+//--------------------------------------------Graphics body routine-----------------------------------------------------//         
      if(switches.circumventTFT == 0)
      {
       if(newChip.pins == 14 || newChip.pins == 16){tft.drawRect(80, 10 , 80, 240, BLUE);}//chip outline if the IC is a 14 or 16 pin chip  
@@ -66,7 +66,7 @@ void Test_init(int pins)
         } 
      }                 
       for (uint8_t i = 0; i < newChip.pins; i++) {outputs[i] = clearArray[0]; digitalWrite(pin[i], LOW); pinMode(pin[i], INPUT_PULLUP);}//Clear output Array   
- //------------------------Various graphical spacing and shifting depending on the number of pins on the chip--------------------------
+ //-----------------Various graphical spacing and shifting depending on the number of pins on the chip------------------//
       switch(newChip.pins)
       {
         case 14: nudge = 30; pinSpacer = 30; shifterLeft = 9; shifterRight = 459;
@@ -78,7 +78,7 @@ void Test_init(int pins)
         case 24: nudge = 13; pinSpacer = 22; shifterLeft = 0; shifterRight = 550; buttonHeight = 30; buttonYaxis = 305; buttonSize = 18; boxSize = 16; outputSize = 8; horizontalNudge = 2;
         break;
       }              
-//------------------------------------------------------Graphics left side pins routine------------------------------------------------------        
+//-----------------------------------------Graphics left side pins routine----------------------------------------------//        
       for(uint8_t a=0; a<newChip.pins/2; a++)
       {   
         newChip.pinFunction.reserve(9);    
@@ -92,7 +92,7 @@ void Test_init(int pins)
         if(newChip.pinFunction == "NC     ") { if(switches.circumventTFT == 0){tft.fillRect(70 + horizontalNudge, nudge , boxSize, boxSize, NAVY);}}//        
         if(newChip.pinFunction == "In/Out ") {inOut[a] = 1; pinMode(pin[a], OUTPUT); digitalWrite(pin[a], LOW); buttonsPinout[a].initButton(&tft, 80, nudge+10, buttonSize, buttonSize, WHITE, DARKGREY, WHITE, "", 1); if(switches.circumventTFT == 0){buttonsPinout[a].drawButton();} *globalpinFunctionPointer[a] = "Input  ";}//
         if(newChip.pinFunction == "Out/In ") {outIn[a] = 1; outputs[a] = 1; tablet.sortedOutputs[a] = 1; if(switches.circumventTFT == 0){tft.fillCircle(80, nudge+9, outputSize, DARKGREY);} *globalpinFunctionPointer[a]= "Output  ";}   //here the Com ports are outputs      
-//----------------------------------------------------------References on the left side------------------------------------------------------        
+//--------------------------------------------References on the left side-----------------------------------------------//        
         *globalReferencePointer[a]= dataFile.readStringUntil('\n');
         tft.setCursor(17, nudge+5);//
         tft.setTextColor(WHITE);  tft.setTextSize(1);         
@@ -110,7 +110,7 @@ void Test_init(int pins)
             break;
           }   
         }
-//--------------------------------------------------------Graphics right side pins routine------------------------------------------------------          
+//------------------------------------------Graphics right side pins routine--------------------------------------------//        
         switch(newChip.pins)
         {
           case 14:nudge=210;
@@ -137,7 +137,7 @@ void Test_init(int pins)
           if(newChip.pinFunction == "In/Out ") {inOut[a] = 1; pinMode(pin[a], OUTPUT); digitalWrite(pin[a], LOW); buttonsPinout[a].initButton(&tft, 160, nudge+10, buttonSize, buttonSize, WHITE, DARKGREY, WHITE, "", 1); if(switches.circumventTFT == 0){buttonsPinout[a].drawButton();} *globalpinFunctionPointer[a]= "Input  ";}//
           if(newChip.pinFunction == "Out/In ") {outIn[a] = 1; outputs[a] = 2; tablet.sortedOutputs[a] = 2; if(switches.circumventTFT == 0){tft.fillCircle(160, nudge+9, outputSize, DARKGREY);} *globalpinFunctionPointer[a]= "Output  ";}  
           
-  //--------------------------------------------------References on the right side-------------------------------------------------------------------        
+  //--------------------------------------References on the right side--------------------------------------------------//        
 
           *globalReferencePointer[a]= dataFile.readStringUntil('\n');   
 
@@ -156,7 +156,7 @@ void Test_init(int pins)
             break;
           }      
         }         
-//--------------------------------------------Graphics Menu and clock/mux button toggle----------------------------------------------------------   
+//-------------------------------------Graphics Menu and clock/mux button toggle----------------------------------------// 
         switches.clockmenuToggle = 0; switches.muxdemuxMenuToggle = 0; switches.muxdemuxFlag = 0;
         for (uint8_t i = 0; i < *pinNumberRoutingPointer; i++)
         {
@@ -244,7 +244,7 @@ void muxIOswitchRefresh()
   if(*pinNumberRoutingPointer == 16) {nudge=20; pinSpacer = 28; shifterLeft = 1;   shifterRight = 476;} 
   if(*pinNumberRoutingPointer == 20) {nudge=13; pinSpacer = 26; shifterLeft = -3;  shifterRight = 542;}
   if(*pinNumberRoutingPointer == 24) {nudge=13; pinSpacer = 22; shifterLeft = 0;   shifterRight = 550;}
-//-----------------------------------Graphics left side pins routine----------------------------------------------        
+//---------------------------------------Graphics left side pins routine------------------------------------------------//        
   for(uint8_t a=0; a<*pinNumberRoutingPointer/2; a++)
   {                                
   if(inOut[a] == 1) {buttonsPinout[a].initButton(&tft, 80, nudge+10, buttonSize, buttonSize, BLACK, BLACK, BLACK, "", 1); buttonsPinout[a].drawButton(); *globalpinFunctionPointer[a]= "Input  ";}//erase previous graphics
@@ -257,7 +257,7 @@ void muxIOswitchRefresh()
   if(*pinNumberRoutingPointer == 20) {nudge=nudge+26;}
   if(*pinNumberRoutingPointer == 24) {nudge=nudge+22;}
   }
-//----------------------------------Graphics right side pins routine----------------------------------------------          
+//----------------------------------------Graphics right side pins routine----------------------------------------------//          
   if(*pinNumberRoutingPointer == 14) {nudge=210;}
   if(*pinNumberRoutingPointer == 16) {nudge=215;}
   if(*pinNumberRoutingPointer == 20) {nudge=247;}
@@ -291,7 +291,7 @@ void demuxIOswitchRefresh()
   if(*pinNumberRoutingPointer == 16) {nudge=20; pinSpacer = 28; shifterLeft = 1;   shifterRight = 476;}
   if(*pinNumberRoutingPointer == 20) {nudge=13; pinSpacer = 26; shifterLeft = -3; shifterRight = 542;}
   if(*pinNumberRoutingPointer == 24) {nudge=13; pinSpacer = 22; shifterLeft = 0;   shifterRight = 550;}
-//-------------------------------------------------------Graphics left side pins routine-----------------------------------------------------------------------        
+//----------------------------------------Graphics left side pins routine-----------------------------------------------//        
   for(uint8_t a=0; a<*pinNumberRoutingPointer/2; a++)
   {                                 
   if(outIn[a] == 1) {buttonsPinout[a].initButton(&tft, 80, nudge+10, buttonSize, buttonSize, BLACK, BLACK, BLACK, "", 1); buttonsPinout[a].drawButton(); *globalpinFunctionPointer[a]= "Input  ";}//erase previous graphics
@@ -304,7 +304,7 @@ void demuxIOswitchRefresh()
   if(*pinNumberRoutingPointer == 20) {nudge=nudge+26;}
   if(*pinNumberRoutingPointer == 24) {nudge=nudge+22;}
   }
-//-------------------------------------------------------Graphics right side pins routine--------------------------------------------------------------------          
+//----------------------------------------Graphics right side pins routine----------------------------------------------//          
   if(*pinNumberRoutingPointer == 14) {nudge=210;}
   if(*pinNumberRoutingPointer == 16) {nudge=215;}
   if(*pinNumberRoutingPointer == 20) {nudge=247;}
@@ -325,7 +325,7 @@ void demuxIOswitchRefresh()
 }
 void clockAndmuxButtons()
 {
-// -------------------------------------------clock and IO switch toggle buttons--------------------------------            
+// ---------------------------------------clock and IO switch toggle buttons--------------------------------------------//            
   if(switches.clockmenuToggle == 0)
   {
     if (buttonsMenus[3].justPressed())//truth table screen

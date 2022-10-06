@@ -75,7 +75,7 @@ void clearingRoutines()
 void clockRoutine(bool state)
 {
  // Serial.println("Im in the clock routine");
-//-------------------------------------------Switching Input buttons------------------------------------------------------   
+//-------------------------------------------Switching Input buttons----------------------------------------------------//  
    if(switches.pushingButtons == 1)
   {  
     for(int a=0; a<*pinNumberRoutingPointer; a++)
@@ -99,7 +99,7 @@ void clockRoutine(bool state)
       }
     } 
   }  
-//-----------------------------------------------------Clock Routine-----------------------------------------------------  
+//-----------------------------------------------------Clock Routine----------------------------------------------------//  
   for(uint8_t a=0; a<*pinNumberRoutingPointer; a++)//
   { 
     if(clock[a] == 1)
@@ -128,7 +128,7 @@ void automateRoutine(bool state)
 }  
 //----------------------This function checks the mode of a pin(whether it's an Input or an Output)----------------------//
 //-----------------------------------------bastardization of post 6 by davekw7x-----------------------------------------//
-//                  https://forum.arduino.cc/t/is-is-possible-to-detect-pin-mode-in-and-if/52904/6                      //
+//----------------- https://forum.arduino.cc/t/is-is-possible-to-detect-pin-mode-in-and-if/52904/6 ---------------------//
 
 // Test function to display DDR register bits for Arduino pins
 int getPinMode(int p) {
@@ -190,7 +190,7 @@ void getTouch()
 }
 //----------------------------------------------------------------------------------------------------------------------//
 //---------------------------The function below monitors the free memory on the device----------------------------------//
-//                     https://learn.adafruit.com/memories-of-an-arduino/measuring-free-memory                          //
+//-------------------- https://learn.adafruit.com/memories-of-an-arduino/measuring-free-memory -------------------------//
 #ifdef __arm__
 // should use uinstd.h to define sbrk but Due causes a conflict
 extern "C" char* sbrk(int incr);

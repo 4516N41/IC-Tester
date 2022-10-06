@@ -1,45 +1,40 @@
+//----------------------------------------------------------------------------------------------------------------------//
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//---------------------------------------- Original code made by Baweja Akshay -----------------------------------------//
+//                                                                                                                      //
+//------------------------------------ https://www.instructables.com/Smart-IC-Tester -----------------------------------//
+//----------------------------------- https://github.com/akshaybaweja/Smart-IC-Tester ----------------------------------//
+//                                                                                                                      //
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//------------------------------------------------ Modified by A.S.G ---------------------------------------------------//
+//                                                                                                                      //
+//-------------------------------------- Changes to the original code include: -----------------------------------------//
+//---------------------------------------------------- Additions -------------------------------------------------------//
+//1.Repeat testing,monitoring failed and passed tests + a bit more detailed report -------------------------------------//
+//2.Fast mode || detailed mode so the user can see what chips are being tested.etc -------------------------------------//
+//3.Manual graphical test mode so the user can test individual pins in real time ---------------------------------------//
+//4.Visual Truthtables that cam be saved as csv files ------------------------------------------------------------------//
+//5.Saves information about last test making it easier to test same types of ICs ---------------------------------------//
+//6.20 and 24 pin ICs have been added ----------------------------------------------------------------------------------//
+//--------------------------------------------------- Improvements -----------------------------------------------------//
+//1.Device does not need to be restarted after each test or when changing modes ----------------------------------------//
+//---------------------------------------------------- Known bugs ------------------------------------------------------//
+//1.has to run 2-3 test for it to read the arduino pins correctly in IC test mode --------------------------------------//
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////
-//----------------------Original code made by Baweja Akshay-----------------------//
-//                                                                                //
-//----------------https://www.instructables.com/Smart-IC-Tester/------------------//
-//---------------https://github.com/akshaybaweja/Smart-IC-Tester------------------//
-//                                                                                //
-////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////
-//-----------------------------Modified by A.S.G----------------------------------//
-//                                                                                //
-//--------------------Changes to the original code include:-----------------------//
-//----------------------------------Additions-------------------------------------//
-//1.Repeat testing,monitoring failed and passed tests + a bit more detailed report//
-//2.Fast mode || detailed mode so the user can see what chips are being tested.etc//
-//3.Manual graphical test mode so the user can test individual pins in real time--//
-//4.Visual Truthtables that cam be saved as csv files-----------------------------//
-//5.Saves information about last test making it easier to test same types of ICs--//
-//6.20 and 24 pin ICs have been added---------------------------------------------//
-//---------------------------------Improvements-----------------------------------//
-//1.Device does not need to be restarted after each test or when changing modes---//
-//--------------------------------Known bugs--------------------------------------//
-//1.has to run 2-3 test for it to read the arduino pins correctly in IC test mode-//
-////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////
-
-#include <pin_magic.h>
-#include <registers.h>
-#include <SPFD5408_Adafruit_GFX.h>
 #include <SPFD5408_Adafruit_TFTLCD.h>
 #include <SPFD5408_TouchScreen.h>
-#include <SPFD5408_Util.h>
-#include <pins_arduino.h>
 #include "KickSort.h" //to sort the references alphabetically 
 
-
+//-----------------------If you need to use the Original adafruit library uncomment the lines below---------------------//
 //#include <Adafruit_GFX.h>    // Core graphics library
 //#include <Adafruit_TFTLCD.h> // Hardware-specific library
 //#include <TouchScreen.h> //Touch Screen Library
-//SD CARD
+//----------------------------------------------------------------------------------------------------------------------//
+
 #include <SPI.h>
 #include <SD.h> //need to override the default SD library with the adafruit SD library C:\Users\username\AppData\Local\Arduino15\libraries on win 10
 //the SD library can be found here https://github.com/akshaybaweja/Smart-IC-Tester/tree/master/Libraries
@@ -67,12 +62,12 @@
 #define XP 6   // can be a digital pin
 */
 //--------------------------------------------------------------------------------------------------//
-#define TS_MINX 150  //150
+#define TS_MINX 150  //150, if the touchscreen seems off you might have to tweak these values
 #define TS_MINY 120  //120
 #define TS_MAXX 920  //920
 #define TS_MAXY 940  //940
 
-#define MINPRESSURE 10//
+#define MINPRESSURE 10
 #define MAXPRESSURE 1000
 
 // Assign human-readable names to some common 16-bit color values:
@@ -96,6 +91,7 @@
 //TFT initialization
 Adafruit_TFTLCD tft(LCD_CS, LCD_CD, LCD_WR, LCD_RD, LCD_RESET);
 TouchScreen ts = TouchScreen(XP, YP, XM, YM, 300);
+
 //Buttons
 Adafruit_GFX_Button buttonsPinout[24]; 
 Adafruit_GFX_Button buttonsClearPinout[1];
@@ -112,8 +108,9 @@ Adafruit_GFX_Button buttonsMenus[12];
 
 File myFile;
 #define chipSelect 10
+
 //Database File names !!!!!!txt files cane only have 8 characters in their names!!!!!!!!!
-#define fname  "database.txt"//here the tests for each IC is stored
+#define fname  "Database.txt"//here the tests for each IC is stored
 #define fname2 "Pinouts.txt"//here is the information about each ICs pinout stored
 #define fname3 "Table.csv"//here the truthtables/timing diagrams are stored
 #define fname4 "State.txt"//Order of data, IC number, ScreenStatus, Number of tests, Cycles, Diagram ON/OFF 
@@ -132,7 +129,7 @@ typedef struct
 } truthTablet;
 truthTablet tablet;
 
-//Structure Definiton for Chip under test 
+//Structure definiton for Chip under test 
 typedef struct 
 {
   String num;               
@@ -196,7 +193,7 @@ struct boolSwitches
 boolSwitches switches;
 
 //Variables
-bool storeErrorPlace[24];     
+bool storeErrorPlace[24]; //keeps track of which pin failed a test    
 bool tableRow[24];             
 bool inputs[24];                          
 bool lastDiagramState[24];    

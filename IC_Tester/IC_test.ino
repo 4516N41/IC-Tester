@@ -49,7 +49,6 @@ void repeatTest(const String& number, int numberTest)
   tft.println(F("Line count"));
   for (uint8_t i = 0; i < 24; i++) {storeErrorPlace[i] = clearArray[0]; storeErrorLines[i] = clearArray[0]; } //Clear the Pin number error assignments 
   for (uint8_t i = 0; i < 24; i++) {storeTestLines[i] ="";}//need to change the dependency on 24 as max need to tie it to a reference 
-
 // if the file is available, read from it:
   if (dataFile)
   {   
@@ -130,7 +129,9 @@ void repeatTest(const String& number, int numberTest)
         dataFile.seek(*hardPositionPointer);//this variable stores the start location of the test code 
         testLoop = 0;//clears the number of times the loop has been executed
         if(numberTest == 0){numberTest = 10; switches.endlessLoopSwitch = 1;}//this makes sure that the numberTest variable isn't 0 when entering the while loop
-//------------------------------------------------------------------Testing starts-----------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------//        
+//------------------------------------------------Testing starts--------------------------------------------------------//
+//----------------------------------------------------------------------------------------------------------------------//
         while(testLoop < numberTest*linecount) //testloop is the number of times this loop has been executed and the numberTest is the number of tests chosen by the user
         {  
                               
@@ -214,10 +215,12 @@ void repeatTest(const String& number, int numberTest)
         if(switches.status == 1) break;//this is so the user can stop the test at any time
           // take the measurement          
         } 
+        /*
         Serial.print("Cycles: ");
         Serial.println(cycles2 - 1);
         Serial.print("Microseconds: ");
         Serial.println((float)(cycles2 - 1) / 16);
+        */
        dataFile.close(); break; //breaks out of the loop after finding the right chip and testing otherwise it runs through the rest of the ICs                           
       }    
     }    
@@ -243,7 +246,9 @@ void repeatTest(const String& number, int numberTest)
     flow();  
   } 
 }
-//--------------------------------------------Error Information Routine-----------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------//
+//--------------------------------------------Error Information Routine-------------------------------------------------//
+//----------------------------------------------------------------------------------------------------------------------//
 void errorInfo()
 {
   File dataFile = SD.open(fname2);
@@ -256,12 +261,12 @@ void errorInfo()
    if(numberRouting.toInt() > 7399 && numberRouting.toInt() < 7500 || numberRouting.toInt() > 74000){dataFile.seek(33700);}// this line here speeds up the process of looking for the 7400 series,could cause problems if a IC of the cd4000 series is removed!! 
     while (dataFile.available())
     {           
-//-------------------------------------------Looking for the right chip routine----------------------------------------------  
+//----------------------------------------Looking for the right chip routine-------------------------------------------//  
       dataFile.readStringUntil('$');    
       *testPositionPointer = dataFile.position(); //this variable gets set to start of each line of the test routines, here it´s set to the start of the test sequence         
       newChip.num = dataFile.readStringUntil('\n'); //chip id   
-      if(newChip.num.toInt() != numberRouting.toInt()){dataFile.seek(*testPositionPointer + 240);}//this "scrolls/jumps" through the test lines        
-//-----------------------------When the right chip has been identified routine------------------------------------
+      if(newChip.num.toInt() != numberRouting.toInt()){dataFile.seek(*testPositionPointer + 210);}//this "scrolls/jumps" through the test lines        
+//-------------------------------When the right chip has been identified routine----------------------------------------//
       if(newChip.num.toInt() == numberRouting.toInt()) //comparing IC number to the one chosen by the user
       {        
         newChip.name = dataFile.readStringUntil('\n'); // chip description
@@ -355,7 +360,9 @@ void errorInfo()
   buttonsMenus[4].initButton(&tft, 200, 300, 70, 40, WHITE, BLACK, GREY, "Test", 2);
   buttonsMenus[4].drawButton(); 
 }
-//-------------------------------------------Raw Data Routine-------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------//
+//-------------------------------------------Raw Data Routine-----------------------------------------------------------//
+//----------------------------------------------------------------------------------------------------------------------//
 void rawData()
 {
 

@@ -1,9 +1,10 @@
 //----------------------------------------------------------------------------------------------------------------------//
-// ---------------------------------------------Main Sequence-----------------------------------------------------------//   
+// --------------------------------------------------Main Sequence------------------------------------------------------//   
 //----------------------------------------------------------------------------------------------------------------------//
 void flow()
 {    
-  //---------------------------------Touch monitoring and responce---------------------------------------------
+
+  //----------------------------------------Touch monitoring and responce-----------------------------------------------//
   TSPoint p = ts.getPoint();
   pinMode(XM, OUTPUT);
   pinMode(YP, OUTPUT);
@@ -19,7 +20,8 @@ void flow()
     delay(150);//eh...lets see if this is really needed the debounce is shitty even so
     pressed = true; switches.pushed = 1;
   }
-// -------------------------------------------Pinout buttons-----------------------------------------------------
+
+// ----------------------------------------------Pinout buttons---------------------------------------------------------//
   for (uint8_t a=0; a<*pinNumberRoutingPointer; a++)
   {   
       if (buttonsPinout[a].contains(p.x, p.y) && pressed){buttonsPinout[a].press(true);}  // tell the button it is pressed   
@@ -28,21 +30,21 @@ void flow()
       if (buttonsPinout[a].justPressed()){if (buttonStatus[a] == 0){buttonsPinout[a].drawButton(true);}}  // draw invert!
       if (buttonsPinout[a].isPressed()){buttonsPinout[a].drawButton(true);}  // draw invert!      
   }
-// -------------------------------------------Menu buttons-----------------------------------------------------  
+// ------------------------------------------------Menu buttons---------------------------------------------------------//  
   for (uint8_t a = 0; a < 13; a++)
   {   
       if (buttonsMenus[a].contains(p.x, p.y) && pressed){ buttonsMenus[a].press(true);}  // tell the button it is pressed    
      else{buttonsMenus[a].press(false);}  // tell the button it is NOT pressed
-      if (buttonsMenus[a].justReleased()){}// buttonsMenus[a].drawButton();  // draw normal !!!!!!!!!need to check if these functions are leaving invisible residue!!!!!!!!!!!!
-      if (buttonsMenus[a].justPressed()){}// buttonsMenus[a].drawButton(true);  // draw invert! !!!!!!!!!need to check if these functions are leaving invisible residue!!!!!!!!!!!!   
-      if (buttonsMenus[a].isPressed()){}// buttonsMenus[a].drawButton(true);  // draw invert!  !!!!!!!!!need to check if these functions are leaving invisible residue!!!!!!!!!!!!      
+      if (buttonsMenus[a].justReleased()){}//
+      if (buttonsMenus[a].justPressed()){}// 
+      if (buttonsMenus[a].isPressed()){}//   
   }    
-//----------------------------------------ScreenStatus Routines--------------------------------------------------  
-  Serial.println("(" +  String(p.x) + " , " + String(p.y) + " , " + String(p.z) + ")");//uncomment this line to see the touch values on the serial monitor 
+//-----------------------------------Development and debugging monitoring-----------------------------------------------// 
+  //Serial.println("(" +  String(p.x) + " , " + String(p.y) + " , " + String(p.z) + ")");//uncomment this line to see the touch values on the serial monitor 
   //Serial.print("screenstatus: "); Serial.println(screenStatus); //uncomment this line to see in what screenStatus the program is 
   //Serial.println(freeMemory());//Uncomment this to see how much memory is left on the device while it´s working
   //Serial.println(millis());
-  
+ //---------------------------------------------ScreenStatus Routines---------------------------------------------------//  
  switch(screenStatus)//every time the program waits for input from the user excluding the keypad one of those cases are in effect 
   {
   case 0:switches.circumvent = 0;  screenStatus = 1; //screenStatus 0 is so it makes sure that it has changed status, circumvent is so you can get to the main menu from the keypad screen :/ 
@@ -80,8 +82,8 @@ void flow()
     case 4://Pinout from IC search result screen
     case 5://Pinout from Test result screen
         screenSaver();  
-        clockAndmuxButtons();//this function contains the clock and mux/demux button actions
-// ---------------------Scrolling through input buttons looking for keypresses--------------------------------     
+        clockAndmuxButtons();//this function contains the clock and mux/demux button actions     
+// -------------------------Scrolling through input buttons looking for keypresses--------------------------------------//    
         for(uint8_t a=0; a<*pinNumberRoutingPointer; a++)//
         {                                                     
           if (buttonsPinout[a].justPressed() && buttonStatus[a] == 0) //Input selected ON
@@ -96,7 +98,7 @@ void flow()
           if (buttonsPinout[a].justReleased() && lastbuttonStatus[a] == 1){ buttonStatus[a] = 0; }
           
           lastbuttonStatus[a] = buttonStatus[a];//Updates the last read state of a button 
-// ------------------------Scrolling through outputs, reading them and clock pulse------------------------------               
+// ----------------------------Scrolling through outputs, reading them and clock pulse----------------------------------//               
           if(digitalRead(pin[a]) != lastoutputState[a])//So the program doesn't write to the screen when there isn't anything new to write to the screen
           {
             switch(outputs[a])//This variable keeps track of which pins are outputs
@@ -164,7 +166,7 @@ void flow()
         if (buttonsMenus[6].justPressed()){screenStatus = 41;} //Pinout from Manual search result screen          
   break;       
   case 69: // truthtable screen
-//----------------------------------------Inputs--------------------------------------------------------------------------- 
+//-------------------------------------------------Inputs---------------------------------------------------------------//
           screenSaver();                     
           for(uint8_t a=0; a<*pinNumberRoutingPointer; a++)//
           {               
@@ -183,13 +185,15 @@ void flow()
             lastInputPushing[a] = inputPushing[a] ;           
             lastbuttonStatus[a] = buttonStatus[a];//Updates the last read state of a button                                        
           }        
-//----------------------------------------------------------------------------------------------------------------------------------              
-//-------------------------------------------------Menu Buttons functions-----------------------------------------------------------         
-//----------------------------------------------------Back to main menu-------------------------------------------------------------  
+//----------------------------------------------------------------------------------------------------------------------//            
+//--------------------------------------------Menu Buttons functions----------------------------------------------------//   
+//----------------------------------------------------------------------------------------------------------------------//        
+
+//-----------------------------------------------Back to main menu------------------------------------------------------//
         if (buttonsMenus[0].justPressed()){screenStatus = 0;} //Main menu 
-//-------------------------------------------------Starts clock---------------------------------------------------------------------          
+//-------------------------------------------------Starts clock---------------------------------------------------------//          
         if(switches.clockmenuToggle == 1){if (buttonsMenus[1].justPressed()){switches.clockToggle = 1;}} //turns the clock ON
-//------------------------------------------Cycle input routine--------------------------------------------------------------------------     
+//-----------------------------------------------Cycle input routine----------------------------------------------------//     
         if(clockCounter != lastclockCounter)
         {
           getTouch(); //Serial.println("clockCounter != lastclockCounter");
@@ -210,7 +214,7 @@ void flow()
           tft.setCursor(210, 267);tft.setTextColor(YELLOW);
           tft.println(cycle);          
         }          
-//---------------------------------------------Prints out on serial the truthtable that was generated-----------------------------------          
+//--------------------------------Prints out on serial the truthtable that was generated--------------------------------//         
         if (buttonsMenus[6].justPressed())
         {
           myFile = SD.open(fname3);// open the Table.txt
@@ -227,13 +231,13 @@ void flow()
             Serial.println("error opening Table.csv");// if the file didn't open, print an error:
           }            
         }       
-//------------------------------------------Clears the table.csv file----------------------------------------------------------------         
+//------------------------------------------Clears the table.csv file---------------------------------------------------//         
         if (buttonsMenus[7].justPressed())
         {
           screenStatus = 69; switches.clockToggle = 0;
           SD.remove(fname3);Serial.println("Clearing Table.csv"); if(switches.clockmenuToggle == 1){writeOutputs();} if(switches.clockmenuToggle == 0){writeIOs();}           
         } 
-//----------------------------------------------Switches between a diagram and truthtable-------------------------------------------------------          
+//----------------------------------Switches between a diagram and truthtable-------------------------------------------//          
         if (buttonsMenus[8].justPressed())
         { 
           tft.fillScreen(BLACK);//clear screen 
@@ -245,7 +249,7 @@ void flow()
           if(switches.lastDiagram == 1){switches.statusDiagram = 0; } //flip the bit for toggle effect 
         }
         switches.lastDiagram = switches.statusDiagram; //Updates the last read state of a fast button    
-//--------------------------------------------Switches between different types of trigger--------------------------------------------------------          
+//---------------------------------Switches between different types of trigger------------------------------------------//          
         if(switches.clockmenuToggle == 0)
         {  
           if (buttonsMenus[9].justPressed() && !buttonsMenus[8].justPressed())
@@ -257,7 +261,7 @@ void flow()
           }
           switches.lastfullCycle = switches.statusfullCycle; //Updates the last read state of a fast button   
         }
-//--------------------------------------------Goes back to pinout mode----------------------------------------------------------------------------          
+//---------------------------------------Goes back to pinout mode-------------------------------------------------------//          
         if (buttonsMenus[11].justPressed() && !buttonsMenus[7].justPressed())
         {
           switches.saveStateSD = 1; switches.circumventTFT = 0;
@@ -273,7 +277,7 @@ void flow()
           }
           screenStatus = 3;               
         }                      
-//-----------------------------------refreshes the table when it gets to the end of the table-------------------------------------------------                                                                            
+//-----------------------------------refreshes the table when it gets to the end of the table---------------------------//                                                                            
         if(countingOutputs < 14)
         {          
           if(rowsOfValuesCounter == 9)
@@ -290,7 +294,7 @@ void flow()
             if(switches.diagram == 0) {table();}
           }  
         }
-//-----------------------------------Switches between diagram and truthtable function-------------------------------------------------------------         
+//-----------------------------------Switches between diagram and truthtable function-----------------------------------//      
         switch (switches.diagram)
         {
           case 0: truthTableValues();
@@ -298,7 +302,7 @@ void flow()
           case 1: timingDiagram();
           break;             
         }   
-//---------------------------------Stops generation of diagram/table when number of cycles have been completed---------------------------------------         
+//---------------------Stops generation of diagram/table when number of cycles have been completed----------------------//         
         if(clockCounter >= cycle){switches.clockToggle = 0; cycle = 0; automaticInputButtonPusher = 0;}                                 
         lastOutputCounter = cycle;                                                      
     break;
@@ -381,17 +385,21 @@ void flow()
   digitalWrite(XM, LOW);
   pinMode(YP, OUTPUT);
   digitalWrite(YP, HIGH);
-//-----------------------------------------Switch Case Routines----------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------//  
+//------------------------------------------------Switch Case Routines--------------------------------------------------//
+//----------------------------------------------------------------------------------------------------------------------//
   if (screenStatus != lastStatus)//so it only updates once per statechange(screenStatus)
   {   
   switch (screenStatus)
     {
     case 1://All roads lead to Rome.                                           
+//---------------------------------Debugging and truobleshooting monitoring---------------------------------------------//             
             //SD.remove(fname5); //!!!!!uncomment this line if the program doesn't load properly after uploading because the config file might be corrupt!!!!!//
             //readSavedFile();   //reads from the SD card relevent informations regarding previous test and prints it on the serial monitor       
             //readConfigFile();  //reads from the SD card the last configuration state and prints it on the serial monitor
             //readICsInPinout(); //prints out all the ICs in pinout.txt
             //readICsInDatabase(); //prints out all the ICs in database.txt
+ //----------------------------------------------------------------------------------------------------------------------//            
               clearingRoutines();//clearing routines so previous tests don't interfere with future tests.  
               readConfig();      //assigns config variables with saved config data from the SD card
               modeScreen();      //Main menu screen
