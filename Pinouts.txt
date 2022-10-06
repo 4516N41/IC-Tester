@@ -1,0 +1,6340 @@
+﻿$4000
+Dual 3-input NOR gate and inverter
+14
+NC     %      NC
+NC     %      NC
+Input  %      1A
+Input  %      1B
+Input  %      1C
+Output %   Out 1
+GND    %     VSS
+Input  %2A
+Output %Out 2
+Output %Out 3
+Input  %3A
+Input  %3B
+Input  %3C
+VCC    %VDD
+$4001
+Quad 2-input NOR gate
+14
+Input  %      1A
+Input  %      1B
+Output %   Out 1
+Output %   Out 2
+Input  %      2A
+Input  %      2B
+GND    %     VSS
+Input  %3A
+Input  %3B
+Output %3
+Output %4
+Input  %4A
+Input  %4B
+VCC    %VDD
+$4002
+Dual 4-input NOR gates
+14
+Output %   Out 1
+Input  %      1A
+Input  %      1B
+Input  %      1C
+Input  %      1D
+NC     %      NC
+GND    %     VSS
+NC     %NC
+Input  %2D
+Input  %2C
+Input  %2B
+Input  %2A
+Output %2
+VCC    %VDD
+$4006
+18-Stage Static Shift Register 
+14
+Input  %      D1
+Output %   D1+4'
+Clock  %   Clock
+Input  %      D2
+Input  %      D3
+Output %      D4
+GND    %     VSS
+Output %D4+4
+Output %D4+5
+Output %D3+4
+Output %D2+4
+Output %D2+5
+Output %D1+4
+VCC    %VDD
+$4007
+DUAL COMPLIMENTARY PAIR PLUS INVERTER
+14
+In/Out % Q2 S(P)
+Out/In % Q2 D(P)
+Input  %Q2 Gates
+In/Out % Q2 S(N)
+Out/In % Q2 D(N)  
+Input  %Q1 Gates
+GND    %     VSS
+Out/In %Q1 D(N)
+In/Out %Q3 S(N)
+Input  %Q3 Gates
+Out/In %Q3 D(P)
+Out/In %Q3 D(N)
+In/Out %Q1 S(P)
+VCC    %VDD
+$4008
+4-Bit Full Adder with Parallel Carry Out
+14
+Input  %      A4
+Input  %      B3
+Input  %      A3
+Input  %      B2
+Input  %      A2
+Input  %      B1
+Input  %      A1
+GND    %     VSS
+Input  %Carry In
+Output %S1
+Output %S2
+Output %S3
+Output %S4
+Output %CarryOut
+Input  %B4
+VCC    %VDD
+$4009
+Hex inverters with level shifted outputs
+16
+Input  %     VCC
+Output %   Out 1
+Input  %      1A
+Output %   Out 2
+Input  %      2A
+Output %   Out 3
+Input  %      3A
+GND    %     VSS
+Input  %4A
+Output %Out 4
+Input  %5A
+Output %Out 5
+NC     %2B
+Input  %6A
+Output %Out 6
+VCC    %VDD
+$4010
+Hex buffers with level shifted outputs
+16
+Input  %     VCC
+Output %   Out 1
+Input  %      1A
+Output %   Out 2
+Input  %      2A
+Output %   Out 3
+Input  %      3A
+GND    %     VSS
+Input  %4A
+Output %Out 4
+Input  %5A
+Output %Out 5
+NC     %2B
+Input  %6A
+Output %Out 6
+VCC    %VDD
+$40100
+32-STAGE STATIC LEFT/RIGHT SHIFT REGISTER
+16
+NC     %      NC
+Input  %ClockInh
+Clock  %   Clock
+Output % Sh.Left
+NC     %      NC
+Input  %Sh.Right  
+NC     %      NC
+GND    %     VSS
+Input  %RC.Cntr
+NC     %NC
+Input  %Sh.Right
+Output %Sh.Right
+Input  %L/R Cntr
+NC     %NC
+NC     %NC
+VCC    %VDD
+$40101
+9-PARITY GENERATOR/CHECKER
+14
+Input  %      D1
+Input  %      D2
+Input  %      D3
+Input  %      D4
+Input  %      D9
+Output %     Odd    
+GND    %     VSS
+Input  %Inhibit
+Output %Even
+Input  %D5
+Input  %D6
+Input  %D7
+Input  %D8
+VCC    %VDD
+$40102
+2-DECADE BCD
+16
+Clock  %   Clock
+Input  %  Clear'
+Input  %CarryIn'
+Input  %      J0
+Input  %      J1
+Input  %      J2
+Input  %      J3
+GND    %     VSS
+Input  %ASync'
+Input  %J4
+Input  %J5
+Input  %J6
+Input  %J7
+Output %Car.Out'
+Input  %Sync'
+VCC    %VDD
+$40103
+8-BIT BINARY
+16
+Clock  %   Clock
+Input  %  Clear'
+Input  %CarryIn'
+Input  %      J0
+Input  %      J1
+Input  %      J2
+Input  %      J3
+GND    %     VSS
+Input  %ASync'
+Input  %J4
+Input  %J5
+Input  %J6
+Input  %J7
+Output %Car.Out'
+Input  %Sync'
+VCC    %VDD
+$40104
+4-BIT UNIVERSAL BIDIRECTIONAL SHIFT REGISTER
+16
+Input  % En. Out
+Input  %Sh.Right
+Input  %      D0
+Input  %      D1
+Input  %      D2
+Input  %      D3
+Input  % Sh.Left
+GND    %     VSS
+Input  %Mode S0
+Input  %Mode S1
+Clock  %Clock
+Output %Q3
+Output %Q2
+Output %Q1
+Output %Q0
+VCC    %VDD
+$40105
+FIFO REGISTER 4-BITS WIDE BY 16-BITS LONG
+16
+Input  % 3-State
+Input  % Data In
+Input  %Shift In
+Input  %      D0
+Input  %      D1
+Input  %      D2
+Input  %      D3
+GND    %     VSS
+Input  %Reset
+Output %Q3
+Output %Q2
+Output %Q1
+Output %Q0
+Output %Data Out
+Output %ShiftOut
+VCC    %VDD
+$40106
+Hex inverters with schmitt-trigger inputs
+14
+Input  %      1A
+Output %      A'
+Input  %      1B
+Output %      B'
+Input  %      1C
+Output %      C'
+GND    %     VSS
+Output %D'
+Input  %1D
+Output %E'
+Input  %1E
+Output %F'
+Input  %1F
+VCC    %VDD
+$40107
+DUAL 2-INPUT NAND BUFFER/DRIVER
+14
+NC     %      NC
+NC     %      NC
+Input  %       A
+Input  %       B
+Output %      C'
+NC     %      NC
+GND    %     VSS
+NC     %NC
+Output %F'
+Input  %E
+Input  %D
+NC     %NC
+NC     %NC
+VCC    %VDD
+$40108
+4-BY-4 MULTIPORT REGISTER
+24
+Output %     Q3B
+Output %     Q2B
+Input  %3-Stat.A
+Output %     Q0A
+Output %     Q1A
+Output %     Q2A
+Output %     Q3A
+Input  % Write 0
+Input  % Write 1
+Input  % Read 1B
+Input  % Read 0B
+GND    %     VSS 
+Input  %Read 0A
+Input  %Read 1A
+Input  %Write En
+Clock  %Clock
+Input  %D3
+Input  %D2
+Input  %D1
+Input  %D0
+Input  %3-Stat.B
+Output %Q0B
+Output %Q1B
+VCC    %VDD
+$40109
+QUAD LOW TO HIGH VOLTAGE LEVEL SHIFTER
+16
+Input  % 
+Input  %    En 1
+Input  %    In 1
+Output %   Out 1
+Output %   Out 2
+Input  %    In 2
+Input  %    En 2
+GND    %     VSS
+Input  %En 3
+Input  %In 3
+Output %Out 3
+NC     %NC
+Output %Out 4
+Input  %In 4
+Input  %En 4
+VCC    %VDD
+$4011
+Quad 2-input NAND gates
+14
+Input  %      1A
+Input  %      1B
+Output %       1
+Output %       2
+Input  %      2A
+Input  %      2B
+GND    %     VSS
+Input  %3A
+Input  %3B
+Output %3
+Output %4
+Input  %4A
+Input  %4B
+VCC    %VDD
+$4012
+Dual 4-input NAND gates
+14
+Output %       1
+Input  %      1A
+Input  %      1B
+Input  %      1C
+Input  %      1D
+NC     %      NC
+GND    %     VSS
+NC     %NC
+Input  %2D
+Input  %2C
+Input  %2B
+Input  %2A
+Output %2
+VCC    %VDD
+$4013
+Dual D flip-flop with set and reset
+14
+Output %      Q1
+Output %      1Q
+Input  % Clock 1
+Input  % Reset 1
+Input  %      D1
+Input  %    Set1
+GND    %     VSS
+Input  %Set 2
+Input  %D2
+Input  %Reset 2
+Input  %Clock 2
+Output %2Q
+Output %Q2
+VCC    %VDD
+$4014
+8-Stage Static Shift registers
+16
+Input  %      P8
+Output %      Q8
+Output %     Q14
+Input  %      P4
+Input  %      P3
+Input  %      P2
+Input  %      P1
+GND    %     VSS 
+Input  %Par/Ser
+Clock  %Clock 
+Input  %Serial 
+Output %Q7
+Input  %P5
+Input  %P6
+Input  %P7
+VCC    %VDD
+$4015
+Dual 4-bit serial-in parallel-out shift register with asynchronous reset
+16
+Clock  % Clock 2
+Output %      4B
+Output %      3A
+Output %      2A
+Output %      1A
+Input  % Reset 1
+Input  %      D1
+GND    %     VSS 
+Clock  %Clock 1
+Output %4A 
+Output %3B 
+Output %2B
+Output %1B
+Input  %Reset 2
+Input  %D2
+VCC    %VDD
+$4016
+Quad analog switches
+14
+Input  %      1A
+Output %   Out A
+Input  %      1B
+Output %   Out B
+Input  %Contrl B
+Input  %Contrl C
+GND    %     VSS
+Input  %1C
+Output %Out C
+Output %Out D
+Input  %1D
+Input  %Contrl D
+Input  %Contrl A
+VCC    %VDD
+$4017
+Decade counter (5-stage Johnson counter) with 10-output decoder
+16
+Output %      Q5
+Output %      Q1
+Output %      Q0
+Output %      Q2
+Output %      Q6
+Output %      Q7
+Output %      Q3
+GND    %     VSS
+Output %Q8
+Output %Q4
+Output %Q9
+Output %CarryOut
+Input  %Inhibit
+Clock  %Clock
+Input  %Reset
+VCC    %VDD
+$4018
+Presettable divide-by-N counter
+16
+Input  %    Data
+Input  %      J1
+Input  %      J2
+Output %      Q2
+Output %      Q1
+Output %      Q3
+Input  %      J3
+GND    %     VSS 
+Input  %J4
+Input  %Enable 
+Output %Q4 
+Input  %J5
+Output %Q5
+Clock  %Clock
+Input  %Reset
+VCC    %VDD
+$4019
+8-to-4 line noninverting data selector/multiplexer with OR function
+16
+Input  %      B4
+Input  %      A3
+Input  %      B3
+Input  %      A2
+Input  %      B2
+Input  %      A1
+Input  %      B1
+GND    %     VSS 
+Input  %Ka
+Output %D1 
+Output %D2 
+Output %D3
+Output %D4
+Input  %Kb
+Input  %A4
+VCC    %VDD
+$4020
+14-bit asynchronous binary counter with reset
+16
+Output %     Q12
+Output %     Q13
+Output %     Q14
+Output %      Q6
+Output %      Q5
+Output %      Q7
+Output %      Q4
+GND    %     VSS 
+Output %Q1
+Clock  %Clock 
+Input  %Reset 
+Output %Q9
+Output %Q8
+Output %Q10
+Output %Q11
+VCC    %VDD
+$4021
+8-Stage Static Shift registers
+16
+Input  %  Para.8
+Output %      Q8
+Output %     Q14
+Input  %  Para.4
+Input  %  Para.3
+Input  %  Para.2
+Input  %  Para.1
+GND    %     VSS 
+Input  %Par/Ser
+Clock  %Clock 
+Input  %Serial 
+Output %Q7
+Input  %Para.5
+Input  %Para.6
+Input  %Para.7
+VCC    %VDD
+$4022
+Octal counter (4-stage Johnson counter) with 8-output decoder
+16
+Output %      Q1
+Output %      Q0
+Output %      Q2
+Output %      Q5
+Output %      Q6
+NC     %      NC
+Output %      Q3
+GND    %     VSS 
+NC     %NC
+Output %Q7 
+Output %Q4
+Output %CarryOut
+Input  %Inhibit
+Clock  %Clock
+Input  %Reset
+VCC    %VDD
+$4023
+Triple 3-input NAND gates
+14
+Input  %      2A
+Input  %      2B
+Input  %      1A
+Input  %      1B
+Input  %      1C
+Output %   Out 1
+GND    %     VSS
+Input  %2C
+Output %Out 2
+Output %Out 3
+Input  %3A
+Input  %3B
+Input  %3C
+VCC    %VDD
+$4024
+7-bit asynchronous binary counter with reset
+14
+Clock  %   Clock
+Input  %   Reset
+Output %      Q7
+Output %      Q6
+Output %      Q5
+Output %      Q4
+GND    %     VSS 
+NC     %NC
+Output %Q3 
+NC     %NC 
+Output %Q2
+Output %Q1
+NC     %NC
+VCC    %VDD
+$4025
+Triple 3-input NOR gates
+14
+Input  %      2A
+Input  %      2B
+Input  %      1A
+Input  %      1B
+Input  %      1C
+Output %   Out 1
+GND    %     VSS
+Input  %2C
+Output %Out 2
+Output %Out 3
+Input  %3A
+Input  %3B
+Input  %3C
+VCC    %VDD
+$4026
+Decade counter with decoded 7-segment display outputs and display enable
+16
+Clock  %   Clock
+Input  % Inhibit
+Input  %  En. In
+Output %  En.Out
+Output %CarryOut
+Output %       f
+Output %       g
+GND    %     VSS 
+Output %d
+Output %a 
+Output %e
+Output %b
+Output %c
+Output %Ung.C.Seg
+Input  %Reset
+VCC    %VDD
+$4027
+Dual J-K flip-flops with set and reset
+16
+Output %   Out 2
+Output %In.Out 2
+Clock  % Clock 1
+Input  % Reset 2
+Input  %      K2
+Input  %      J2
+Input  %   Set 2
+GND    %     VSS 
+Input  %Set 1
+Input  %J1 
+Input  %K1
+Input  %Reset 1
+Clock  %Clock 2
+Output %In.Out 1
+Output %Out 1
+VCC    %VDD
+$4028
+4-bit BCD to 10-output decoder (can be used as 3-bit binary to 8-output decoder)
+16
+Output %      Q4
+Output %      Q2
+Output %      Q0
+Output %      Q7
+Output %      Q9
+Output %      Q5
+Output %      Q6
+GND    %     VSS 
+Output %Q8
+Input  %A
+Input  %D
+Input  %C
+Input  %B
+Output %Q1
+Output %Q3
+VCC    %VDD
+$4029
+Presettable up/down counter, binary or BCD-decade
+16
+Input  %  Pre.En
+Output %      Q4
+Input  %      J4
+Input  %      J1
+Input  %Carry In
+Output %      Q1
+Input  %CarryOut
+GND    %     VSS 
+Input  %Bin/Dec
+Input  %Up/Down
+Output %Q2
+Input  %J2
+Input  %J3
+Output %Q3
+Clock  %Clock
+VCC    %VDD
+$4030
+Quad 2-input XOR gates
+14
+Input  %      1A
+Input  %      1B
+Output %   Out 1
+Output %   Out 2
+Input  %      2A
+Input  %      2B
+GND    %     VSS
+Input  %3A
+Input  %3B
+Output %Out 3
+Output %Out 4
+Input  %4A
+Input  %4B
+VCC    %VDD
+$4031
+64-stage shift register
+16
+Input  %DataIn 2
+Clock  %   Clock
+NC     %      NC
+NC     %      NC
+Output %delay Q1
+Output %      Q1
+Output %     Q1'
+GND    %     Vss
+Output %Del.Clock
+Input  %Mode
+NC     %NC
+NC     %NC
+NC     %NC
+NC     %NC
+Input  %DataIn 1
+VCC    %VDD
+$4032
+Triple serial adder	
+16
+Output %      S3
+Input  %      3'
+Input  %      CL
+Output %      S2
+Input  %      2'
+Input  %CarryRes
+Input  %      1'
+GND    %     VSS 
+Output %S1
+Input  %A1
+Input  %B1
+Input  %B2
+Input  %A2
+Input  %B3
+Input  %A3
+VCC    %VDD
+$4033
+Decade counter with decoded 7-segment display outputs and Ripple Blanking
+16
+Clock  %   Clock
+Input  % Inhibit
+Input  %Blank In
+Output %BlankOut
+Output %CarryOut
+Output %       f
+Output %       g
+GND    %     VSS 
+Output %d
+Output %a 
+Output %e
+Output %b
+Output %c
+Input  %Lamp
+NC     %NC
+VCC    %VDD
+$4034
+8-stage bidirectional parallel/serial input/output register
+24
+In/Out %     DB8
+In/Out %     DB7
+In/Out %     DB6
+In/Out %     DB5
+In/Out %     DB4
+In/Out %     DB3
+In/Out %     DB2
+In/Out %     DB1
+Input  %Enable A
+Input  %SerialIn
+Input  %     A/B
+GND    %     VSS 
+Input  %P/S
+Input  %A/S
+Clock  %Clock
+Out/In %DA1
+Out/In %DA2
+Out/In %DA3
+Out/In %DA4
+Out/In %DA5
+Out/In %DA6
+Out/In %DA7
+Out/In %DA8
+VCC    %VDD
+$4035
+4-stage parallel-in/parallel-out shift register
+16
+Output %Q1/InvQ1
+Input  %True/Com
+Input  %      K'
+Input  %       J
+Input  %   Reset
+Clock  %   Clock
+Input  %     P/S
+GND    %     VSS 
+Input  %PI1
+Input  %PI2
+Input  %PI3
+Input  %PI4
+Output %Q4/Q4'
+Output %Q3/Q3'
+Output %Q2/Q2'
+VCC    %VDD
+$4037
+Triple AND/OR Bi-Phase Pair
+14
+VCC    %VCC
+Input  %       B
+Input  %      C1
+Input  %       A
+Input  %      C2
+Input  %      C3
+GND    %     VSS
+Output %D3
+Output %E3
+Output %D2
+Output %E2
+Output %E1
+Output %D1
+VCC    %VDD
+$4038
+Triple Serial Adder Negative Logic
+16
+Output %   Sum 3
+Input  %      3'
+Input  %      CL
+Output %   Sum 2
+Input  %      2'
+Input  %CarryRes
+Input  %      1'
+GND    %     VSS 
+Output %Sum 1
+Input  %A1
+Input  %B1 
+Input  %B2
+Input  %A2
+Input  %B3
+Input  %A3
+VCC    %VDD
+$4040
+12-bit asynchronous binary counter with reset
+16
+Output %     Q12
+Output %      Q6
+Output %      Q5
+Output %      Q7
+Output %      Q4
+Output %      Q3
+Output %      Q2
+GND    %     VSS 
+Output %Q1
+Clock  %Clock 
+Input  %Reset 
+Output %Q9
+Output %Q8
+Output %Q10
+Output %Q11
+VCC    %VDD
+$4041
+Quad True/Complement buffer/inverter (2 outputs per gate) (4 times standard "B" drive)
+14
+Output %      QA
+Output %     QA'
+Input  %       A
+Output %      QB
+Output %     QB'
+Input  %       B
+GND    %     VSS
+Output %QC
+Output %QC'
+Input  %C
+Output %QD
+Output %QD'
+Input  %D
+VCC    %VDD
+$4042
+4-bit transparent latch with selectable latch enable polarity and complementary outputs
+16
+Output %      Q4
+Output %      Q1
+Output %     Q1'
+Input  %      D1
+Clock  %   Clock
+Output %Polarity
+Input  %      D2
+GND    %     VSS 
+Output %Q2'
+Output %Q2
+Output %Q3
+Output %Q3'
+Input  %D3
+Input  %D4
+Output %Q4'
+VCC    %VDD
+$4043
+Quad 3-State NOR R/S latch 
+16
+Output %      Q4
+Output %      Q1
+Input  %      R1
+Input  %      S1
+Input  %  Enable
+Input  %      S2
+Input  %      R2
+GND    %     VSS 
+Output %Q2
+Output %Q3
+Input  %R3
+Input  %S3
+NC     %NC
+Input  %S4
+Input  %R4
+VCC    %VDD
+$4044
+Quad 3-State NOR R/S latch 
+16
+Output %      Q4
+Output %      Q1
+Input  %      R1
+Input  %      S1
+Input  %  Enable
+Input  %      S2
+Input  %      R2
+GND    %     VSS 
+Output %Q2
+Output %Q3
+Input  %R3
+Input  %S3
+NC     %NC
+Input  %S4
+Input  %R4
+VCC    %VDD
+$4045
+21-Stage Counter
+16
+Input  %      SP
+Input  %      SN
+VCC    %      VDD
+NC     %      NC
+NC     %      NC
+NC     %      NC
+Output %       Y
+Output %     Y+D
+NC     %NC
+NC     %NC
+NC     %NC
+NC     %NC
+NC     %NC
+GND    %VSS 
+Clock  %Phi0
+Clock  %Phi1
+$4046
+Micropower Phase-Locked Loop
+16
+Output %Phase.P
+Output %Phase.C1
+Input  % Comp.In
+Output % VCO Out
+Input  % Inhibit
+Input  %      Cx
+Input  %      Cx
+GND    %     VSS 
+Input  %VCO In
+Output %Dmod.Out
+GND    %R2
+GND    %R1
+Output %Phase.C2
+Input  %SignalIn
+GND    %Zener
+VCC    %VDD
+$4047
+Low-Power Monostable/Astable Multivibrator
+14
+Input  %      Cx
+Input  %      Rx
+Input  %     RCx
+Input  %Astable'
+Input  % Astable
+Input  %-Trigger
+GND    %     VSS 
+Input  %+Trigger
+Input  %Ex.Reset
+Output %Q1
+Output %Q1'
+Input  %Rtrigger
+Output %OSC Out
+VCC    %VDD
+$4048
+Multi-Function Expendable 8-lnput Gate 
+16
+Output %     Out
+Input  %      Kd
+Input  %       H
+Input  %       G
+Input  %       F
+Input  %       E
+Input  %      Kb
+GND    %     VSS
+Input  %Kc
+Input  %Ka
+Input  %D
+Input  %C
+Input  %B
+Input  %A
+Input  %Expand
+VCC    %VDD
+$4049
+Hex Buffer/Converter Inverting Type 
+16
+VCC    %      VDD
+Output %     QA'
+Input  %       A
+Output %     QB'
+Input  %       B
+Output %     QC'
+Input  %       C
+GND    %     VSS
+Input  %D
+Output %QD'
+Input  %E
+Output %QE'
+CN     %NC
+Input  %F
+Output %QF'
+NC     %NC
+$4050
+Hex Buffer/Converter Non-Inverting Type 
+16
+VCC    %      VDD
+Output %      QA
+Input  %       A
+Output %      QB
+Input  %       B
+Output %      QC
+Input  %       C
+GND    %     VSS
+Input  %D
+Output %QD
+Input  %E
+Output %QE
+CN     %NC
+Input  %F
+Output %QF
+NC     %NC
+$4051
+Single 8-channel analog multiplexer/demultiplexer
+16
+In/Out %Channel4
+In/Out %Channel6
+Out/In %     Com
+In/Out %Channel7
+In/Out %Channel5
+Input  % Inhibit
+GND    %     VEE
+GND    %VSS
+Input  %C
+Input  %B
+Input  %A
+In/Out %Channel3
+In/Out %Channel0
+In/Out %Channel1
+In/Out %Channel2
+VCC    %VDD
+$4052
+Dual 4-channel analog multiplexer/demultiplexer
+16
+In/Out %  Y Ch.0
+In/Out %  Y Ch.2
+Out/In %   Com Y
+In/Out %  Y Ch.3
+In/Out %  Y Ch.1
+Input  % Inhibit
+GND    %     VEE
+GND    %     VSS
+Input  %B
+Input  %A
+Input  %X Ch.3
+In/Out %X Ch.0
+Out/In %Com X
+In/Out %X Ch.1
+In/Out %X Ch.2
+VCC    %VDD
+$4053
+Triple 2-to-1 line analog multiplexer/demultiplexer
+16
+In/Out %      By
+In/Out %      Bx
+In/Out %      Cy
+Out/In %   Com C
+In/Out %      Cx
+Input  % Inhibit
+GND    %     VEE
+GND    %     VSS
+Input  %C
+Input  %B
+Input  %A
+In/Out %Ax
+In/Out %Ay
+Out/In %Com A
+Out/In %Com B
+VCC    %VDD
+$4054
+4-Segment LCD Driver
+16
+Input  %Strobe 4
+Input  %D.FreqIn
+Output %   Out 4
+Output %   Out 3
+Output %   Out 2
+Output %   Out 1
+GND    %     VEE
+GND    %     VSS
+Input  %In 1
+Input  %Strobe 1
+Input  %In 2
+Input  %Strobe 2
+Input  %In 3
+Input  %Strobe 3
+Input  %In 4
+VCC    %VDD
+$4055
+BCD to 7 Segment Decoder/Driver
+16
+Output %DFreqOut
+Input  %      A2
+Input  %      A1
+Input  %      A3
+Input  %      A0
+Output %D.FreqIn
+GND    %     VEE
+GND    %     VSS
+Output %a
+Output %b
+Output %c
+Output %d
+Output %e
+Output %g
+Output %f
+VCC    %VDD
+$4056
+BCD to 7 Segment Decoder/Driver with Strobed Latch Function
+16
+Output %  Strobe
+Input  %      A2
+Input  %      A1
+Input  %      A3
+Input  %      A0
+Output %D.FreqIn
+GND    %     VEE
+GND    %     VSS
+Output %a
+Output %b
+Output %c
+Output %d
+Output %e
+Output %g
+Output %f
+VCC    %VDD
+$4057
+4-Bit Arithmetic Logic Unit
+26
+Input  % (LSB)D1
+Input  % (MSB)D4
+Input  %      D2
+Output %Neg.Ind.
+Input  %   ZI In
+Input  % F.Sel.c
+Input  % F.Sel.d
+Input  %Con.In A
+Input  %Con.In C
+Input  %R.Data.L
+Input  %  Bypass
+NC     %      NC	 
+Input  % Mode C1
+Input  %Rotate 1
+Input  %Mode C2
+Input  %OverF.IO
+Input  %OverF.In
+Input  %L.Data.L
+Input  %Con. In B
+Clock  %Clockk
+Input  %F.Sel.b
+Input  %F.Sel.a
+Input  %D.Out.C
+GND    %VSS
+VCC    %VDD
+$4059
+Programmable Divide by N Counter
+24
+Clock  %   Clock
+Input  %En.Latch
+Input  %      J1
+Input  %      J2
+Input  %      J3
+Input  %      J4
+Input  %     J16
+Input  %     J15
+Input  %     J14
+Input  %     J13
+Input  %      Kc
+GND    %     VSS	 
+Input  %Kb
+Input  %Ka
+Input  %J12
+Input  %J11
+Input  %J10
+Input  %J9
+Input  %J8
+Clock  %J7
+Input  %J6
+Input  %J5
+Output %Out
+VCC    %VDD
+$4060
+14-Stage Ripple Carry Binary Counter/Divider and Oscillator
+16
+Output %     Q12
+Output %     Q13
+Output %     Q14
+Output %      Q6
+Output %      Q5
+Output %      Q7
+GND    %      Q4
+GND    %     VSS
+Output %CarryOut
+Output %IOut
+Clock  %Clock
+Input  %Reset
+Output %Q9
+Output %Q8
+Output %Q10
+VCC    %VDD
+$4062
+200-Stage Dynamic Shift Register*Unfinished
+16
+Output %     Q12
+Output %     Q13
+Output %     Q14
+Output %      Q6
+Output %      Q5
+Output %      Q7
+Output %      Q4
+GND    %     VSS
+Output %COut
+Output %IOut
+Clock  %Clk
+Input  %Res
+Output %Q9
+Output %Q8
+Output %Q10
+VCC    %VDD
+$4063
+4-Bit Magnitude Comparator
+16
+Input  %      B3
+Input  %     A<B
+Input  %     A=B
+Input  %     A>B
+Output %     A>B
+Output %     A=B
+Output %     A<B
+GND    %     VSS
+Input  %B0
+Input  %A0
+Input  %B1
+Input  %A1
+Input  %A2
+Input  %B2
+Input  %A3
+VCC    %VDD
+$4066
+Quad Bilateral switches
+14
+In/Out %      1A
+Out/In %       A
+In/Out %      1B
+Out/In %       B
+Input  %ControlB
+Input  %ControlC
+GND    %     VSS
+In/Out %1C
+Out/In %C
+Out/In %D
+In/Out %1D
+Input  %ControlD
+Input  %ControlA
+VCC    %VDD
+$4067
+Single 16-Channel Multiplexer/Demultiplexer
+24
+Out/In %     Com
+In/Out %  Chan.7
+In/Out %  Chan.6
+In/Out %  Chan.5
+In/Out %  Chan.4
+In/Out %  Chan.3
+In/Out %  Chan.2
+In/Out %  Chan.1
+In/Out %  Chan.0
+Input  %       A
+Input  %       B
+GND    %     VSS	 
+Input  %D
+Input  %C
+Input  %Inhibit
+In/Out %Chan.15
+In/Out %Chan.14
+In/Out %Chan.13
+In/Out %Chan.12
+In/Out %Chan.11
+In/Out %Chan.10
+In/Out %Chan.9
+In/Out %Chan.8
+VCC    %VDD
+$4068
+8-Input NAND/AND Gate
+14
+Output %     Out
+Input  %       A
+Input  %       B
+Input  %       C
+Input  %       D
+NC     %      NC
+GND    %     VSS
+NC     %NC
+Input  %E
+Input  %F
+Input  %G
+Input  %H
+Output %Inv.Out
+VCC    %VDD
+$4069
+Hex inverters 
+14
+Input  %       A
+Output %     QA'
+Input  %       B
+Output %     QB'
+Input  %       C
+Output %     QC'
+GND    %     VSS
+Output %QD'
+Input  %D
+Output %QE'
+Input  %E
+Output %QF'
+Input  %F
+VCC    %VDD
+$4070
+Quad 2-input XOR gates
+14
+Input  %      1A
+Input  %      1B
+Output %   Out 1
+Output %   Out 2
+Input  %      2A
+Input  %      2B
+GND    %     VSS
+Input  %3A
+Input  %3B
+Output %Out 3
+Output %Out 4
+Input  %4A
+Input  %4B
+VCC    %VDD
+$4071
+Quad 2-input OR gates
+14
+Input  %      1A
+Input  %      1B
+Output %   Out 1
+Output %   Out 2
+Input  %      2A
+Input  %      2B
+GND    %     VSS
+Input  %3A
+Input  %3B
+Output %Out 3
+Output %Out 4
+Input  %4A
+Input  %4B
+VCC    %VDD
+$4072
+Dual 4-input OR gates
+14
+Output %   Out 1
+Input  %      1A
+Input  %      1B
+Input  %      1C
+Input  %      1D
+NC     %      NC
+GND    %     VSS
+NC     %NC
+Input  %2A
+Input  %2B
+Input  %3C
+Input  %3D
+Output %Out 2
+VCC    %VDD
+$4073
+Triple 3-input AND gates
+14
+Input  %      1A
+Input  %      1B
+Input  %      2A
+Input  %      2B
+Input  %      2C
+Output %   Out B
+GND    %     VSS
+Input  %1C
+Output %Out A
+Output %Out C
+Input  %3A
+Input  %3B
+Input  %3C
+VCC    %VDD
+$4075
+Triple 3-input OR gates
+14
+Input  %      1A
+Input  %      1B
+Input  %      2A
+Input  %      2B
+Input  %      2C
+Output %   Out B
+GND    %     VSS
+Input  %1C
+Output %Out A
+Output %Out C
+Input  %3A
+Input  %3B
+Input  %3C
+VCC    %VDD
+$4076
+4-Bit D Type Register
+16
+Output %Dis.OutM
+Output %Dis.OutN
+Output %      Q1
+Output %      Q2
+Output %      Q3
+Output %      Q4
+Clock  %   Clock
+GND    %     VSS
+Input  %Dat.D.G1
+Input  %Dat.D.G2
+Input  %D4
+Input  %D3
+Input  %D2
+Input  %D1
+Input  %Reset
+VCC    %VDD
+$4077
+Quad 2-input XNOR gates
+14
+Input  %      1A
+Input  %      1B
+Output %   Out 1
+Output %   Out 2
+Input  %      2A
+Input  %      2B
+GND    %     VSS
+Input  %3A
+Input  %3B
+Output %Out 3
+Output %Out 4
+Input  %4A
+Input  %4B
+VCC    %VDD
+$4078
+8-Input NOR/OR Gate
+14
+Output %     Out
+Input  %       A
+Input  %       B
+Input  %       C
+Input  %       D
+NC     %      NC
+GND    %     VSS
+Input  %NC
+Input  %E
+Input  %F
+Input  %G
+Input  %H
+Output %Inv.Out
+VCC    %VDD
+$4081
+Quad 2-input AND gates
+14
+Input  %      1A
+Input  %      1B
+Output %   Out 1
+Output %   Out 2
+Input  %      2A
+Input  %      2B
+GND    %     VSS
+Input  %3A
+Input  %3B
+Output %Out 3
+Output %Out 4
+Input  %4A
+Input  %4B
+VCC    %VDD
+$4082
+Dual 4-input AND gates
+14
+Output %   Out 1
+Input  %      1A
+Input  %      1B
+Input  %      1C
+Input  %      1D
+NC     %      NC
+GND    %     VSS
+NC     %NC
+Input  %2A
+Input  %2B
+Input  %3C
+Input  %3D
+Output %Out 2
+VCC    %VDD
+$4085
+Dual 2-Wide 2-input And/OR/Invert gates
+14
+Input  %      1A
+Input  %      1B
+Output %   Out 1
+Output %   Out 2
+Input  %      2A
+Input  %      2B
+GND    %     VSS
+Input  %2C
+Input  %2D
+Input  %Inhibit1
+Input  %Inhibit2
+Input  %1C
+Input  %1D
+VCC    %VDD
+$4086
+Expandable 4-Wide 2-input And/OR/Invert gates
+14
+Input  %      1A
+Input  %      1B
+Output %     Out
+NC     %      NC
+Input  %      3A
+Input  %      3B
+GND    %     VSS
+Input  %4A
+Input  %4B
+Input  %Inh/Exp
+Input  %En/Exp
+Input  %2A
+Input  %2B
+VCC    %VDD
+$4089
+Binary Rate Multiplier
+16
+Output % "15"Out
+Input  %BinSel.C
+Input  %BinSel.D
+Input  %Set "15"
+Output % Inv.Out
+Output %     Out
+Output %CarryOut
+GND    %     VSS
+Clock  %Clock
+Input  %Strobe
+Input  %Carry In
+Input  %Cascade
+Input  %Clear
+Input  %BinSel.A
+Input  %BinSel.B
+VCC    %VDD
+$4093
+Quad 2-input NAND gates with schmitt trigger inputs
+14
+Input  %      1A
+Input  %      1B
+Output %   Out 1
+Output %   Out 2
+Input  %      2A
+Input  %      2B
+GND    %     VSS
+Input  %3A
+Input  %3B
+Output %Out 3
+Output %Out 4
+Input  %4A
+Input  %4B
+VCC    %VDD
+$4094
+8 Stage Shift and Store Bus Register
+16
+Input  %  Strobe
+Input  %    Data
+Clock  %   Clock
+Output %      Q1
+Output %      Q2
+Output %      Q3
+Output %      Q4
+GND    %     VSS
+Output %Q'S
+Output %QS
+Output %Q8
+Output %Q7
+Output %Q6
+Output %Q5
+Output %Out.En.
+VCC    %VDD
+$4095
+Gated J-K Master-Slave Flip-Flop, Non-Inverting Inputs
+14
+NC     %      NC
+Input  %   Reset
+Input  %      J1
+Input  %      J2
+Input  %      J5
+Output %    Out'
+GND    %     VSS
+Output %Out
+Input  %K3
+Input  %K2
+Input  %K1
+Clock  %Clock
+Input  %Set
+VCC    %VDD
+$4096
+Gated J-K Master-Slave Flip-Flop, Inverting and Non-Inverting Inputs
+14
+NC     %      NC
+Input  %   Reset
+Input  %      J1
+Input  %     J2'
+Input  %      J5
+Output %    Out'
+GND    %     VSS
+Output %Out
+Input  %K3'
+Input  %K2
+Input  %K1
+Clock  %Clock
+Input  %Set
+VCC    %VDD
+$4097
+Differential 8-Channel Multiplexer/Demultiplexer
+24
+Out/In %   Com X
+In/Out %      X7
+In/Out %      X6
+In/Out %      X5
+In/Out %      X4
+In/Out %      X3
+In/Out %      X2
+In/Out %      X1
+In/Out %      X0
+Input  %       A
+Input  %       B
+GND    %     VSS	 
+Input  %Inhibit
+Input  %C
+In/Out %Y7
+In/Out %Y6
+Out/In %Com Y
+In/Out %Y5
+In/Out %Y4
+In/Out %Y3
+In/Out %Y2
+In/Out %Y1
+In/Out %Y0
+VCC    %VDD
+$4098
+Dual Monostable Multivibrator
+16
+Input  %     Cx1
+Input  %     Rx1
+Input  % Reset 1
+Input  %    +Tr1
+Input  %    -Tr1
+Output %   Out 1
+Output %   Out1'
+GND    %     VSS
+Output %Out2'
+Output %Out 2
+Input  %-Tr2
+Input  %+Tr2
+Input  %Reset 2
+Input  %Rx2
+Input  %Cx2
+VCC    %VDD
+$4099
+8-Bit Addressable Latch
+16
+Output %      Q7
+Output %   Reset
+Output %    Data
+Output %Write.En
+Input  %      A0
+Input  %      A1
+Input  %      A2
+GND    %     VSS
+Output %Q0
+Output %Q1
+Output %Q2
+Output %Q3
+Output %Q4
+Output %Q5
+Output %Q6
+VCC    %VDD
+$4502
+STROBED HEX INVERTER/BUFFER
+16
+Input  %      D3
+Output %      Q3
+Input  %      D1
+Input  % Disable
+Output %      Q1
+Input  %      D2
+Output %      Q2
+GND    %     VSS
+Output %Q4
+Input  %D4
+Output %Q5
+Input  %Inhibit
+Input  %D5
+Output %Q6
+Input  %D6
+VCC    %VDD
+$4503
+HEX BUFFER 3-STATE NON-INVERTING
+16
+Input  %DisableA
+Input  %      D1
+Output %      Q1
+Input  %      D2
+Output %      Q2
+Input  %      D3
+Output %      Q3
+GND    %     VSS
+Output %Q4
+Input  %D4
+Output %Q5
+Input  %D5
+Output %Q6
+Input  %D6
+Input  %DisableB
+VCC    %VDD
+$4504
+HEX VOLTAGE-LEVEL SHIFTER FOR TTL TO CMOS OR CMOS TO TTL OPERATION
+16
+Input  %     VCC
+Output %   A Out
+Input  %    A In
+Output %   B Out
+Input  %    B In
+Output %   C Out
+Input  %    C IN
+GND    %     VSS
+Input  %D In
+Output %D Out
+Input  %E In
+Output %E Out
+Input  %Select
+Input  %F In
+Output %F Out
+VCC    %VDD
+$4508
+DUAL 4-BIT LATCH
+24
+Input  % Reset A
+Input  %Strobe A
+Input  %DisableA
+Input  %     D0A
+Output %     Q0A
+Input  %     D1A
+Output %     Q1A
+Input  %     D2A
+Output %     Q2A
+Input  %     D3A
+Output %     Q3A
+GND    %     VSS
+Input  %Reset B
+Input  %Strobe B
+Input  %DisableB
+Input  %D0B
+Output %Q0B
+Input  %D1B
+Output %Q1B
+Input  %D2B
+Output %Q2B
+Input  %D3B
+Output %Q3B
+VCC    %VDD
+$4510
+PRESETTABLE BCD UP/DOWN COUNTERS
+16
+Input  %Enable
+Output %      Q4
+Input  %      P4
+Input  %      P1
+Input  %CarryIn'
+Output %      Q1
+Output %Car.Out'
+GND    %     VSS
+Input  %Reset
+Input  %Up/Down
+Output %Q2
+Input  %P2
+Input  %P3
+Output %Q3
+Clock  %Clock
+VCC    %VDD
+$4511
+BCD TO 7-SEGMENT LATCH DECODER DRIVERS
+16
+Input  %       B
+Input  %       C
+Input  %   Lamp'
+Input  %  Blank'
+Input  % Strobe'
+Input  %       D
+Input  %       A
+GND    %     VSS
+Output %e
+Output %d
+Output %c
+Output %b
+Output %a
+Output %g
+Output %f
+VCC    %VDD
+$4512
+8-CHANNEL DATA SELECTOR
+16
+Input  %      D0
+Input  %      D1
+Input  %      D2
+Input  %      D3
+Input  %      D4
+Input  %      D5
+Input  %      D6
+GND    %     VSS
+Input  %D7
+Input  %Inhibit
+Input  %A
+Input  %B
+Input  %C
+Output %Sel.Out
+Input  %3.St.Dis
+VCC    %VDD
+$4514
+4-BIT LATCH/4 TO 16 LINE DECODER
+24
+Input  %  Strobe
+Input  %  Data 1
+Input  %  Data 2
+Output %      S7
+Output %      S6
+Output %      S5
+Output %      S4
+Output %      S3
+Output %      S1
+Output %      S2
+Output %      S0
+GND    %     VSS
+Output %S13
+Output %S12
+Output %S15
+Output %S14
+Output %S9
+Output %S8
+Output %S11
+Output %S10
+Input  %Data 3
+Input  %Data 4
+Input  %Inhibit
+VCC    %VDD
+$4516
+PRESETTABLE BINARY UP/DOWN COUNTERS
+16
+Input  %Enable
+Output %      Q4
+Input  %      P4
+Input  %      P1
+Input  %CarryIn'
+Output %      Q1
+Output %Car.Out'
+GND    %     VSS
+Input  %Reset
+Input  %Up/Down
+Output %Q2
+Input  %P2
+Input  %P3
+Output %Q3
+Clock  %Clock
+VCC    %VDD
+$4517
+DUAL 64-BIT SHIFT REGISTER
+16
+Output %Q16/D17A
+Output %Q48/D49A
+Input  % Wr.En.A
+Clock  %   Clock    
+Output %Q64/HiZA   
+Output %Q32/D33A
+Input  %  Data A
+GND    %     VSS
+Input  %Data B
+Output %Q32/D33B
+Output %Q64/HiZB
+Clock  %Clock
+Input  %Wr.En.B
+Output %Q48/D49B
+Output %Q16/D17B
+VCC    %VDD
+$4518
+DUAL BCD UP COUNTER
+16
+Clock  % Clock A
+Input  %Enable A
+Output %     Q1A
+Output %     Q2A
+Output %     Q3A
+Output %     Q4A
+Input  % Reset A
+GND    %     VSS
+Clock  %Clock B
+Input  %Enable B
+Output %Q1B
+Output %Q2B
+Output %Q3B
+Output %Q4B
+Input  %Reset B
+VCC    %VDD
+$4520
+DUAL BINARY UP COUNTER
+16
+Clock  % Clock A
+Input  %Enable A
+Output %     Q1A
+Output %     Q2A
+Output %     Q3A
+Output %     Q4A
+Input  % Reset A
+GND    %     VSS
+Clock  %Clock B
+Input  %Enable B
+Output %Q1B
+Output %Q2B
+Output %Q3B
+Output %Q4B
+Input  %Reset B
+VCC    %VDD
+$4527
+BCD RATE MULTIPLIER
+16
+Output %   9 Out
+Input  %       C
+Input  %       D
+Input  %Set to 9
+Output %    Out'
+Output %     Out
+Output %Inh/COut
+GND    %     VSS
+Clock  %Clock 
+Input  %Strobe
+Input  %Inh/CIn
+Input  %Cascade
+Input  %Clear
+Input  %A
+Input  %B
+VCC    %VDD
+$4532
+8-BIT PRIORITY ENCEODER
+16
+Input  %      D4
+Input  %      D5
+Input  %      D6
+Input  %      D7
+Input  %EnableIn
+Output %      Q2
+Output %      Q1
+GND    %     VSS
+Output %Q0
+Input  %D0
+Input  %D1
+Input  %D2
+Input  %D3
+Input  %GroupSel
+Input  %En.Out
+VCC    %VDD
+$4536
+PROGRAMMABLE TIMER
+16
+Input  %     Set
+Input  %   Reset
+Input  %      In
+Output %   Out 1
+Output %   Out 2
+Output %8-Bypass
+Input  %Clock.In
+GND    %     VSS
+Input  %A
+Input  %B
+Input  %C
+Input  %D
+Output %Dec.Out
+Input  %OSC.Inh
+Input  %Mono In
+VCC    %VDD
+$4538
+DUAL PRECISION MONOSTABLE MULTIVIBRATORM
+16
+Input  %     Cx1
+Input  %     Rx1
+Input  % Reset 1
+Input  %    +Tr1
+Input  %    -Tr1
+Output %   Out 1
+Output %   Out1'
+GND    %     VSS
+Output %Out2'
+Output %Out 2
+Input  %-Tr2
+Input  %+Tr2
+Input  %Reset 2
+Input  %Rx2
+Input  %Cx2
+VCC    %VDD
+$4541
+PROGRAMMABLE TIMER
+14
+Input  %     RTC
+Input  %     CTC
+Input  %      RS
+NC     %      NC
+Input  %      AR
+Input  %      MR
+GND    %     VSS
+Output %Q
+Input  %Q/Q' Sel
+Input  %Mode
+NC     %NC
+Input  %A
+Input  %B
+VCC    %VDD
+$4543
+BCD TO 7-SEGMENT LATCH/DECODER/DRIVER
+16
+Input  %      LD
+Input  %       C
+Input  %       B
+Input  %       D
+Input  %       A
+Input  %      PH
+Input  %      BL
+GND    %     VSS
+Output %a
+Output %b
+Output %c
+Output %d
+Output %e
+Output %g
+Output %f
+VCC    %VDD
+$4555
+DUAL BINARY TO 1 OF 4 DECODER/DEMULTIPLEXER OUTPUT HIGH ON SELECT
+16
+Input  %      E'
+Input  %       A
+Input  %       B
+Output %      Q0
+Output %      Q1
+Output %      Q2
+Output %      Q3
+GND    %     VSS
+Output %Q3
+Output %Q2
+Output %Q1
+Output %Q0
+Input  %B
+Input  %A
+Input  %E'
+VCC    %VDD
+$4556
+DUAL BINARY TO 1 OF 4 DECODER/DEMULTIPLEXER OUTPUT LOW ON SELECT
+16
+Input  %      E'
+Input  %       A
+Input  %       B
+Output %     Q0'
+Output %     Q1'
+Output %     Q2'
+Output %     Q3'
+GND    %     VSS
+Output %Q3'
+Output %Q2'
+Output %Q1'
+Output %Q0'
+Input  %B
+Input  %A
+Input  %E'
+VCC    %VDD
+$4585
+4-BIT MAGNITUDE COMPARATOR
+16
+Input  %      B2
+Input  %      A2
+Output %     A=B
+Input  %     A>B
+Input  %     A<B
+Input  %     A=B
+Input  %      A1
+GND    %     VSS
+Input  %B1
+Input  %A0
+Input  %B0
+Output %A<B
+Output %A>B
+Input  %B3
+Input  %A3
+VCC    %VDD
+$4724
+8-BIT ADDRESSABLE LATCH
+16
+Input  %      A0
+Input  %      A1
+Input  %      A2
+Output %      Q0
+Output %      Q1
+Output %      Q2
+Output %      Q3
+GND    %     VSS
+Output %Q4
+Output %Q5
+Output %Q6
+Output %Q7
+Input  %Data
+Input  %Write.En
+Input  %Reset
+VCC    %VDD
+$7400
+QUADRUPLE 2-INPUT POSITIVE-NAND GATES
+14
+Input  %      1A
+Input  %      1B
+Output %      1Y
+Input  %      2A
+Input  %      2B
+Output %      2Y
+GND    %     GND
+Output %3Y
+Input  %3A
+Input  %3B
+Output %4Y
+Input  %4A
+Input  %4B
+VCC    %VCC
+$7401
+QUADRUPLE 2-INPUT POSITIVE-NAND GATES WITH OPEN-COLLECTOR OUTPUTS
+14
+Output %      1Y
+Input  %      1A
+Input  %      1B
+Output %      2Y
+Input  %      2A
+Input  %      2B
+GND    %     GND
+Input  %3A
+Input  %3B
+Output %3Y
+Input  %4A
+Input  %4B
+Output %4Y
+VCC    %VCC
+$7402
+QUADRUPLE 2-INPUT POSITIVE-NOR GATES
+14
+Output %      1Y
+Input  %      1A
+Input  %      1B
+Output %      2Y
+Input  %      2A
+Input  %      2B
+GND    %     GND
+Input  %3A
+Input  %3B
+Output %3Y
+Input  %4A
+Input  %4B
+Output %4Y
+VCC    %VCC
+$7403
+QUADRUPLE 2-INPUT POSITIVE-NAND GATES WITH OPEN-COLLECTOR OUTPUTS
+14
+Input  %      1A
+Input  %      1B
+Output %      1Y
+Input  %      2A
+Input  %      2B
+Output %      2Y
+GND    %     GND
+Output %3Y
+Input  %3A
+Input  %3B
+Output %4Y
+Input  %4A
+Input  %4B
+VCC    %VCC
+$7404
+HEX INVERTERS
+14
+Input  %      1A
+Output %      1Y
+Input  %      2A
+Output %      2Y
+Input  %      3A
+Output %      3Y
+GND    %     GND
+Output %4Y
+Input  %4A
+Output %5Y
+Input  %5A
+Output %6Y
+Input  %6A
+VCC    %VCC
+$7405
+HEX INVERTERS WITH OPEN-DRAIN OUTPUTS
+14
+Input  %      1A
+Output %      1Y
+Input  %      2A
+Output %      2Y
+Input  %      3A
+Output %      3Y
+GND    %     GND
+Output %4Y
+Input  %4A
+Output %5Y
+Input  %5A
+Output %6Y
+Input  %6A
+VCC    %VCC
+$7406
+HEX INVERTER BUFFERS/DRIVERS WITH OPEN-DRAIN OUTPUTS
+14
+Input  %      1A
+Output %      1Y
+Input  %      2A
+Output %      2Y
+Input  %      3A
+Output %      3Y
+GND    %     GND
+Output %4Y
+Input  %4A
+Output %5Y
+Input  %5A
+Output %6Y
+Input  %6A
+VCC    %VCC
+$7407
+HEX BUFFERS/DRIVERS WITH OPEN-DRAIN OUTPUTS
+14
+Input  %      1A
+Output %      1Y
+Input  %      2A
+Output %      2Y
+Input  %      3A
+Output %      3Y
+GND    %     GND
+Output %4Y
+Input  %4A
+Output %5Y
+Input  %5A
+Output %6Y
+Input  %6A
+VCC    %VCC
+$7408
+QUADRUPLE 2-INPUT POSITIVE-NAND GATES WITH OPEN-COLLECTOR OUTPUTS
+14
+Input  %      1A
+Input  %      1B
+Output %      1Y
+Input  %      2A
+Input  %      2B
+Output %      2Y
+GND    %     GND
+Output %3Y
+Input  %3A
+Input  %3B
+Output %4Y
+Input  %4A
+Input  %4B
+VCC    %VCC
+$7409
+QUADRUPLE 2-INPUT POSITIVE-AND GATES WITH OPEN-COLLECTOR OUTPUTS
+14
+Input  %      1A
+Input  %      1B
+Output %      1Y
+Input  %      2A
+Input  %      2B
+Output %      2Y
+GND    %     GND
+Output %3Y
+Input  %3A
+Input  %3B
+Output %4Y
+Input  %4A
+Input  %4B
+VCC    %VCC
+$7410
+TRIPLE 3-INPUT POSITIVE-NAND GATES
+14
+Input  %      1A
+Input  %      1B
+Input  %      2A
+Input  %      2B
+Input  %      2C
+Output %      2Y
+GND    %     GND
+Output %3Y
+Input  %3A
+Input  %3B
+Input  %3C
+Output %1Y
+Input  %1C
+VCC    %VCC
+$74107
+DUAL J-K FLIP-FLOPS WITH CLEAR
+14
+Input  %      1J
+Output %     1Q'
+Output %      1Q
+Input  %      1K
+Output %      2Q
+Output %     2Q' 
+GND    %     GND
+Input  %2J
+Input  %Clock 2
+Input  %Clear 2
+Input  %2K
+Input  %Clock 1
+Input  %Clear 1
+VCC    %VCC
+$74109
+DUAL J-K POSITIVE-EDGE-TRIGGERED FLIP-FLOPS WITH CLEAR AND PRESET
+16
+Input  % Clear 1
+Input  %      1J
+Input  %     1K'     
+Input  % Clock 1
+Input  %Preset 1
+Output %      1Q     
+Output %     1Q' 
+GND    %     GND
+Output %2Q'
+Output %2Q
+Input  %Clock 2
+Input  %Preset 2
+Input  %2K'
+Input  %2J
+Input  %Clear 2
+VCC    %VCC
+$7411
+TRIPLE 3-INPUT POSITIVE-AND GATES
+14
+Input  %      1A
+Input  %      1B
+Input  %      2A
+Input  %      2B
+Input  %      2C
+Output %      2Y
+GND    %     GND
+Output %3Y
+Input  %3A
+Input  %3B
+Input  %3C
+Output %1Y
+Input  %1C
+VCC    %VCC
+$74112
+DUAL J-K NEGATIVE-EDGE-TRIGGERED FLIP-FLOPS WITH CLEAR AND PRESET
+16
+Input  % Clock 1
+Input  %      1K
+Input  %      1J     
+Input  %Preset 1      
+Input  %      1Q
+Output %     1Q'     
+Output %     2Q' 
+GND    %     GND
+Output %2Q
+Output %Preset 2
+Input  %2J
+Input  %2K
+Input  %Clock 2
+Input  %Clear 2
+Input  %Clear 1
+VCC    %VCC
+$74121
+MONOSTABLE MULTIVIBRATORS WITH SCHMITT-TRIGGER INPUTS
+14
+Output %      Q'
+NC     %      NC
+Input  %      A1
+Input  %      A2
+Input  %       B
+Output %       Q
+GND    %     GND
+NC     %NC
+Input  %Rint
+Input  %Cext
+Input  %Rxt/Cxt
+NC     %NC
+NC     %NC
+VCC    %VCC
+$74122
+RETRIGGERABLE MONOSTABLE MULTIVIBRATORS
+14
+Input  %      A1
+NC     %      A2
+Input  %      B1
+Input  %      B2
+Input  %   Clear
+Output %      Q'
+GND    %     GND
+Output %Q
+Input  %Rint
+NC     %NC
+Input  %Cext
+NC     %NC
+Input  %Rxt/Cxt
+VCC    %VCC
+$74123
+DUAL RETRIGGERABLE MONOSTABLE MULTIVIBARATORS WITH SCHMITT-TRIGGER INPUTS
+16
+Input  %      1A
+Input  %      1B
+Input  % Clear 1
+Output %     1Q'
+Output %      2Q
+Input  %  Cext 2
+Input  %Rxt/Cxt2
+GND    %     GND
+Input  %2A
+Input  %2B
+Input  %Clear 2
+Output %2Q'
+Output %1Q
+Input  %Cext 1
+Input  %Rxt/Cxt1
+VCC    %VCC
+$74124
+DUAL VOLTAGE-CONTROLLED OSCILLATORS
+16
+Input  %  Freq.2     
+Input  %  Freq.1     
+Input  % Range 1
+Input  %  Cext 1
+Input  %  Cext 1
+Input  %Enable 1
+Output %      1Y
+GND    %  AC GND
+GND    %GND
+Output %2Y
+Input  %Enable 2
+Input  %Cext 2
+Input  %Cext 2
+Input  %Range 2
+Input  %VAC
+VCC    %VCC
+$74133
+13-INPUT POSITIVE-NAND GATES
+16
+Input  %       A
+Input  %       B
+Input  %       C
+Input  %       D
+Input  %       E
+Input  %       F
+Input  %       G
+GND    %     GND
+Output %Y
+Input  %H
+Input  %I
+Input  %J
+Input  %K
+Input  %L
+Input  %M
+VCC    %VCC
+$74136
+QUADRUPLE 2-INPUT EXCLUSIVE-OR GATES WITH OPEN COLLECTOR OUTPUTS
+14
+Input  %      1A
+Input  %      1B
+Output %      1Y
+Input  %      2A
+Input  %      2B
+Output %      2Y
+GND    %     GND
+Output %3Y
+Input  %3A
+Input  %3B
+Output %4Y
+Input  %4A
+Input  %4B
+VCC    %VCC
+$74137
+3-LINE TO 8-LINE DECODERS/DEMULTIPLEXERS WITH ADDRESS LATCHES
+16
+Input  %       A
+Input  %       B
+Input  %       C
+Input  %     GL'
+Input  %     G2'
+Input  %      G1
+Output %      Y7
+GND    %     GND
+Output %Y6
+Output %Y5
+Output %Y4
+Output %Y3
+Output %Y2
+Output %Y1
+Output %Y0
+VCC    %VCC
+$74138
+1-of-8 inverting decoder/demultiplexer
+16
+Input  %       A
+Input  %       B
+Input  %       C
+Input  %    G2A'
+Input  %    G2B'
+Input  %      G1
+Output %      Y7
+GND    %     GND
+Output %Y6
+Output %Y5
+Output %Y4
+Output %Y3
+Output %Y2
+Output %Y1
+Output %Y0
+VCC    %VCC
+$74139
+DUAL 2-LINE TO 4-LINE DECODERS/DEMULTIPLEXERS
+16
+Input  %Enable 1
+Input  %      1A 
+Input  %      1B
+Output %     1Y0
+Output %     1Y1
+Output %     1Y2
+Output %     1Y3
+GND    %     GND
+Output %2Y3
+Output %2Y2
+Output %2Y1
+Output %2Y0
+Input  %2B
+Input  %2A
+Input  %Enable 2
+VCC    %VCC
+$7414
+HEX SCHMITT-TRIGGER INVERTERS
+14
+Input  %      1A
+Output %      1Y
+Input  %      2A
+Output %      2Y
+Input  %      3A
+Output %      3Y
+GND    %     GND
+Output %4Y
+Input  %4A
+Output %5Y
+Input  %5A
+Output %6Y
+Input  %6A
+VCC    %VCC
+$74140
+DUAL 4-INPUT POSITIVE-NAND 50-Ω LINE DRIVERS
+14
+Input  %      1A
+Input  %      1B
+NC     %      NC
+Input  %      1C
+Input  %      1D
+Output %      1Y
+GND    %     GND
+Output %2Y
+Input  %2A
+Input  %2B
+NC     %NC
+Input  %2C
+Input  %2D
+VCC    %VCC
+$74145
+BCD-TO-DECIMAL DECODERS/DRIVERS
+16
+Output %      Y0
+Output %      Y1
+Output %      Y2 
+Output %      Y3 
+Output %      Y4
+Output %      Y5
+Output %      Y6
+GND    %     GND
+Output %Y7
+Output %Y8
+Output %Y9
+Input  %D
+Input  %C
+Input  %B
+Input  %A
+VCC    %VCC
+$74147
+10-LINE TO 4-LINE BCD PRIORITY ENCODER
+16
+Input  %     I4'
+Input  %     I5'
+Input  %     I6'
+Input  %     I7'
+Input  %     I8'
+Input  %     Y2'
+Output %     Y1'
+GND    %     GND
+Output %Y0'
+Input  %I9'
+Input  %I1'
+Input  %I2'
+Input  %I3'
+Output %Y3'
+NC     %NC
+VCC    %VCC
+$74148
+8-LINE TO 3-LINE PRIORITY ENCODERS
+16
+Input  %      I4
+Input  %      I5
+Input  %      I6
+Input  %      I7
+Input  %  En.In.
+Output %      A2
+Output %      A1
+GND    %     GND
+Output %A0
+Input  %I0
+Input  %I1
+Input  %I2
+Input  %I3
+Output %GS
+Output %En.Out.
+VCC    %VCC
+$74150
+16-LINE TO 1-LINE DATA SELECTOR/MULTIPLEXER
+24
+Input  %      I7
+Input  %      I6
+Input  %      I5
+Input  %      I4
+Input  %      I3
+Input  %      I2
+Input  %      I1
+Input  %      I0
+Input  %  Strobe
+Output %  W.Out.
+Input  %Data.Sel
+GND    %     GND	 
+Input  %C
+Input  %B
+Input  %A
+Input  %I15
+Input  %I14
+Input  %I13
+Input  %I12
+Input  %I11
+Input  %I10
+Input  %I9
+Input  %I8
+VCC    %VCC
+$74151
+8-LINE TO 1-LINE DATA SELECTORS/MULTIPLEXERS
+16
+Input  %      I3
+Input  %      I2
+Input  %      I1
+Input  %      I0
+Output %       Y
+Output %       W
+Input  %  Strobe
+GND    %     GND
+Input  %C
+Input  %B
+Input  %A
+Input  %I7
+Input  %I6
+Input  %I5
+Input  %I4
+VCC    %VCC
+$74153
+DUAL 4-LINE TO 1-LINE DATA SELECTORS/MULTIPLEXERS
+16
+Input  %Strobe.1
+Input  %Select.B
+Input  %     1C3
+Input  %     1C2
+Input  %     1C1
+Input  %     1C0
+Output %      1Y
+GND    %     GND
+Output %2Y
+Input  %2C0
+Input  %2C1
+Input  %2C2
+Input  %2C3
+Output %Select.A
+Output %Strobe.1
+VCC    %VCC
+$74154
+4-LINE TO 16-LINE DECODER/DEMULTIPLEXER
+24
+Output %      0Y
+Output %      1Y
+Output %      2Y
+Output %      3Y
+Output %      4Y
+Output %      5Y
+Output %      6Y
+Output %      7Y
+Output %      8Y
+Output %      9Y
+Input  %     10Y
+GND    %     GND	 
+Output %11Y
+Output %12Y
+Output %13Y
+Output %14Y
+Output %15Y
+Input  %G1
+Input  %G2
+Input  %D
+Input  %C
+Input  %B
+Input  %A
+VCC    %VCC
+$74155
+DUAL 2-LINE TO 4-LINE DECODERS/DEMULTIPLEXERS
+16
+Input  %  DATA.1
+Input  %Strobe.1
+Input  %Sel.In.B
+Output %     1Y3
+Output %     1Y2
+Output %     1Y1
+Output %     1Y0
+GND    %     GND
+Output %2Y0
+Output %2Y1
+Output %2Y2
+Output %2Y3
+Input  %Sel.In.A
+Input  %Strobe.2
+Input  %DATA.2
+VCC    %VCC
+$74156
+DUAL 2-LINE TO 4-LINE DECODERS/DEMULTIPLEXERS
+16
+Input  %  DATA.1
+Input  %Strobe.1
+Input  %Sel.In.B
+Output %     1Y3
+Output %     1Y2
+Output %     1Y1
+Output %     1Y0
+GND    %     GND
+Output %2Y0
+Output %2Y1
+Output %2Y2
+Output %2Y3
+Input  %Sel.In.A
+Input  %Strobe.2
+Input  %DATA.2
+VCC    %VCC
+$74159
+4-LINE TO 16-LINE DECODER/DEMULTIPLEXER WITH OPEN-COLLECTOR OUTPUTS
+24
+Output %      0Y
+Output %      1Y
+Output %      2Y
+Output %      3Y
+Output %      4Y
+Output %      5Y
+Output %      6Y
+Output %      7Y
+Output %      8Y
+Output %      9Y
+Input  %     10Y
+GND    %     GND	 
+Output %11Y
+Output %12Y
+Output %13Y
+Output %14Y
+Output %15Y
+Input  %G1
+Input  %G2
+Input  %D
+Input  %C
+Input  %B
+Input  %A
+VCC    %VCC
+$7416
+HEX INVERTER BUFFERS/DRIVERS WITH OPEN-COLLECTOR HIGH-VOLTAGE OUTPUTS
+14
+Input  %      1A
+Output %      1Y
+Input  %      2A
+Output %      2Y
+Input  %      3A
+Output %      3Y
+GND    %     GND
+Output %4Y
+Input  %4A
+Output %5Y
+Input  %5A
+Output %6Y
+Input  %6A
+VCC    %VCC
+$74161
+4-BIT SYNCHRONOUS BINARY COUNTERS
+16
+Input  %   Clear
+Clock  %   Clock
+Input  %       A
+Input  %       B
+Input  %       C
+Input  %       D
+Input  %Enable P
+GND    %     GND
+Output %Load
+Input  %Enable T
+Output %QD
+Output %QC
+Output %QB
+Output %QA
+Output %RippleCO
+VCC    %VCC
+$74163
+4-BIT SYNCHRONOUS BINARY COUNTERS
+16
+Input  %   Clear
+Clock  %   Clock
+Input  %       A
+Input  %       B
+Input  %       C
+Input  %       D
+Input  %Enable P
+GND    %     GND
+Output %Load
+Input  %Enable T
+Output %QD
+Output %QC
+Output %QB
+Output %QA
+Output %RippleCO
+VCC    %VCC
+$74164
+8-BIT PARALLEL-OUT SERIAL SHIFT REGISTERS
+14
+Input  %       A
+Input  %       B
+Output %      QA
+Output %      QB
+Output %      QC
+Output %      QD
+GND    %     GND
+Clock  %Clock
+Input  %Clear
+Output %QE
+Output %QF
+Output %QG
+Output %QH
+VCC    %VCC
+$74165
+PARALLEL-LOAD 8-BIT SHIFT REGISTERS
+16
+Input  % Sh/Load
+Clock  %   Clock
+Input  %       E
+Input  %       F
+Input  %       G
+Input  %       H
+Output %     QH'
+GND    %     GND
+Output %QH
+Input  %SerialIn
+Input  %A
+Input  %B
+Input  %C
+Input  %D
+Input  %Inhibit
+VCC    %VCC
+$74166
+PARALLEL-LOAD 8-BIT SHIFT REGISTERS
+16
+Input  %SerialIn
+Input  %       A
+Input  %       B
+Input  %       C
+Input  %       D
+Input  % Inhibit
+Clock  %   Clock
+GND    %     GND
+Input  %Clear
+Input  %E
+Input  %F
+Input  %G
+Output %QH
+Input  %Par.In.H
+Input  %Sh/Load
+VCC    %VCC
+$74169
+SYNCHRONOUS 4-BIT UP/DOWN BINARY COUNTERS
+16
+Input  % UP/DOWN
+Clock  %   Clock
+Input  %       A
+Input  %       B
+Input  %       C
+Input  %       D
+Input  %    En.P
+GND    %     GND
+Input  %Load
+Input  %En.T
+Output %QD
+Output %QC
+Output %QB
+Output %QA
+Output %Rip.CO
+VCC    %VCC
+$7417
+HEX SCHMITT-TRIGGER BUFFER
+14
+Input  %      1A
+Output %      1Y
+Input  %      2A
+Output %      2Y
+Input  %      3A
+Output %      3Y
+GND    %     GND
+Output %4Y
+Input  %4A
+Output %5Y
+Input  %5A
+Output %6Y
+Input  %6A
+VCC    %VCC
+$74170
+4 BY 4 REGISTER FILES WITH OPEN COLLECTOR OUTPUTS
+16
+Input  %      D2
+Input  %      D3
+Input  %      D4
+Input  %      RB
+Input  %      RA
+Output %      Q4
+Output %      Q3
+GND    %     GND
+Output %Q2
+Output %Q1
+Input  %En.Read
+Input  %En.Write
+Input  %WB
+Input  %WA
+Input  %D1
+VCC    %VCC
+$74173
+4-BIT D-TYPE REGISTERS WITH 3-STATE OUTPUTS
+16
+Input  %       M
+Input  %       N
+Output %      Q1
+Output %      Q2
+Output %      Q3
+Output %      Q4
+Clock  %   Clock
+GND    %     GND
+Input  %G1
+Input  %G2
+Input  %D4
+Input  %D3
+Input  %D2
+Input  %D1
+Input  %Clear
+VCC    %VCC
+$74174
+HEX D-TYPE FLIP-FLOPS WITH CLEAR
+16
+Input  %   Clear
+Output %      Q1
+Input  %      D1
+Input  %      D2
+Output %      Q2
+Input  %      D3
+Output %      Q3
+GND    %     GND
+Clock  %Clock
+Output %Q4
+Input  %D4
+Output %Q5
+Input  %D5
+Input  %D6
+Output %Q6
+VCC    %VCC
+$74175
+QUADRUPLE D-TYPE FLIP-FLOPS WITH CLEAR
+16
+Input  %   Clear
+Output %      Q1
+Input  %     Q1'
+Input  %      D1
+Input  %      D2
+Output %     Q2'
+Output %      Q2
+GND    %     GND
+Clock  %Clock
+Output %Q3
+Output %Q3'
+Input  %D3
+Input  %D4
+Output %Q4'
+Output %Q4
+VCC    %VCC
+$74181
+ARITHMETIC LOGIC UNITS/FUNCTION GENERATORS
+24
+Input  %     B0'
+Input  %     A0'
+Input  %      S3
+Input  %      S2
+Input  %      S1
+Input  %      S0
+Input  %      Cn
+Input  %       M
+Output %     F0'
+Output %     F1'
+Output %     F2'
+GND    %     GND	 
+Output %F3'
+Output %A=B
+Output %P'
+Output %Cn+4
+Output %G'
+Input  %B3'
+Input  %A3'
+Input  %B2'
+Input  %A2'
+Input  %B1'
+Input  %A1'
+VCC    %VCC
+$74182
+LOOK-AHEAD CARRY GENERATOR
+16
+Input  %     G1'
+Input  %     P1'
+Input  %     G0'
+Input  %     P0'
+Input  %     G3'
+Input  %     P3'
+Output %   P.Out
+GND    %     GND
+Output %Cn+Z
+Output %G'
+Output %Cn+Y
+Output %Cn+X
+Input  %Cn
+Input  %G2'
+Input  %P2'
+VCC    %VCC
+$7419
+HEX SCHMITT-TRIGGER INVERTERS
+14
+Input  %      1A
+Output %      1Y
+Input  %      2A
+Output %      2Y
+Input  %      3A
+Output %      3Y
+GND    %     GND
+Output %4Y
+Input  %4A
+Output %5Y
+Input  %5A
+Output %6Y
+Input  %6A
+VCC    %VCC
+$74190
+SYNCHRONOUS 4-BIT UP/DOWN DECADE AND BINARY COUNTERS
+16
+Input  %  Data B
+Output %      QB
+Output %      QA
+Input  %  Enable
+Input  % UP/DOWN
+Output %      QC
+Output %      QD
+GND    %     GND
+Input  %Data D
+Input  %Data C
+Input  %LOAD
+Output %MAX/MIN
+Output %R.Clock
+Input  %Clock
+Input  %Data A
+VCC    %VCC
+$74191
+4-BIT UP/DOWN BINARY COUNTERS
+16
+Input  %  Data B
+Output %      QB
+Output %      QA
+Input  %  Enable
+Input  % UP/DOWN
+Output %      QC
+Output %      QD
+GND    %     GND
+Input  %Data D
+Input  %Data C
+Input  %LOAD
+Output %MAX/MIN
+Output %R.Clock
+Input  %Clock
+Input  %Data A
+VCC    %VCC
+$74193
+4-BIT SYNCHRONOUS UP/DOWN COUNTERS(DUAL CLOCK WITH CLEAR)
+16
+Input  %  Data B
+Output %      QB
+Output %      QA
+Input  %  C.DOWN
+Input  %    C.UP
+Output %      QC
+Output %      QD
+GND    %     GND
+Input  %Data D
+Input  %Data C
+Input  %LOAD
+Output %CARRY
+Output %BORROW
+Input  %Clear
+Input  %Data A
+VCC    %VCC
+$74194
+4-BIT BIDIRECTIONAL UNIVERSAL SHIFT REGISTERS
+16
+Input  %   Clear
+Input  %Sh.Right
+Input  %       A
+Input  %       B
+Input  %       C
+Input  %       D
+Input  % Sh.Left
+GND    %     GND
+Input  %S0
+Input  %S1
+Clock  %Clock
+Output %QD
+Output %QC
+Output %QB
+Output %QA
+VCC    %VCC
+$74195
+4-BIT PARALLEL ACCESS SHIFT REGISTERS
+16
+Input  %   Clear
+Input  %       J
+Input  %      K'
+Input  %       A
+Input  %       B
+Input  %       C
+Input  %       D
+GND    %     GND
+Input  %Sh/Load
+Clock  %Clock
+Output %Inv.QD
+Output %QD
+Output %QC
+Output %QB
+Output %QA
+VCC    %VCC
+$7420
+DUAL 4-INPUT POSITIVE-NAND GATES
+14
+Input  %      1A
+Input  %      1B
+NC     %      NC
+Input  %      1C
+Input  %      1D
+Output %      1Y
+GND    %     GND
+Output %2Y
+Input  %2A
+Input  %2B
+NC     %NC
+Input  %2C
+Input  %2D
+VCC    %VCC
+$7421
+DUAL 4-INPUT POSITIVE-AND GATES
+14
+Input  %      1A
+Input  %      1B
+NC     %      NC
+Input  %      1C
+Input  %      1D
+Output %      1Y
+GND    %     GND
+Output %2Y
+Input  %2A
+Input  %2B
+NC     %NC
+Input  %2C
+Input  %2D
+VCC    %VCC
+$74221
+DUAL MONOSTABLE MULTIVIBRATORS WITH SCHMITT-TRIGGER INPUTS
+16
+Input  %      1A
+Input  %      1B
+Input  % Clear 1
+Output %     Q1'
+Output %      2Q
+Input  %  Cext 2
+Input  %Rex/Cex2
+GND    %     GND
+Input  %2A
+Input  %2B
+Input  %Clear 2
+Output %Q2'
+Output %Q1
+Input  %Cext 1
+Input  %Rex/Cex1
+VCC    %VCC
+$74240
+OCTAL BUFFERS/DRIVERS WITH 3-STATE OUTPUTS
+20
+Input  %      1G
+Input  %     1A1 
+Output %     2Y4 
+Input  %     1A2 
+Output %     2Y3 
+Input  %     1A3 
+Output %     2Y2 
+Input  %     1A4 
+Output %     2Y1
+GND    %     GND
+Input  %2A1
+Output %1Y4
+Input  %2A2
+Output %1Y3
+Input  %2A3
+Output %1Y2
+Input  %2A4
+Output %1Y1
+Input  %2G
+VCC    %VCC
+$74241
+OCTAL BUFFERS/DRIVERS WITH 3-STATE OUTPUTS
+20
+Input  %      1G
+Input  %     1A1 
+Output %     2Y4 
+Input  %     1A2 
+Output %     2Y3 
+Input  %     1A3 
+Output %     2Y2 
+Input  %     1A4 
+Output %     2Y1
+GND    %     GND
+Input  %2A1
+Output %1Y4
+Input  %2A2
+Output %1Y3
+Input  %2A3
+Output %1Y2
+Input  %2A4
+Output %1Y1
+Input  %2G
+VCC    %VCC
+$74243
+QUADRUPLE BUS TRANSCEIVERS WITH 3-STATE OUTPUTS
+14
+Input  %     AB'
+NC     %      NC
+In/Out %      1A
+In/Out %      2A
+In/Out %      3A
+In/Out %      4A
+GND    %     GND
+Out/In %4B
+Out/In %3B
+Out/In %2B
+Out/In %1B
+NC     %NC
+Input  %AB
+VCC    %VCC
+$74244
+OCTAL BUFFERS/DRIVERS WITH 3-STATE OUTPUTS
+20
+Input  %      1G
+Input  %     1A1 
+Output %     2Y4 
+Input  %     1A2 
+Output %     2Y3 
+Input  %     1A3 
+Output %     2Y2 
+Input  %     1A4 
+Output %     2Y1
+GND    %     GND
+Input  %2A1
+Output %1Y4
+Input  %2A2
+Output %1Y3
+Input  %2A3
+Output %1Y2
+Input  %2A4
+Output %1Y1
+Input  %2G
+VCC    %VCC
+$74245
+OCTAL BUS TRANSCEIVERS WITH 3-STATE OUTPUTS
+20
+Input  %     DIR
+In/Out %      A1 
+In/Out %      A2 
+In/Out %      A3 
+In/Out %      A4 
+In/Out %      A5 
+In/Out %      A6 
+In/Out %      A7 
+In/Out %      A8
+GND    %     GND
+Out/In %B8
+Out/In %B7
+Out/In %B6
+Out/In %B5
+Out/In %B4
+Out/In %B3
+Out/In %B2
+Out/In %B1
+Input  %Enable'
+VCC    %VCC
+$74247
+BCD-TO-7 SEGMENT DECODERS/DRIVERS
+16
+Input  %       B
+Input  %       C
+Input  %LampTest
+Output %  RB.Out
+Input  %   RB.In
+Input  %       D
+Input  %       A 
+GND    %     GND
+Output %e
+Output %d
+Output %c
+Output %b
+Output %a
+Output %g
+Output %f
+VCC    %VCC
+$7425
+DUAL 4-INPUT POSITIVE-NOR GATES WITH STROBE
+14
+Input  %      1A
+Input  %      1B
+Input  %  Strobe
+Input  %      1C
+Input  %      1D
+Output %      1Y
+GND    %     GND
+Output %2Y
+Input  %2A
+Input  %2B
+Input  %Strobe
+Input  %2C
+Input  %2D
+VCC    %VCC
+$74250
+1-OF-16 DATA GENERATORS/MULTIPLEXERS WITH 3-STATE OUTPUTS
+24
+Input  %  Data 7
+Input  %  Data 6
+Input  %  Data 5
+Input  %  Data 4
+Input  %  Data 3
+Input  %  Data 2
+Input  %  Data 1
+Input  %  Data 0
+Input  %  Strobe
+Output %   W.Out
+Input  %Data.Sel
+GND    %     GND	 
+Output %C
+Output %B
+Output %A
+Input  %Data 15
+Input  %Data 14
+Input  %Data 13
+Input  %Data 12
+Input  %Data 11
+Input  %Data 10
+Input  %Data 9
+Input  %Data 8
+VCC    %VCC
+$74251
+DATA SELECTORS/MULTIPLEXERS WITH 3-STATE OUTPUTS
+16
+Input  %       3
+Input  %       2
+Input  %       1
+Input  %       0
+Output %       Y
+Output %       W
+Input  %  Strobe 
+GND    %     GND
+Input  %C
+Input  %B
+Input  %A
+Input  %7
+Input  %6
+Input  %5
+Input  %4
+VCC    %VCC
+$74253
+DUAL 4-LINE TO 1-LINE DATA SELECTOR/MULTIPLEXERS WITH 3-STATE OUTPUTS
+16
+Input  %ControlA
+Input  %   Sel.B
+Input  %     1C3
+Input  %     1C2
+Input  %     1C1
+Input  %     1C0
+Output %      1Y 
+GND    %     GND
+Output %2Y
+Input  %2C0
+Input  %2C1
+Input  %2C2
+Input  %2C3
+Input  %Sel.A
+Input  %ControlB
+VCC    %VCC
+$74257
+QUADRUPLE 2-LINE TO 1-LINE DATA SELECTOR/MULTIPLEXERS WITH 3-STATE OUTPUTS
+16
+Input  %  Select
+Input  %      1A
+Input  %      1B
+Output %      1Y
+Input  %      2A
+Input  %      2B
+Output %      2Y 
+GND    %     GND
+Output %3Y
+Input  %3B
+Input  %3A
+Output %4Y
+Input  %4B
+Input  %4A
+Input  %Control
+VCC    %VCC
+$74258
+QUADRUPLE 4-LINE TO 1-LINE DATA SELECTOR/MULTIPLEXERS WITH 3-STATE OUTPUTS
+16
+Input  %  Select
+Input  %      1A
+Input  %      1B
+Output %      1Y
+Input  %      2A
+Input  %      2B
+Output %      2Y 
+GND    %     GND
+Output %3Y
+Input  %3B
+Input  %3A
+Output %4Y
+Input  %4B
+Input  %4A
+Input  %Control
+VCC    %VCC
+$74259
+QUADRUPLE 4-LINE TO 1-LINE DATA SELECTOR/MULTIPLEXERS WITH 3-STATE OUTPUTS
+16
+Input  %       A
+Input  %       B
+Input  %       C
+Output %      Q0
+Output %      Q1
+Output %      Q2
+Output %      Q3 
+GND    %     GND
+Output %Q4
+Output %Q5
+Output %Q6
+Output %Q7
+Input  %Data In
+Input  %Enable
+Input  %Clear
+VCC    %VCC
+$7426
+QUADRUPLE 2-INPUT HIGH-VOLTAGE INTERFACE POSITIVE NAND GATES
+14
+Input  %      1A
+Input  %      1B
+Output %      1Y
+Input  %      2A
+Input  %      2B
+Output %      2Y
+GND    %     GND
+Output %3Y
+Input  %3A
+Input  %3B
+Output %4Y
+Input  %4A
+Input  %4B
+VCC    %VCC
+$74260
+DUAL 5-INPUT POSITIVE NOR GATES
+14
+Input  %      1A
+Input  %      1B
+Input  %      1C
+Input  %      2A
+Output %      1Y
+Output %      2Y
+GND    %     GND
+Input  %2B
+Input  %2C
+Input  %2D
+Input  %2E
+Input  %1D
+Input  %1E
+VCC    %VCC
+$74265
+QUADRUPLE COMPLEMENTARY OUTPUT ELEMENTS
+16
+Input  %      1A
+Input  %      1W 
+Output %      1Y
+Input  %      2A
+Input  %      2B
+Input  %      2W
+Output %      2Y 
+GND    %     GND
+Output %3Y
+Input  %3W
+Input  %3A
+Input  %3B
+Output %4Y
+Input  %4W
+Input  %4A
+VCC    %VCC
+$74266
+QUADRUPLE 2-INPUT EXCLUSIVE NOR GATES WITH OPEN DRAIN OUTPUTS
+14
+Input  %      1A
+Input  %      1B
+Output %      1Y
+Output %      2Y
+Input  %      2A
+Input  %      2B
+GND    %     GND
+Input  %3A
+Input  %3B
+Output %3Y
+Output %4Y
+Input  %4A
+Input  %4B
+VCC    %VCC
+$7427
+TRIPLE 3-INPUT POSITIVE-NOR GATES
+14
+Input  %      1A
+Input  %      1B
+Input  %      2A
+Input  %      2B
+Input  %      2C
+Output %      2Y
+GND    %     GND
+Output %3Y
+Input  %3A
+Input  %3B
+Input  %3C
+Output %1Y
+Input  %1C
+VCC    %VCC
+$74273
+OCTAL D-TYPE FLIP-FLOPS WTIH CLEAR
+20
+Input  %   Clear
+Output %      1Q
+Input  %      1D  
+Input  %      2D 
+Output %      2Q  
+Output %      3Q  
+Input  %      3D 
+Input  %      4D
+Output %      4Q
+GND    %     GND
+Clock  %Clock
+Output %5Q
+Input  %5D
+Input  %6D
+Output %6Q
+Output %7Q
+Input  %7D
+Input  %8D
+Output %8Q
+VCC    %VCC
+$74276
+QUADRUPLE J-K FLIP-FLOPS
+20
+Input  %   Clear
+Input  %      1J
+Clock  % Clock 1  
+Input  %      1K 
+Output %      1Q  
+Output %      2Q  
+Input  %      2K 
+Clock  % Clock 2
+Input  %      2J
+GND    %     GND
+Clock  %Preset
+Input  %3J
+Clock  %Clock 3
+Input  %3K
+Output %3Q
+Output %4Q
+Input  %4K
+Clock  %Clock 4
+Input  %4J
+VCC    %VCC
+$74279
+QUADRUPLE S-R LATCHES
+16
+Input  %      1R
+Input  %     1S1
+Input  %     1S2
+Output %      1Q
+Input  %      2R
+Input  %      2S
+Output %      2Q 
+GND    %     GND
+Output %3Q
+Input  %3R
+Input  %3S1
+Input  %3S2
+Output %4Q
+Input  %4R
+Input  %4S
+VCC    %VCC
+$74280
+9-BIT PARITY GENERATORS/CHECKERS
+14
+Input  %       G
+Input  %       H
+NC     %      NC
+Input  %       I
+Output %SUM Even
+Output % SUM Odd
+GND    %     GND
+Input  %A
+Input  %B
+Input  %C
+Input  %D
+Input  %E
+Input  %F
+VCC    %VCC
+$74283
+4_BIT BINARY FULL ADDERS WITH FAST CARRY
+16
+Input  %   SUM 2
+Input  %      B2
+Input  %      A2
+Output %   SUM 1
+Input  %      A1
+Input  %      B1
+Output %CarryOut 
+GND    %     GND
+Output %C4
+Input  %SUM 4
+Input  %B4
+Input  %A4
+Output %SUM 3
+Input  %A3
+Input  %B3
+VCC    %VCC
+$74286
+9-BIT PARITY GENERATORS/CHECKERS WITH BUS DRIVER PARITY I/O PORT
+14
+Input  %       G
+Input  %       H
+Input  %    XMIT
+Input  %       I
+Output % P.Error
+Output %   P.I/O
+GND    %     GND
+Input  %A
+Input  %B
+Input  %C
+Input  %D
+Input  %E
+Input  %F
+VCC    %VCC
+$74292
+PROGRAMMABLE FREQUENCY DIVIDERS/DIGITAL TIMERS
+16
+Input  %       B
+Input  %       E
+Input  %     TP1
+Clock  % Clock 1
+Clock  % Clock 2
+Input  %     TP2
+Output %   Q Out 
+GND    %     GND
+NC     %NC
+Input  %A
+Input  %Clear
+NC     %NC
+Input  %TP3
+Input  %D
+Input  %C
+VCC    %VCC
+$74293
+4-BIT BINARY COUNTERS
+14
+NC     %      NC
+NC     %      NC
+NC     %      NC
+Output %      QC
+Output %      QB
+NC     %      NC
+GND    %     GND
+Output %QD
+Output %QA
+Input  %A
+Input  %B
+Input  %R0(1)
+Input  %R0(0)
+VCC    %VCC
+$74294
+PROGRAMMABLE FREQUENCY DIVIDERS/DIGITAL TIMERS
+16
+Input  %       B
+Input  %       A
+Input  %      TP
+Clock  % Clock 1
+Clock  % Clock 2
+NC     %      NC
+Output %   Q Out 
+GND    %     GND
+NC     %NC
+NC     %NC
+Input  %Clear
+NC     %NC
+NC     %NC
+Input  %D
+Input  %C
+VCC    %VCC
+$74297
+DIGITAL PHASE_LOCKED LOOP
+16
+Input  %       B
+Input  %       A
+Input  %  EN.ctr
+Input  %    K.CP
+Input  %  I/D.CP 
+Input  %     D/U
+Output % I/D.Out 
+GND    %     GND
+Input  %A1
+Input  %B
+Output %XOR Out
+Output %ECPD Out
+Input  %A2
+Input  %D
+Input  %C
+VCC    %VCC
+$74298
+QUADRUPLE 2 INPUT MULTIPLEXERS WITH STORAGE
+16
+Input  %      B2
+Input  %      A2
+Input  %      A1
+Input  %      B1
+Input  %      C2
+Input  %      D2
+Input  %      D1 
+GND    %     GND
+Output %C1
+Input  %Word.Sel
+Clock  %Clock
+Output %QD
+Output %QC
+Output %QB
+Output %QA
+VCC    %VCC
+$74299
+8-BIT UNIVERSAL SHIFT/STORAGE REGISTERS WITH 3-STATE OUTPUTS
+20
+Input  %      S0
+Input  %      G1
+Input  %      G2  
+In/Out %    G/QG 
+In/Out %    E/QE  
+In/Out %    C/QC  
+In/Out %    A/QA 
+Output %     QA'
+Input  %  Inv.CE
+GND    %     GND
+Input  %Shift R.
+Clock  %Clock
+In/Out %B/QB
+In/Out %D/QD
+In/Out %F/QF
+In/Out %H/QH
+Output %QH'
+Input  %Shift L.
+Input  %S1
+VCC    %VCC
+$7430
+8-INPUT POSITIVE-NAND GATES
+14
+Input  %       A
+Input  %       B
+Input  %       C
+Input  %       D
+Input  %       E
+Input  %       F
+GND    %     GND
+Output %Y
+NC     %NC
+NC     %NC
+Input  %G
+Input  %H
+NC     %NC
+VCC    %VCC
+$7431
+DELAY ELEMENTS
+16
+Input  %      1A
+Output %      1Y
+Input  %      2A
+Output %      2Y
+Input  %      3A
+Input  %      3B
+Output %      3Y 
+GND    %     GND
+Output %4Y 
+Input  %4A
+Input  %4B
+Output %5Y
+Input  %5A
+Output %6Y
+Input  %6A
+VCC    %VCC
+$7432
+QUADRUPLE 2-INPUT POSITIVE-OR GATES
+14
+Input  %      1A
+Input  %      1B
+Output %      1Y
+Input  %      2A
+Input  %      2B
+Output %      2Y
+GND    %     GND
+Output %3Y
+Input  %3A
+Input  %3B
+Output %4Y
+Input  %4A
+Input  %4B
+VCC    %VCC
+$74321
+CRYSTAL-CONTROLLED OSCILLATORS
+16
+Input  %  Tank 1
+Input  %  Tank 2
+GND    %   GND 1
+Output %     FFQ
+Output %     FFD
+Output %     F/4
+Output %       F
+GND    %   GND 2
+Output %F'
+Output %F'
+Input  %VCC'
+Output %F'
+Input  %F/2
+Input  %Xtal 1
+Input  %Xtal 2
+VCC    %VCC
+$74323
+8-BIT UNIVERSAL SHIFT/STORAGE REGISTERS WITH SYNCHRONOUS CLEAR AND 3-STATE OUTPUTS
+20
+Input  %      S0
+Input  %     G1'
+Input  %     G2'  
+In/Out %    G/QG 
+In/Out %    E/QE  
+In/Out %    C/QC  
+In/Out %    A/QA 
+Output %     QA'
+Input  %  Clear'
+GND    %     GND
+Input  %Shift R.
+Clock  %Clock
+In/Out %B/QB
+In/Out %D/QD
+In/Out %F/QF
+In/Out %H/QH
+Output %QH'
+Input  %Shift L.
+Input  %S1
+VCC    %VCC
+$7433
+QUADRUPLE 2-INPUT POSITIVE-NOR BUFFERS WITH OPEN-COLLECTOR OUTPUTS
+14
+Output %      1Y
+Input  %      1A
+Input  %      1B
+Output %      2Y
+Input  %      2A
+Input  %      2B
+GND    %     GND
+Input  %3A
+Input  %3B
+Output %3Y
+Input  %4A
+Input  %4B
+Output %4Y
+VCC    %VCC
+$7434
+HEX BUFFER GATE
+14
+Input  %      1A
+Output %      1Y
+Input  %      2A
+Output %      2Y
+Input  %      3A
+Output %      3Y
+GND    %     GND
+Output %4Y
+Input  %4A
+Output %5Y
+Input  %5A
+Output %6Y
+Input  %6A
+VCC    %VCC
+$74348
+8-LINE TO 3-LINE PRIORITY ENCODERS WITH 3-STATE OUTPUTS
+16
+Input  %    In 4
+Input  %    In 5
+Input  %    In 6
+Input  %    In 7
+Input  %   En.In
+Output %      A2
+Output %      A1
+GND    %   GND 2
+Output %A0
+Input  %In 0
+Input  %In 1
+Input  %In 2
+Input  %In 3
+Output %GS
+Output %En.Out
+VCC    %VCC
+$7435
+HEX NONINVERTERS WITH OPEN-COLLECTOR OUTPUTS
+14
+Input  %      1A
+Output %      1Y
+Input  %      2A
+Output %      2Y
+Input  %      3A
+Output %      3Y
+GND    %     GND
+Output %4Y
+Input  %4A
+Output %5Y
+Input  %5A
+Output %6Y
+Input  %6A
+VCC    %VCC
+$74354
+8-LINE TO 1-LINE DATA SELECTORS/MULTIPLEXERS/TRANSPARENT/REGISTERS WITH 3-STATE OUTPUTS
+20
+Input  %      D7
+Input  %      D6
+Input  %      D5  
+Input  %      D4 
+Input  %      D3  
+Input  %      D2  
+Input  %      D1 
+Input  %      D0
+Input  %Dat/Clck
+GND    %     GND
+Input  %Sel.Cntr
+Input  %S2
+Input  %S1
+Input  %S0
+Input  %G1'
+Input  %G2'
+Input  %G3
+Output %Y'
+Output %Y
+VCC    %VCC
+$74356
+8-INPUT MULTIPLEXER/REGISTERS 3-STATE
+20
+Input  %      D7
+Input  %      D6
+Input  %      D5  
+Input  %      D4 
+Input  %      D3  
+Input  %      D2  
+Input  %      D1 
+Input  %      D0
+Input  %Dat/Clck
+GND    %     GND
+Input  %Sel.Cntr
+Input  %S2
+Input  %S1
+Input  %S0
+Input  %G1'
+Input  %G2'
+Input  %G3
+Output %Y'
+Output %Y
+VCC    %VCC
+$74365
+HEX BUFFERS AND LINE DRIVERS WITH 3-STATE OUTPUTS
+16
+Input  %     G1'
+Input  %      1A
+Output %      1Y
+Input  %      2A
+Output %      2Y
+Input  %      3A
+Output %      3Y
+GND    %     GND
+Output %4Y
+Input  %4A
+Output %5Y
+Input  %5A
+Output %6Y
+Input  %6A
+Input  %G2'
+VCC    %VCC
+$74366
+HEX BUFFERS AND LINE DRIVERS WITH 3-STATE OUTPUTS
+16
+Input  %     G1'
+Input  %      1A
+Output %      1Y
+Input  %      2A
+Output %      2Y
+Input  %      3A
+Output %      3Y
+GND    %     GND
+Output %4Y
+Input  %4A
+Output %5Y
+Input  %5A
+Output %6Y
+Input  %6A
+Input  %G2'
+VCC    %VCC
+$74367
+HEX BUFFERS AND LINE DRIVERS WITH 3-STATE OUTPUTS
+16
+Input  %     G1'
+Input  %      1A
+Output %      1Y
+Input  %      2A
+Output %      2Y
+Input  %      3A
+Output %      3Y
+GND    %     GND
+Output %4Y
+Input  %4A
+Output %5Y
+Input  %5A
+Output %6Y
+Input  %6A
+Input  %G2'
+VCC    %VCC
+$74368
+HEX INVERTING BUFFERS AND LINE DRIVERS WITH 3-STATE OUTPUTS
+16
+Input  %     G1'
+Input  %      1A
+Output %      1Y
+Input  %      2A
+Output %      2Y
+Input  %      3A
+Output %      3Y
+GND    %     GND
+Output %4Y
+Input  %4A
+Output %5Y
+Input  %5A
+Output %6Y
+Input  %6A
+Input  %G2'
+VCC    %VCC
+$7437
+QUADRUPLE 2-INPUT POSITIVE-NAND BUFFERS
+14
+Input  %      1A
+Input  %      1B
+Output %      1Y
+Input  %      2A
+Input  %      2B
+Output %      2Y
+GND    %     GND
+Output %3Y
+Input  %3A
+Input  %3B
+Output %4Y
+Input  %4A
+Input  %4B
+VCC    %VCC
+$74373
+OCTAL TRANSPARENT D-TYPE LATCHES WITH 3-STATE OUTPUTS
+20
+Input  %Cntr.Out
+Output %      1Q
+Input  %      1D  
+Input  %      2D 
+Output %      2Q  
+Output %      3Q  
+Input  %      3D 
+Input  %      4D
+Output %      4Q
+GND    %     GND
+Input  %Enable
+Output %5Q
+Input  %5D
+Input  %6D
+Output %6Q
+Output %7Q
+Input  %7D
+Input  %8D
+Output %8Q
+VCC    %VCC
+$74374
+OCTAL EDGE-TRIGGERED D-TYPE FLIP-FLOPS WITH 3-STATE OUTPUTS
+20
+Input  %Cntr.Out
+Output %      1Q
+Input  %      1D  
+Input  %      2D 
+Output %      2Q  
+Output %      3Q  
+Input  %      3D 
+Input  %      4D
+Output %      4Q
+GND    %     GND
+Clock  %Clock
+Output %5Q
+Input  %5D
+Input  %6D
+Output %6Q
+Output %7Q
+Input  %7D
+Input  %8D
+Output %8Q
+VCC    %VCC
+$74375
+4-BIT BISTABLE LATCHES
+16
+Input  %      1D
+Output %     1Q'
+Output %      1Q
+Input  %  En.1-2
+Output %      2Q
+Output %     2Q'
+Input  %      2D
+GND    %     GND
+Input  %3D
+Output %3Q'
+Output %3Q
+Input  %En.3-4
+Output %4Q
+Output %4Q'
+Input  %4D
+VCC    %VCC
+$74377
+OCTAL D-TYPE FLIP-FLOPS WITH CLOCK ENABLE
+20
+Input  %  En. G'
+Output %      1Q
+Input  %      1D  
+Input  %      2D 
+Output %      2Q  
+Output %      3Q  
+Input  %      3D 
+Input  %      4D
+Output %      4Q
+GND    %     GND
+Clock  %Clock
+Output %5Q
+Input  %5D
+Input  %6D
+Output %6Q
+Output %7Q
+Input  %7D
+Input  %8D
+Output %8Q
+VCC    %VCC
+$74378
+HEX D-TYPE FLIP-FLOPS WITH CLOCK ENABLE
+16
+Input  %  En. G'
+Output %      1Q
+Input  %      1D  
+Input  %      2D 
+Output %      2Q  
+Input  %      3D  
+Output %      3Q 
+GND    %     GND
+Clock  %Clock
+Output %4Q
+Input  %4D
+Output %5Q
+Input  %5D
+Input  %6D
+Output %6Q
+VCC    %VCC
+$7438
+QUADRUPLE 2-INPUT POSITIVE-NAND BUFFERS WITH OPEN-COLLECTOR OUTPUTS
+14
+Input  %      1A
+Input  %      1B
+Output %      1Y
+Input  %      2A
+Input  %      2B
+Output %      2Y
+GND    %     GND
+Output %3Y
+Input  %3A
+Input  %3B
+Output %4Y
+Input  %4A
+Input  %4B
+VCC    %VCC
+$74386
+Quad 2-input XOR gates
+14
+Input  %      1A
+Input  %      1B
+Output %      1Y
+Output %      2Y
+Input  %      2A
+Input  %      2B
+GND    %     GND
+Input  %3A
+Input  %3B
+Output %3Y
+Output %4Y
+Input  %4A
+Input  %4B
+VCC    %VCC
+$74390
+DUAL 4-BIT DECADE COUNTERS
+16
+Input  %      1A
+Input  % Clear 1
+Output %    1 QA  
+Input  %      1B 
+Output %    1 QB  
+Output %    1 QC  
+Output %    1 QD 
+GND    %     GND
+Output %2 QD
+Output %2 QC
+Output %2 QB
+Input  %2B
+Output %2 QA
+Input  %Clear 2
+Input  %2A
+VCC    %VCC
+$74393
+Dual 4-bit asynchronous binary counters with reset
+14 
+Clock  % Clock 1
+Input  % Clear 1
+Output %      A1
+Output %      B1
+Output %      C1
+Output %      D1
+GND    %     GND
+Output %D2
+Output %C2
+Output %B2
+Output %A2
+Input  %Clear 2
+Clock  %Clock 2
+VCC    %VCC
+$74395
+CASCADABLE SHIFT REGISTERS
+16 
+Input  %  Clear'
+Input  %SerialIn
+Input  %  Par. A
+Input  %  Par. B
+Input  %  Par. C
+Input  %  Par. D
+Input  % L-Shift
+GND    %     GND
+Input  %Out.Cntr
+Clock  %Clock
+Output %Casc.Out
+Output %QD
+Output %QC
+Output %QB
+Output %QA
+VCC    %VCC
+$74399
+QUADRUPLE 2-INPUT MULTIPLEXERS WITH STORAGE
+16 
+Input  %Word Sel
+Output %      QA
+Input  %      A1
+Input  %      A2
+Input  %      B2
+Input  %      B1
+Output %      QB
+GND    %     GND
+Clock  %Clock
+Output %QC
+Input  %C1
+Input  %C2
+Input  %D2
+Input  %D1
+Output %QD
+VCC    %VCC
+$7442
+4-LINE-TO-10-LINE DECODERS (1 of 10)
+16
+Output %      Q0
+Output %      Q1
+Output %      Q2
+Output %      Q3
+Output %      Q4
+Output %      Q5
+Output %      Q6
+GND    %     GND
+Output %Q7
+Output %Q8
+Output %Q9
+Input  %D
+Input  %C
+Input  %B
+Input  %A
+VCC    %VCC
+$74423
+RETRIGGERABLE MONOSTABLE MULTIVIBRATORS
+16
+Input  %      1A
+Input  %      1B
+Input  %Clear 1'
+Output %     1Q'
+Output %      2Q
+Input  %  Cext 2
+Input  %Rxt/Cxt2
+GND    %     GND
+Input  %2A'
+Input  %2B
+Input  %Clear 2'
+Output %2Q'
+Output %1Q
+Input  %Cext 1
+Input  %Rxt/Cxt1
+VCC    %VCC
+$7445
+BCD-TO-DECIMAL DECODERS/DRIVERS
+16
+Output %      Q0
+Output %      Q1
+Output %      Q2
+Output %      Q3
+Output %      Q4
+Output %      Q5
+Output %      Q6
+GND    %     GND
+Output %Q7
+Output %Q8
+Output %Q9
+Input  %D
+Input  %C
+Input  %B
+Input  %A
+VCC    %VCC
+$74465
+OCTAL BUFFERS WITH 3-STATE OUTPUTS
+20
+Input  %     G1'
+Input  %      A1
+Output %      Y1  
+Input  %      A2 
+Output %      Y2  
+Input  %      A3  
+Output %      Y3 
+Input  %      A4
+Output %      Y4
+GND    %     GND
+Output %Y5
+Input  %A5
+Output %Y6
+Input  %A6
+Output %Y7
+Input  %A7
+Output %Y8
+Input  %A8
+Input  %G2'
+VCC    %VCC
+$7447
+BCD-TO-SEVEN-SEGMENT DECODERS/DRIVERS
+16
+Input  %       B
+Input  %       C
+Input  %    Lamp
+Output %  RB.Out
+Input  %   RB.In
+Input  %       D
+Input  %       A
+GND    %     GND
+Output %e
+Output %d
+Output %c
+Output %b
+Output %a
+Output %g
+Output %f
+VCC    %VCC
+$7451
+AND-OR-INVERT GATES `LS51 2-WIDE 3-INPUT, 2-WIDE 2-INPUT
+14
+Input  %      1A
+Input  %      2A
+Input  %      2B
+Input  %      2C
+Input  %      2D
+Output %      2Y
+GND    %     GND
+Output %1Y
+Input  %1D
+Input  %1E
+Input  %1F
+Input  %1B
+Input  %1C
+VCC    %VCC
+$74518
+OCTAL BINARY/BCD IDENTITY COMPARATORS WITH ENABLE
+20
+Output %      G'
+Input  %      P0
+Input  %      Q0  
+Input  %      P1 
+Input  %      Q1  
+Input  %      P2  
+Input  %      Q2 
+Input  %      P3
+Input  %      Q3
+GND    %     GND
+Input  %P4
+Input  %Q4
+Input  %P5
+Input  %Q5
+Input  %P6
+Input  %Q6
+Input  %P7
+Input  %Q7
+Output %P=Q
+VCC    %VCC
+$74520
+OCTAL BINARY/BCD IDENTITY COMPARATORS WITH ENABLE
+20
+Output %      G'
+Input  %      P0
+Input  %      Q0  
+Input  %      P1 
+Input  %      Q1  
+Input  %      P2  
+Input  %      Q2 
+Input  %      P3
+Input  %      Q3
+GND    %     GND
+Input  %P4
+Input  %Q4
+Input  %P5
+Input  %Q5
+Input  %P6
+Input  %Q6
+Input  %P7
+Input  %Q7
+Output %P=Q'
+VCC    %VCC
+$74521
+8-BIT IDENTITY COMPARATORS WITH OPEN-COLLECTOR OUTPUTS
+20
+Output %      G'
+Input  %      P0
+Input  %      Q0  
+Input  %      P1 
+Input  %      Q1  
+Input  %      P2  
+Input  %      Q2 
+Input  %      P3
+Input  %      Q3
+GND    %     GND
+Input  %P4
+Input  %Q4
+Input  %P5
+Input  %Q5
+Input  %P6
+Input  %Q6
+Input  %P7
+Input  %Q7
+Output %P=Q'
+VCC    %VCC
+$74533
+OCTAL TRANSPARENT D-TYPE LATCHES WITH 3-STATE OUTPUTS
+20
+Input  %     OC'
+Output %     1Q'
+Input  %      1D  
+Input  %      2D 
+Output %     2Q'  
+Output %     3Q'  
+Input  %      3D 
+Input  %      4D
+Output %     4Q'
+GND    %     GND
+Input  %Enable
+Output %5Q'
+Input  %5D
+Input  %6D
+Output %6Q'
+Output %7Q'
+Input  %7D
+Input  %8D
+Output %8Q'
+VCC    %VCC
+$74534
+OCTAL EDGE-TRIGGERED D-TYPE FLIP-FLOPS WITH 3-STATE OUTPUTS
+20
+Input  %     OC'
+Output %     1Q'
+Input  %      1D  
+Input  %      2D 
+Output %     2Q'  
+Output %     3Q'  
+Input  %      3D 
+Input  %      4D
+Output %     4Q'
+GND    %     GND
+Clock  %Clock
+Output %5Q'
+Input  %5D
+Input  %6D
+Output %6Q'
+Output %7Q'
+Input  %7D
+Input  %8D
+Output %8Q'
+VCC    %VCC
+$74540
+OCTAL BUFFERS/DRIVERS WITH 3-STATE OUTPUTS
+20
+Input  %     G1'
+Input  %      A1
+Input  %      A2  
+Input  %      A3 
+Input  %      A4  
+Input  %      A5  
+Input  %      A6 
+Input  %      A7
+Input  %      A8
+GND    %     GND
+Output %Y8
+Output %Y7
+Output %Y6
+Output %Y5
+Output %Y4
+Output %Y3
+Output %Y2
+Output %Y1
+Input  %G2'
+VCC    %VCC
+$74541
+OCTAL BUFFERS/DRIVERS WITH 3-STATE OUTPUTS
+20
+Input  %     G1'
+Input  %      A1
+Input  %      A2  
+Input  %      A3 
+Input  %      A4  
+Input  %      A5  
+Input  %      A6 
+Input  %      A7
+Input  %      A8
+GND    %     GND
+Output %Y8
+Output %Y7
+Output %Y6
+Output %Y5
+Output %Y4
+Output %Y3
+Output %Y2
+Output %Y1
+Input  %G2'
+VCC    %VCC
+$74543
+OCTAL REGISTERED TRANSCEIVERS WITH 3-STATE OUTPUTS
+24
+Input  %   LEBA'
+Input  %   OEBA'
+In/Out %      A1
+In/Out %      A2
+In/Out %      A3
+In/Out %      A4
+In/Out %      A5
+In/Out %      A6
+In/Out %      A7
+In/Out %      A8
+Input  %   CEAB'
+GND    %     GND	 
+Output %OEAB'
+Output %LEAB'
+In/Out %B8
+In/Out %B7
+In/Out %B6
+In/Out %B5
+In/Out %B4
+In/Out %B3
+In/Out %B2
+In/Out %B1
+Input  %CEBA'
+VCC    %VCC
+$74561
+SYNCHRONOUS 4-BIT COUNTERS WITH 3-STATE OUTPUTS
+20
+Input  %  ALoad'
+Clock  %   Clock
+Input  %      DA
+Input  %      DB
+Input  %      DC
+Input  %      DD
+Input  %     ENP
+Input  %Clear A'
+Input  % SClear'
+GND    %     GND
+Input  %SLoad'
+Input  %ENT
+Output %QD
+Output %QC
+Output %QB
+Output %QA
+Input  %OE'
+Output %CCO
+Output %RCO
+VCC    %VCC
+$74563
+OCTAL TRANSPARENT LATCHES WITH 3-STATE OUTPUTS
+20
+Input  %     OC'
+Input  %      1D
+Input  %      2D  
+Input  %      3D 
+Input  %      4D  
+Input  %      5D  
+Input  %      6D 
+Input  %      7D
+Input  %      8D
+GND    %     GND
+Input  %Enable
+Output %8Q'
+Output %7Q'
+Output %6Q'
+Output %5Q'
+Output %4Q'
+Output %3Q'
+Output %2Q'
+Output %1Q'
+VCC    %VCC
+$74564
+OCTAL D-TYPE EDGE-TRIGGERED FLIP-FLOPS WITH 3-STATE OUTPUTS
+20
+Input  %     OC'
+Input  %      1D
+Input  %      2D  
+Input  %      3D 
+Input  %      4D  
+Input  %      5D  
+Input  %      6D 
+Input  %      7D
+Input  %      8D
+GND    %     GND
+Clock  %Clock
+Output %8Q'
+Output %7Q'
+Output %6Q'
+Output %5Q'
+Output %4Q'
+Output %3Q'
+Output %2Q'
+Output %1Q'
+VCC    %VCC
+$74569
+SYNCHRONOUS 4-BIT UP/DOWN BINARY COUNTERS WITH 3-STATE OUTPUTS
+20
+Input  %    U/D'
+Clock  %   Clock
+Input  %      DA
+Input  %      DB
+Input  %      DC
+Input  %      DD
+Input  %    ENP'
+Input  %Clear A'
+Input  % SClear'
+GND    %     GND
+Input  %SLoad'
+Input  %ENT'
+Output %QD
+Output %QC
+Output %QB
+Output %QA
+Input  %OE'
+Output %CCO
+Output %RCO'
+VCC    %VCC
+$74573
+OCTAL TRANSPARENT D-TYPE LATCHES WITH 3-STATE OUTPUTS
+20
+Input  %     OC'
+Input  %      1D
+Input  %      2D
+Input  %      3D
+Input  %      4D
+Input  %      5D
+Input  %      6D
+Input  %      7D
+Input  %      8D
+GND    %     GND
+Input  %Enable
+Output %8Q
+Output %7Q
+Output %6Q
+Output %5Q
+Output %4Q
+Output %3Q
+Output %2Q
+Output %1Q
+VCC    %VCC
+$74574
+OCTAL EDGE-TRIGGERED D-TYPE FLIP-FLOPS WITH 3-STATE OUTPUTS
+20
+Input  %     OC'
+Input  %      1D
+Input  %      2D
+Input  %      3D
+Input  %      4D
+Input  %      5D
+Input  %      6D
+Input  %      7D
+Input  %      8D
+GND    %     GND
+Clock  %Clock
+Output %8Q
+Output %7Q
+Output %6Q
+Output %5Q
+Output %4Q
+Output %3Q
+Output %2Q
+Output %1Q
+VCC    %VCC
+$74575
+OCTAL D-TYPE EDGE-TRIGGERED FLIP-FLOPS WITH 3-STATE OUTPUTS
+24
+Input  % SClear'
+Input  %     OC'
+Input  %      D0
+Input  %      D1
+Input  %      D2
+Input  %      D3
+Input  %      D4
+Input  %      D5
+Input  %      D6
+Input  %      D7
+NC     %      NC
+GND    %     GND	 
+NC     %NC
+Input  %Clock
+Output %Q7
+Output %Q6
+Output %Q5
+Output %Q4
+Output %Q3
+Output %Q2
+Output %Q1
+Output %Q0
+NC     %NC
+VCC    %VCC
+$74576
+OCTAL D-TYPE EDGE-TRIGGERED FLIP-FLOPS WITH 3-STATE OUTPUTS
+20
+Input  %     OC'
+Input  %      1D
+Input  %      2D
+Input  %      3D
+Input  %      4D
+Input  %      5D
+Input  %      6D
+Input  %      7D
+Input  %      8D
+GND    %     GND
+Clock  %Clock
+Output %8Q'
+Output %7Q'
+Output %6Q'
+Output %5Q'
+Output %4Q'
+Output %3Q'
+Output %2Q'
+Output %1Q'
+VCC    %VCC
+$74577
+OCTAL D-TYPE EDGE-TRIGGERED FLIP-FLOPS WITH 3-STATE OUTPUTS
+24
+Input  % SClear'
+Input  %     OC'
+Input  %      D0
+Input  %      D1
+Input  %      D2
+Input  %      D3
+Input  %      D4
+Input  %      D5
+Input  %      D6
+Input  %      D7
+NC     %      NC
+GND    %     GND	 
+NC     %NC
+Input  %Clock
+Output %Q7'
+Output %Q6'
+Output %Q5'
+Output %Q4'
+Output %Q3'
+Output %Q2'
+Output %Q1'
+Output %Q0'
+NC     %NC
+VCC    %VCC
+$74580
+OCTAL D-TYPE TRANSPARENT LATCHES WITH 3-STATE OUTPUTS
+20
+Input  %     OC'
+Input  %      1D
+Input  %      2D
+Input  %      3D
+Input  %      4D
+Input  %      5D
+Input  %      6D
+Input  %      7D
+Input  %      8D
+GND    %     GND
+Input  %Enable
+Output %8Q'
+Output %7Q'
+Output %6Q'
+Output %5Q'
+Output %4Q'
+Output %3Q'
+Output %2Q'
+Output %1Q'
+VCC    %VCC
+$74590
+8-BIT BINARY COUNTERS WITH 3-STATE OUTPUT REGISTERS
+16
+Output %      QB
+Output %      QC
+Output %      QD
+Output %      QE
+Output %      QF
+Output %      QG
+Output %      QH
+GND    %     GND
+Output %RCO'
+Input  %CCLR'
+Clock  %CCK'
+Input  %CCKEN'
+Clock  %RCK
+Input  %G'
+Output %QA
+VCC    %VCC
+$74592
+8-BIT BINARY COUNTERS WITH INPUT REGISTERS
+16
+Output %      QB
+Output %      QC
+Output %      QD
+Output %      QE
+Output %      QF
+Output %      QG
+Output %      QH
+GND    %     GND
+Output %RCO'
+Input  %CCLR'
+Clock  %CCK
+Input  %CCKEN'
+Clock  %RCK
+Input  %CLoad'
+Output %QA
+VCC    %VCC
+$74593
+8-BIT BINARY COUNTERS WITH INPUT REGISTERS
+20
+In/Out %    A/QA
+In/Out %    B/QB
+In/Out %    C/QC
+In/Out %    D/QD
+In/Out %    E/QE
+In/Out %    F/QF
+In/Out %    G/QG
+In/Out %    H/QH
+Input  %  CLoad'
+GND    %     GND
+Output %RCO'
+Input  %CCLR'
+Clock  %CCK
+Input  %CCKEN'
+Input  %CCKEN
+Clock  %RCK
+Input  %RCKEN'
+Input  %G'
+Input  %G
+VCC    %VCC
+$74594
+8-BIT SHIFT REGISTERS WITH OUTPUT REGISTERS
+16 
+Output %      QB
+Output %      QC
+Output %      QD
+Output %      QE
+Output %      QF
+Output %      QG
+Output %      QH
+GND    %     GND
+Output %QH'
+Input  %SRCLR'
+Input  %SRCLK
+Input  %RCLK
+Input  %RCLR'
+Input  %SER
+Output %QA
+VCC    %VCC
+$74595
+8-BIT SHIFT REGISTERS WITH 3-STATE OUTPUT REGISTERS
+16 
+Output %      QB
+Output %      QC
+Output %      QD
+Output %      QE
+Output %      QF
+Output %      QG
+Output %      QH
+GND    %     GND
+Output %QH'
+Input  %SRCLR
+Input  %SRCLK
+Input  %RCLK
+Input  %OE
+Input  %SER
+Output %QA
+VCC    %VCC
+$74596
+8-BIT SHIFT REGISTERS WITH OUTPUT LATCHES
+16 
+Output %      QB
+Output %      QC
+Output %      QD
+Output %      QE
+Output %      QF
+Output %      QG
+Output %      QH
+GND    %     GND
+Output %QH'
+Input  %SRCLR
+Input  %SRCLK
+Input  %RCLK
+Input  %OE
+Input  %SER
+Output %QA
+VCC    %VCC
+$74597
+SERIAL-OUT SHIFT REGISTERS WITH INPUT LATCHES
+16 
+Output %      QB
+Output %      QC
+Output %      QD
+Output %      QE
+Output %      QF
+Output %      QG
+Output %      QH
+GND    %     GND
+Output %QH'
+Input  %SRCLR'
+Input  %SRCLK
+Input  %RCLK
+Input  %Load'
+Input  %SER
+Output %QA
+VCC    %VCC
+$74598
+8-BIT SHIFT REGISTERS WITH INPUT LATCHES
+20
+In/Out %    A/QA
+In/Out %    B/QB
+In/Out %    C/QC
+In/Out %    D/QD
+In/Out %    E/QE
+In/Out %    F/QF
+In/Out %    G/QG
+In/Out %    H/QH
+Input  %  SLoad'
+GND    %     GND
+Output %QH'
+Input  %SCLR'
+Clock  %SCK
+Input  %SCKEN'
+Clock  %RCK
+Input  %G'
+Input  %SER1
+Input  %SER0
+Input  %DS
+VCC    %VCC
+$74624
+VOLTAGE-CONTROLLED OSCILLATORS
+14
+GND    %  AC GND
+Input  %   Range
+Input  %     CX1
+Input  %     CX2
+Input  %  Enable
+Output %   Y Out
+GND    %     GND
+Output %Z Out
+VCC    %VCC
+NC     %NC
+NC     %NC
+NC     %NC
+Input  %FreqCntr
+VCC    %AC VCC
+$74628
+VOLTAGE-CONTROLLED OSCILLATORS
+14
+GND    %  AC GND
+Input  %   Range
+Input  %     CX1
+Input  %     CX2
+Input  %  Enable
+Output %   Y Out
+GND    %     GND
+Output %Z Out
+VCC    %VCC
+NC     %NC
+Input  %Rext
+Input  %Rext
+Input  %FreqCntr
+VCC    %AC VCC
+$7464
+4-2-3-2 INPUT AND-OR INVERT GATES
+14
+Input  %       A
+Input  %       E
+Input  %       F
+Input  %       G
+Input  %       H
+Input  %       I
+GND    %     GND
+Output %Y
+Input  %J
+Input  %K
+Input  %B
+Input  %C
+Input  %D
+VCC    %VCC
+$74640
+OCTAL BUS TRANSCEIVERS WITH 3-STATE OUTPUTS
+20
+Input  %     DIR
+In/Out %      A1
+In/Out %      A2
+In/Out %      A3
+In/Out %      A4
+In/Out %      A5
+In/Out %      A6
+In/Out %      A7
+In/Out %      A8
+GND    %     GND
+Out/In %B8
+Out/In %B7
+Out/In %B6
+Out/In %B5
+Out/In %B4
+Out/In %B3
+Out/In %B2
+Out/In %B1
+Input  %Enable'
+VCC    %VCC
+$74641
+OCTAL BUS TRANSCEIVERS WITH OPEN-COLLECTOR OUTPUTS
+20
+Input  %     DIR
+In/Out %      A1
+In/Out %      A2
+In/Out %      A3
+In/Out %      A4
+In/Out %      A5
+In/Out %      A6
+In/Out %      A7
+In/Out %      A8
+GND    %     GND
+Out/In %B8
+Out/In %B7
+Out/In %B6
+Out/In %B5
+Out/In %B4
+Out/In %B3
+Out/In %B2
+Out/In %B1
+Input  %Enable'
+VCC    %VCC
+$74642
+OCTAL BUS TRANSCEIVERS WITH OPEN-COLLECTOR OUTPUTS
+20
+Input  %     DIR
+In/Out %      A1
+In/Out %      A2
+In/Out %      A3
+In/Out %      A4
+In/Out %      A5
+In/Out %      A6
+In/Out %      A7
+In/Out %      A8
+GND    %     GND
+Out/In %B8
+Out/In %B7
+Out/In %B6
+Out/In %B5
+Out/In %B4
+Out/In %B3
+Out/In %B2
+Out/In %B1
+Input  %Enable'
+VCC    %VCC
+$74645
+OCTAL BUS TRANSCEIVERS WITH 3-STATE OUTPUTS
+20
+Input  %     DIR
+In/Out %      A1
+In/Out %      A2
+In/Out %      A3
+In/Out %      A4
+In/Out %      A5
+In/Out %      A6
+In/Out %      A7
+In/Out %      A8
+GND    %     GND
+Out/In %B8
+Out/In %B7
+Out/In %B6
+Out/In %B5
+Out/In %B4
+Out/In %B3
+Out/In %B2
+Out/In %B1
+Input  %Enable'
+VCC    %VCC
+$74646
+OCTAL BUS TRANSCEIVERS AND REGISTERS WITH 3-STATE OUTPUTS
+24
+Clock  %Clock AB
+Input  %SelectAB
+Input  %     DIR
+In/Out %      A1
+In/Out %      A2
+In/Out %      A3
+In/Out %      A4
+In/Out %      A5
+In/Out %      A6
+In/Out %      A7
+In/Out %      A8
+GND    %     GND
+Out/In %B8
+Out/In %B7
+Out/In %B6
+Out/In %B5
+Out/In %B4
+Out/In %B3
+Out/In %B2
+Out/In %B1
+Input  %Control'
+Input  %SelectBA
+Clock  %Clock BA
+VCC    %VCC
+$74647
+OCTAL BUS TRANSCEIVERS AND REGISTERS WITH OPEN-COLLECTOR OUTPUTS
+24
+Clock  %Clock AB
+Input  %SelectAB
+Input  %     DIR
+In/Out %      A1
+In/Out %      A2
+In/Out %      A3
+In/Out %      A4
+In/Out %      A5
+In/Out %      A6
+In/Out %      A7
+In/Out %      A8
+GND    %     GND
+Out/In %B8
+Out/In %B7
+Out/In %B6
+Out/In %B5
+Out/In %B4
+Out/In %B3
+Out/In %B2
+Out/In %B1
+Input  %Control'
+Input  %SelectBA
+Clock  %Clock BA
+VCC    %VCC
+$74648
+OCTAL BUS TRANSCEIVERS AND REGISTERS WITH 3-STATE OUTPUTS
+24
+Clock  %Clock AB
+Input  %SelectAB
+Input  %     DIR
+In/Out %      A1
+In/Out %      A2
+In/Out %      A3
+In/Out %      A4
+In/Out %      A5
+In/Out %      A6
+In/Out %      A7
+In/Out %      A8
+GND    %     GND
+Out/In %B8
+Out/In %B7
+Out/In %B6
+Out/In %B5
+Out/In %B4
+Out/In %B3
+Out/In %B2
+Out/In %B1
+Input  %Control'
+Input  %SelectBA
+Clock  %Clock BA
+VCC    %VCC
+$74651
+OCTAL BUS TRANSCEIVERS AND REGISTERS WITH 3-STATE OUTPUTS
+24
+Clock  %Clock AB
+Input  %SelectAB
+Input  %EnableAB
+In/Out %      A1
+In/Out %      A2
+In/Out %      A3
+In/Out %      A4
+In/Out %      A5
+In/Out %      A6
+In/Out %      A7
+In/Out %      A8
+GND    %     GND
+Out/In %B8
+Out/In %B7
+Out/In %B6
+Out/In %B5
+Out/In %B4
+Out/In %B3
+Out/In %B2
+Out/In %B1
+Input  %EnableBA
+Input  %SelectBA
+Clock  %Clock BA
+VCC    %VCC
+$74652
+OCTAL BUS TRANSCEIVERS AND REGISTERS WITH 3-STATE OUTPUTS
+24
+Clock  %Clock AB
+Input  %SelectAB
+Input  %EnableAB
+In/Out %      A1
+In/Out %      A2
+In/Out %      A3
+In/Out %      A4
+In/Out %      A5
+In/Out %      A6
+In/Out %      A7
+In/Out %      A8
+GND    %     GND
+Out/In %B8
+Out/In %B7
+Out/In %B6
+Out/In %B5
+Out/In %B4
+Out/In %B3
+Out/In %B2
+Out/In %B1
+Input  %EnableBA
+Input  %SelectBA
+Clock  %Clock BA
+VCC    %VCC
+$74653
+OCTAL BUS TRANSCEIVERS AND REGISTERS WITH 3-STATE OUTPUTS
+24
+Clock  %Clock AB
+Input  %SelectAB
+Input  %EnableAB
+In/Out %      A1
+In/Out %      A2
+In/Out %      A3
+In/Out %      A4
+In/Out %      A5
+In/Out %      A6
+In/Out %      A7
+In/Out %      A8
+GND    %     GND
+Out/In %B8
+Out/In %B7
+Out/In %B6
+Out/In %B5
+Out/In %B4
+Out/In %B3
+Out/In %B2
+Out/In %B1
+Input  %EnableBA
+Input  %SelectBA
+Clock  %Clock BA
+VCC    %VCC
+$74654
+OCTAL BUS TRANSCEIVERS AND REGISTERS WITH 3-STATE OUTPUTS
+24
+Clock  %Clock AB
+Input  %SelectAB
+Input  %EnableAB
+In/Out %      A1
+In/Out %      A2
+In/Out %      A3
+In/Out %      A4
+In/Out %      A5
+In/Out %      A6
+In/Out %      A7
+In/Out %      A8
+GND    %     GND
+Out/In %B8
+Out/In %B7
+Out/In %B6
+Out/In %B5
+Out/In %B4
+Out/In %B3
+Out/In %B2
+Out/In %B1
+Input  %EnableBA
+Input  %SelectBA
+Clock  %Clock BA
+VCC    %VCC
+$74657
+OCTAL BUS TRANSCEIVERS WITH PARITY GENERATORS/CHECKERS AND 3-STATE OUTPUTS
+24
+Input  %    T/R'
+In/Out %      A1
+In/Out %      A2
+In/Out %      A3
+In/Out %      A4
+In/Out %      A5
+VCC    %      VCC
+In/Out %      A6
+In/Out %      A7
+In/Out %      A8
+Input  %Odd/Even
+Output %  Error'
+Output %Parity
+Out/In %B8
+Out/In %B7
+Out/In %B6
+Out/In %B5
+GND    %GND
+GND    %GND
+Out/In %B4
+Out/In %B3
+Out/In %B2
+Out/In %B1
+Input  %OE'
+$74666
+8-BIT D-TYPE TRANSPARENT READ-BACK LATCHES WITH 3-STATE OUTPUTS
+24
+Input  %   OERB'
+Input  %    OE1'
+Input  %      1D
+Input  %      2D
+Input  %      3D
+Input  %      4D
+Input  %      5D
+Input  %      6D
+Input  %      7D
+Input  %      8D
+Input  %  Clear'
+GND    %     GND
+Input  %C
+Input  %PRE'
+Output %8Q
+Output %7Q
+Output %6Q
+Output %5Q
+Output %4Q
+Output %3Q
+Output %2Q
+Output %1Q
+Output %OE2'
+VCC    %VCC
+$74667
+8-BIT D-TYPE TRANSPARENT READ-BACK LATCHES WITH 3-STATE OUTPUTS
+24
+Input  %   OERB'
+Input  %    OE1'
+Input  %      1D
+Input  %      2D
+Input  %      3D
+Input  %      4D
+Input  %      5D
+Input  %      6D
+Input  %      7D
+Input  %      8D
+Input  %  Clear'
+GND    %     GND
+Input  %C
+Input  %PRE'
+Output %8Q
+Output %7Q
+Output %6Q
+Output %5Q
+Output %4Q
+Output %3Q
+Output %2Q
+Output %1Q
+Output %OE2'
+VCC    %VCC
+$74669
+SYNCHRONOUS 4-BIT UP/DOWN COUNTERS
+16
+Input  % UP/DOWN
+Clock  %   Clock
+Input  %       A
+Input  %       B
+Input  %       C
+Input  %       D
+Input  %    En.P
+GND    %     GND
+Input  %Load'
+Input  %En.T
+Output %QD
+Output %QC
+Output %QB
+Output %QA
+Output %Rip.CO
+VCC    %VCC
+$74670
+4-BY-4 REGISTER FILES WITH 3-STATE OUTPUTS
+16
+Input  %      D2
+Input  %      D3
+Input  %      D4
+Input  %      RB
+Input  %      RA
+Output %      Q4
+Output %      Q3
+GND    %     GND
+Output %Q2
+Output %Q1
+Input  %Read.En
+Input  %Write.En
+Input  %WB
+Input  %WA
+Input  %D1
+VCC    %VCC
+$74673
+16-BIT SHIFT REGISTERS
+24
+Input  %Chip.Sel
+Input  %Sh.Clock
+Input  %    R/W'
+Input  %  Clear'
+Input  %S.Clock'
+Input  %Data I/O
+Output %      Y0
+Output %      Y1
+Output %      Y2
+Output %      Y3
+Output %      Y4
+GND    %     GND
+Output %Y5
+Output %Y6
+Output %Y7
+Output %Y8
+Output %Y9
+Output %Y10
+Output %Y11
+Output %Y12
+Output %Y13
+Output %Y14
+Output %Y15
+VCC    %VCC
+$74674
+16-BIT SHIFT REGISTERS
+24
+Input  %Chip.Sel
+Input  %Sh.Clock
+Input  %    R/W'
+Input  %      NC
+Input  %Mode.Cnt
+Input  %Data I/O
+Output %      P0
+Output %      P1
+Output %      P2
+Output %      P3
+Output %      P4
+GND    %     GND
+Output %P5
+Output %P6
+Output %P7
+Output %P8
+Output %P9
+Output %P10
+Output %P11
+Output %P12
+Output %P13
+Output %P14
+Output %P15
+VCC    %VCC
+$74679
+12-BIT ADDRESS COMPARATOR
+20
+Input  %      A1
+Input  %      A2
+Input  %      A3
+Input  %      A4
+Input  %      A5
+Input  %      A6
+Input  %      A7
+Input  %      A8
+Input  %      A9
+GND    %     GND
+Input  %A10
+Input  %A11
+Input  %A12
+Input  %P0
+Input  %P1
+Input  %P2
+Input  %P3
+Output %Y
+Input  %Enable'
+VCC    %VCC
+$74682
+8-Bit Identity/Magnitude Comparator
+20
+Output %    P>Q'
+Input  %      P0
+Input  %      Q0  
+Input  %      P1 
+Input  %      Q1  
+Input  %      P2  
+Input  %      Q2 
+Input  %      P3
+Input  %      Q3
+GND    %     GND
+Input  %P4
+Input  %Q4
+Input  %P5
+Input  %Q5
+Input  %P6
+Input  %Q6
+Input  %P7
+Input  %Q7
+Output %P=Q'
+VCC    %VCC
+$74684
+8-Bit Identity/Magnitude Comparator
+20
+Output %    P>Q'
+Input  %      P0
+Input  %      Q0  
+Input  %      P1 
+Input  %      Q1  
+Input  %      P2  
+Input  %      Q2 
+Input  %      P3
+Input  %      Q3
+GND    %     GND
+Input  %P4
+Input  %Q4
+Input  %P5
+Input  %Q5
+Input  %P6
+Input  %Q6
+Input  %P7
+Input  %Q7
+Output %P=Q'
+VCC    %VCC
+$74686
+8-Bit Identity/Magnitude Comparator
+24
+Output %    P>Q'
+Input  %     G1'
+Input  %      P0
+Input  %      Q0  
+Input  %      P1 
+Input  %      Q1
+NC     %      NC  
+Input  %      P2  
+Input  %      Q2 
+Input  %      P3
+Input  %      Q3
+GND    %     GND
+Input  %P4
+Input  %Q4
+Input  %P5
+Input  %Q5
+Input  %P6
+Input  %Q6
+NC     %NC
+Input  %P7
+Input  %Q7
+Output %P=Q'
+Input  %G2'
+VCC    %VCC
+$74688
+8-Bit Identity Comparator
+20
+Input  %      G'
+Input  %      P0
+Input  %      Q0  
+Input  %      P1 
+Input  %      Q1  
+Input  %      P2  
+Input  %      Q2 
+Input  %      P3
+Input  %      Q3
+GND    %     GND
+Input  %P4
+Input  %Q4
+Input  %P5
+Input  %Q5
+Input  %P6
+Input  %Q6
+Input  %P7
+Input  %Q7
+Output %P=Q'
+VCC    %VCC
+$74697
+SYNCHRONOUS UP/DOWN COUNTERS WITH OUTPUT REGISTERS AND MULTIPLEXED 3-STATE OUTPUTS
+20
+Input  %     U/D
+Clock  %   Clock
+Input  %       A
+Input  %       B
+Input  %       C
+Input  %       D 
+Input  %   En.P' 
+Input  %   Clear
+Input  %     RCK
+GND    %     GND
+Input  %R/C'Sel.
+Input  %Out.Cnt
+Input  %Load'
+Input  %En.T'
+Output %QD
+Output %QC
+Output %QB
+Output %QA
+Output %R.Carry
+VCC    %VCC
+$74699
+SYNCHRONOUS UP/DOWN COUNTERS WITH OUTPUT REGISTERS AND MULTIPLEXED 3-STATE OUTPUTS
+20
+Input  %     U/D
+Clock  %   Clock
+Input  %       A
+Input  %       B
+Input  %       C
+Input  %       D 
+Input  %   En.P' 
+Input  %   Clear
+Input  %     RCK
+GND    %     GND
+Input  %R/C'Sel.
+Input  %Out.Cnt
+Input  %Load'
+Input  %En.T'
+Output %QD
+Output %QC
+Output %QB
+Output %QA
+Output %R.Carry
+VCC    %VCC
+$7473
+DUAL J-K FLIP-FLOPS WITH CLEAR
+14
+Input  % Clock 1
+Input  % Clear 1
+Input  %      1K
+VCC    %      VCC
+Input  % Clock 2
+Input  % Clear 2
+Input  %      2J
+Output %2Q'
+Output %2Q
+Input  %2K
+GND    %GND
+Input  %1Q
+Output %1Q'
+Input  %1J
+$7474
+DUAL D-TYPE POSITIVE-EDGE-TRIGGERED FLIP-FLOPS WITH CLEAR AND PRESET
+14
+Input  % Clear 1
+Input  %      1D
+Input  % Clock 1
+Input  %Preset 1
+Output %      1Q
+Output %     1Q'
+GND    %     GND
+Output %2Q'
+Output %2Q
+Input  %Preset 2
+Input  %CLock 2
+Input  %2D
+Input  %Clear 2
+VCC    %VCC
+$7475
+4-BIT BISTABLE LATCHES
+16
+Output %     1Q'
+Input  %      1D
+Input  %      2D
+Input  %  En.3-4
+VCC    %      VCC     
+Output %      3D    
+Input  %      4D
+Output %     4Q'
+Output %4Q
+Output %3Q
+Output %3Q'
+GND    %GND
+Input  %En.1-2
+Output %2Q'
+Input  %2Q
+Input  %1Q
+$74756
+OCTAL BUFFERS/DRIVERS WITH OPEN-COLLECTOR OUTPUTS
+20
+Input  %     1G'
+Input  %     1A1 
+Output %     2Y4 
+Input  %     1A2 
+Output %     2Y3 
+Input  %     1A3 
+Output %     2Y2 
+Input  %     1A4 
+Output %     2Y1
+GND    %     GND
+Input  %2A1
+Output %1Y4
+Input  %2A2
+Output %1Y3
+Input  %2A3
+Output %1Y2
+Input  %2A4
+Output %1Y1
+Input  %2G'
+VCC    %VCC
+$74756
+OCTAL BUFFERS/DRIVERS WITH OPEN-COLLECTOR OUTPUTS
+20
+Input  %     1G'
+Input  %     1A1 
+Output %     2Y4 
+Input  %     1A2 
+Output %     2Y3 
+Input  %     1A3 
+Output %     2Y2 
+Input  %     1A4 
+Output %     2Y1
+GND    %     GND
+Input  %2A1
+Output %1Y4
+Input  %2A2
+Output %1Y3
+Input  %2A3
+Output %1Y2
+Input  %2A4
+Output %1Y1
+Input  %2G
+VCC    %VCC
+$74760
+OCTAL BUFFERS/DRIVERS WITH OPEN-COLLECTOR OUTPUTS
+20
+Input  %     1G'
+Input  %     1A1 
+Output %     2Y4 
+Input  %     1A2 
+Output %     2Y3 
+Input  %     1A3 
+Output %     2Y2 
+Input  %     1A4 
+Output %     2Y1
+GND    %     GND
+Input  %2A1
+Output %1Y4
+Input  %2A2
+Output %1Y3
+Input  %2A3
+Output %1Y2
+Input  %2A4
+Output %1Y1
+Input  %2G
+VCC    %VCC
+$74804
+HEX 2-INPUT NAND DRIVERS
+20
+Input  %      1A
+Input  %      1B
+Output %      1Y
+Input  %      2A
+Input  %      2B
+Output %      2Y
+Input  %      3A
+Input  %      3B
+Output %      3Y
+GND    %     GND
+Output %4Y
+Input  %4A
+Input  %4B
+Output %5Y
+Input  %5A
+Input  %5B
+Output %6Y
+Input  %6A
+Input  %6B
+VCC    %VCC
+$74805
+HEX 2-INPUT NOR DRIVERS
+20
+Input  %      1A
+Input  %      1B
+Output %      1Y
+Input  %      2A
+Input  %      2B
+Output %      2Y
+Input  %      3A
+Input  %      3B
+Output %      3Y
+GND    %     GND
+Output %4Y
+Input  %4A
+Input  %4B
+Output %5Y
+Input  %5A
+Input  %5B
+Output %6Y
+Input  %6A
+Input  %6B
+VCC    %VCC
+$74808
+HEX 2-INPUT AND DRIVERS
+20
+Input  %      1A
+Input  %      1B
+Output %      1Y
+Input  %      2A
+Input  %      2B
+Output %      2Y
+Input  %      3A
+Input  %      3B
+Output %      3Y
+GND    %     GND
+Output %4Y
+Input  %4A
+Input  %4B
+Output %5Y
+Input  %5A
+Input  %5B
+Output %6Y
+Input  %6A
+Input  %6B
+VCC    %VCC
+$74821
+10-BIT BUS-INTERFACE FLIP FLOPS WITH 3-STATE OUTPUTS
+24
+Input  %     OC'
+Input  %      1D
+Input  %      2D
+Input  %      3D  
+Input  %      4D 
+Input  %      5D
+Input  %      6D  
+Input  %      7D  
+Input  %      8D 
+Input  %      9D
+Input  %     10D
+GND    %     GND
+Clock  %Clock
+Output %10Q
+Output %9Q
+Output %8Q
+Output %7Q
+Output %6Q
+Output %5Q
+Output %4Q
+Output %3Q
+Output %2Q
+Output %1Q
+VCC    %VCC
+$74823
+9-BIT BUS-INTERFACE FLIP FLOPS WITH 3-STATE OUTPUTS
+24
+Input  %     OC'
+Input  %      1D
+Input  %      2D
+Input  %      3D  
+Input  %      4D 
+Input  %      5D
+Input  %      6D  
+Input  %      7D  
+Input  %      8D 
+Input  %      9D
+Input  %  Clear'
+GND    %     GND
+Clock  %Clock
+Output %ClockEn'
+Output %9Q
+Output %8Q
+Output %7Q
+Output %6Q
+Output %5Q
+Output %4Q
+Output %3Q
+Output %2Q
+Output %1Q
+VCC    %VCC
+$74825
+8-BIT BUS-INTERFACE FLIP FLOPS WITH 3-STATE OUTPUTS
+24
+Input  %     OC1'
+Input  %     OC2'
+Input  %      1D
+Input  %      2D  
+Input  %      3D 
+Input  %      4D
+Input  %      5D  
+Input  %      6D  
+Input  %      7D 
+Input  %      8D
+Input  %  Clear'
+GND    %     GND
+Clock  %Clock
+Output %ClockEn'
+Output %8Q
+Output %7Q
+Output %6Q
+Output %5Q
+Output %4Q
+Output %3Q
+Output %2Q
+Output %1Q
+Input  %OC3'
+VCC    %VCC
+$74827
+10-BIT BUFFERS/DRIVERS WITH 3-STATE OUTPUTS
+24
+Input  %    OE1'
+Input  %      A1
+Input  %      A2
+Input  %      A3  
+Input  %      A4 
+Input  %      A5
+Input  %      A6  
+Input  %      A7  
+Input  %      A8 
+Input  %      A9
+Input  %     A10 
+GND    %     GND
+Input  %OE2'
+Output %Y10
+Output %Y9
+Output %Y8
+Output %Y7
+Output %Y6
+Output %Y5
+Output %Y4
+Output %Y3
+Output %Y2
+Output %Y1
+VCC    %VCC
+$74828
+10-BIT BUFFERS/DRIVERS WITH 3-STATE OUTPUTS
+24
+Input  %    OE1'
+Input  %      A1
+Input  %      A2
+Input  %      A3  
+Input  %      A4 
+Input  %      A5
+Input  %      A6  
+Input  %      A7  
+Input  %      A8 
+Input  %      A9
+Input  %     A10 
+GND    %     GND
+Input  %OE2'
+Output %Y10
+Output %Y9
+Output %Y8
+Output %Y7
+Output %Y6
+Output %Y5
+Output %Y4
+Output %Y3
+Output %Y2
+Output %Y1
+VCC    %VCC
+$74832
+HEX 2-INPUT OR DRIVERS
+24
+Input  %      1A
+Input  %      1B
+Output %      1Y
+Input  %      2A  
+Input  %      2B 
+Output %      2Y
+Input  %      3A  
+Input  %      3B  
+Output %      3Y 
+GND    %     GND
+Output %4Y
+Input  %4A
+Input  %4B
+Output %5Y
+Input  %5A
+Input  %5B
+Output %6Y
+Input  %6A
+Input  %6B
+VCC    %VCC
+$74841
+10-BIT BUS-INTERFACE D-TYPE LATCHES WITH 3-STATE OUTPUTS
+24
+Input  %     OC'
+Input  %      1D
+Input  %      2D
+Input  %      3D  
+Input  %      4D 
+Input  %      5D
+Input  %      6D  
+Input  %      7D  
+Input  %      8D 
+Input  %      9D
+Input  %     10D 
+GND    %     GND
+Input  %C
+Output %10Q
+Output %9Q
+Output %8Q
+Output %7Q
+Output %6Q
+Output %5Q
+Output %4Q
+Output %3Q
+Output %2Q
+Output %1Q
+VCC    %VCC
+$74843
+9-BIT BUS-INTERFACE D-TYPE LATCHES WITH 3-STATE OUTPUTS
+24
+Input  %     OC'
+Input  %      1D
+Input  %      2D
+Input  %      3D  
+Input  %      4D 
+Input  %      5D
+Input  %      6D  
+Input  %      7D  
+Input  %      8D 
+Input  %      9D
+Input  %  Clear' 
+GND    %     GND
+Input  %C
+Input  %PRE'
+Output %9Q
+Output %8Q
+Output %7Q
+Output %6Q
+Output %5Q
+Output %4Q
+Output %3Q
+Output %2Q
+Output %1Q
+VCC    %VCC
+$7485
+4-BIT MAGNITUDE COMPARATORS
+16
+Input  %      B3 
+Input  %     A<B 
+Input  %     A=B
+Input  %     A>B
+Output %     A>B   
+Output %     A=B   
+Output %     A<B  
+GND    %     GND
+Input  %B0
+Input  %A0
+Input  %B1
+Input  %A1
+Input  %A2
+Input  %B2
+Input  %A3
+VCC    %VCC
+$74857
+HEX 2 TO 1 UNIVERSAL MULTIPLEXERS WITH 3-STATE OUTPUTS
+24
+Input  %      S0
+In/Out %      1A
+In/Out %      1B
+Out/In %      1Y  
+In/Out %      2A 
+In/Out %      2B
+Out/In %      2Y  
+In/Out %      3A  
+In/Out %      3B 
+Out/In %      3Y
+Input  %OperZero 
+GND    %     GND
+Input  %'T/C
+Out/In %4Y
+In/Out %4B
+In/Out %4A
+Out/In %5Y
+In/Out %5B
+In/Out %5A
+Out/In %6Y
+In/Out %6B
+In/Out %6A
+Input  %S1
+VCC    %VCC
+$7486
+QUADRUPLE 2-INPUT EXCLUSIVE-OR GATES
+14
+Input  %      1A
+Input  %      1B
+Output %      1Y
+Input  %      2A
+Input  %      2B
+Output %      2Y
+GND    %     GND
+Output %3Y
+Input  %3A
+Input  %3B
+Output %4Y
+Input  %4A
+Input  %4B
+VCC    %VCC
+$74867
+SYNCHRONOUS 8-BIT UP/DOWN COUNTERS
+24
+Input  %      S0
+Input  %      S1
+Input  %       A
+Input  %       B  
+Input  %       C 
+Input  %       D
+Input  %       E  
+Input  %       F  
+Input  %       G 
+Input  %       H
+Input  %Enable T 
+GND    %     GND
+Input  %RCO'
+Clock  %Clock
+Output %QH
+Output %QG
+Output %QF
+Output %QE
+Output %QD
+Output %QC
+Output %QB
+Output %QA
+Input  %Enable P
+VCC    %VCC
+$74869
+SYNCHRONOUS 8-BIT UP/DOWN COUNTERS
+24
+Input  %      S0
+Input  %      S1
+Input  %       A
+Input  %       B  
+Input  %       C 
+Input  %       D
+Input  %       E  
+Input  %       F  
+Input  %       G 
+Input  %       H
+Input  %Enable T 
+GND    %     GND
+Input  %RCO'
+Clock  %Clock
+Output %QH
+Output %QG
+Output %QF
+Output %QE
+Output %QD
+Output %QC
+Output %QB
+Output %QA
+Input  %Enable P
+VCC    %VCC
+$74870
+DUAL 16 BY 4-BIT REGISTER FILES
+24
+Input  %      S0
+Input  %     1A0
+Input  %     1A1
+Input  %     1A2  
+Input  %     1A3 
+Input  %     1W'
+Input  %      S2
+In/Out %    DQA1  
+In/Out %    DQA2 
+In/Out %    DQA3
+In/Out %    DQA4 
+GND    %     GND
+Out/In %DQB1
+Out/In %DQB2
+Out/In %DQB3
+Out/In %DQB4
+Input  %S3
+Input  %2W'
+Input  %2A0
+Input  %2A1
+Input  %2A2
+Input  %2A3
+Input  %S1
+VCC    %VCC
+$7490
+DECADE COUNTER
+14
+Input  %       B
+Output %   R0(1)
+Output %   R0(2)
+NC     %      NC
+VCC    %     VCC
+Output %   Q9(1)
+Output %   Q9(2)
+Output %QC
+Output %QB
+GND    %GND
+Output %QD
+Output %QA
+NC     %NC
+Input  %A
+$7492
+DIVIDE-BY-TWELVE DECODE COUNTERS
+14
+Input  %      B
+NC     %      NC
+NC     %      NC
+NC     %      NC
+VCC    %     VCC
+Output %   R0(1)
+Output %   R0(2)
+Output %QD
+Output %QC
+GND    %GND
+Output %QB
+Output %QA
+NC     %NC
+Input  %A
+$7493
+4-BIT BINARY COUNTERS
+14
+Input  %       B
+Output %   R0(1)
+Output %   R0(2)
+NC     %      NC
+VCC    %     VCC
+NC     %      NC
+NC     %      NC
+Output %QC
+Output %QB
+GND    %GND
+Output %QD
+Output %QA
+NC     %NC
+Input  %A
+$7497
+SYNCHRONOUS 6-BIT BINARY RATE MULTIPLIERS
+16
+Input  %       B
+Input  %       E
+Input  %       F
+Input  %       A
+Output %       Z
+Output %       Y
+Input  %  En.Out
+GND    %     GND
+Input  %Clock
+Input  %Strobe
+Input  %En.In
+Input  %Uni/Cas
+Input  %Clear
+Input  %C
+Input  %D
+VCC    %VCC
+$
