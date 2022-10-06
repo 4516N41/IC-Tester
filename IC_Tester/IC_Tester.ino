@@ -50,17 +50,29 @@
 #define LCD_RD A0     // LCD Read goes to Analog 0
 #define LCD_RESET A4  // LCD RESET goes to Analog 4
 
-#define YP A3  // must be an analog pin, use "An" notation!, Screen 1 = A3 // screen 2 = A1
+//------------------------------------Screen type 1-------------------------------------------------//
+#define YP A3  // must be an analog pin, use "An" notation!
 #define XM A2  // must be an analog pin, use "An" notation!
-#define YM 9   // can be a digital pin, Screen 1 = 9 // Screen 2 = 7
-#define XP 8   // can be a digital pin, Screen 1 = 8 //Screen 2 = 6
+#define YM 9   // can be a digital pin
+#define XP 8   // can be a digital pin
+//--------------------------------------------------------------------------------------------------//
 
+//------- If there is a graphics on the screen but the touch doesn't work try the one below --------//
+//------------------- See the manual for more indepth troubleshooting-------------------------------//
+//------------------------------------Screen type 2-------------------------------------------------//
+/*
+#define YP A1  // must be an analog pin, use "An" notation!
+#define XM A2  // must be an analog pin, use "An" notation!
+#define YM 7   // can be a digital pin
+#define XP 6   // can be a digital pin
+*/
+//--------------------------------------------------------------------------------------------------//
 #define TS_MINX 150  //150
 #define TS_MINY 120  //120
 #define TS_MAXX 920  //920
 #define TS_MAXY 940  //940
 
-#define MINPRESSURE 10//was originally 10
+#define MINPRESSURE 10//
 #define MAXPRESSURE 1000
 
 // Assign human-readable names to some common 16-bit color values:

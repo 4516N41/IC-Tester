@@ -12,10 +12,10 @@ void flow()
   switches.pushed = 0;
   if (p.z > MINPRESSURE && p.z < MAXPRESSURE)
   {
-    // scale from 0->1023 to tft.width
+    // Might have to switch the two last values below on either one if your touch is inverted
     p.y = map(p.y, TS_MINX, TS_MAXX, tft.height(), 0);
     p.x = map(p.x, TS_MINY, TS_MAXY, 0,tft.width());
-   
+
     delay(150);//eh...lets see if this is really needed the debounce is shitty even so
     pressed = true; switches.pushed = 1;
   }
