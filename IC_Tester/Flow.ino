@@ -12,8 +12,12 @@ void flow()
   if (p.z > MINPRESSURE && p.z < MAXPRESSURE)
   {
     // scale from 0->1023 to tft.width
-    p.y = map(p.y, TS_MINX, TS_MAXX, tft.height(), 0);
-    p.x = map(p.x, TS_MINY, TS_MAXY, 0,tft.width());
+    //p.y = map(p.y, TS_MINX, TS_MAXX, tft.height(), 0);
+    //p.x = map(p.x, TS_MINY, TS_MAXY, 0,tft.width());
+
+    p.y = map(p.y, TS_MINX, TS_MAXX, 0,tft.height());
+    p.x = map(p.x, TS_MINY, TS_MAXY, tft.width(), 0);
+    
     delay(150);//eh...lets see if this is really needed the debounce is shitty even so
     pressed = true; switches.pushed = 1;
   }
@@ -36,7 +40,7 @@ void flow()
       if (buttonsMenus[a].isPressed()){}// buttonsMenus[a].drawButton(true);  // draw invert!  !!!!!!!!!need to check if these functions are leaving invisible residue!!!!!!!!!!!!      
   }    
 //----------------------------------------ScreenStatus Routines--------------------------------------------------  
-  //Serial.println("(" +  String(p.x) + " , " + String(p.y) + " , " + String(p.z) + ")");//uncomment this line to see the touch values on the serial monitor 
+  Serial.println("(" +  String(p.x) + " , " + String(p.y) + " , " + String(p.z) + ")");//uncomment this line to see the touch values on the serial monitor 
   //Serial.print("screenstatus: "); Serial.println(screenStatus); //uncomment this line to see in what screenStatus the program is 
   //Serial.println(freeMemory());//Uncomment this to see how much memory is left on the device while it´s working
   //Serial.println(millis());

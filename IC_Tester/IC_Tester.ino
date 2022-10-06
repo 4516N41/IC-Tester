@@ -26,15 +26,19 @@
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 
-#include <pin_magic.h>
-#include <registers.h>
-#include <SPFD5408_Adafruit_GFX.h>
-#include <SPFD5408_Adafruit_TFTLCD.h>
-#include <SPFD5408_TouchScreen.h>
-#include <SPFD5408_Util.h>
-#include <pins_arduino.h>
+//#include <pin_magic.h>
+//#include <registers.h>
+//#include <SPFD5408_Adafruit_GFX.h>
+//#include <SPFD5408_Adafruit_TFTLCD.h>
+//#include <SPFD5408_TouchScreen.h>
+//#include <SPFD5408_Util.h>
+//#include <pins_arduino.h>
 #include "KickSort.h" //to sort the references alphabetically 
 
+
+#include <Adafruit_GFX.h>    // Core graphics library
+#include <Adafruit_TFTLCD.h> // Hardware-specific library
+#include <TouchScreen.h> //Touch Screen Library
 //SD CARD
 #include <SPI.h>
 #include <SD.h> //need to override the default SD library with the adafruit SD library C:\Users\username\AppData\Local\Arduino15\libraries on win 10
