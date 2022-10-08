@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 $4000
 Dual 3-input NOR gate and inverter
 14
