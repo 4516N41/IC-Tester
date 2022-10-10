@@ -6267,6 +6267,114 @@ Input  %2A2
 Input  %2A3
 Input  %S1
 VCC    %VCC
+$74873
+DUAL 4-BIT D TYPE LATCHES WITH 3-STATE OUTPUTS
+24
+Input  %Clear 1'
+Input  %    1OC'
+Input  %     1D1
+Input  %     1D2  
+Input  %     1D3 
+Input  %     1D4
+Input  %     2D1
+Input  %     2D2  
+Input  %     2D3 
+Input  %     2D4
+Input  %    2OC' 
+GND    %     GND
+Input  %Clear 2'
+Input  %Enable 2
+Output %2Q4
+Output %2Q3
+Output %2Q2
+Output %2Q1
+Output %1Q4
+Output %1Q3
+Output %1Q2
+Output %1Q1
+Input  %Enable 1
+VCC    %VCC
+$74874
+DUAL 4-BIT D TYPE EDGE TRIGGERED FLIP-FLOPS WITH 3-STATE OUTPUTS
+24
+Input  %Clear 1'
+Input  %    1OC'
+Input  %     1D1
+Input  %     1D2  
+Input  %     1D3 
+Input  %     1D4
+Input  %     2D1
+Input  %     2D2  
+Input  %     2D3 
+Input  %     2D4
+Input  %    2OC' 
+GND    %     GND
+Input  %Clear 2'
+Clock  %Clock 2
+Output %2Q4
+Output %2Q3
+Output %2Q2
+Output %2Q1
+Output %1Q4
+Output %1Q3
+Output %1Q2
+Output %1Q1
+Clock  %Clock 1
+VCC    %VCC
+$74876
+DUAL 4-BIT D TYPE EDGE TRIGGERED FLIP-FLOPS WITH 3-STATE OUTPUTS
+24
+Input  %  Pre.1'
+Input  %    1OC'
+Input  %     1D1
+Input  %     1D2  
+Input  %     1D3 
+Input  %     1D4
+Input  %     2D1
+Input  %     2D2  
+Input  %     2D3 
+Input  %     2D4
+Input  %    2OC' 
+GND    %     GND
+Input  %Pre.2'
+Clock  %Clock 2
+Output %2Q4'
+Output %2Q3'
+Output %2Q2'
+Output %2Q1'
+Output %1Q4'
+Output %1Q3'
+Output %1Q2'
+Output %1Q1'
+Clock  %Clock 1
+VCC    %VCC
+$74885
+8-BIT MAGNITUDE COMPARATORS
+24
+Input  %    L/A'
+Output %  P<Q IN
+Output %  P>Q IN
+Input  %      Q7  
+Input  %      Q6 
+Input  %      Q5
+Input  %      Q4
+Input  %      Q3  
+Input  %      Q2 
+Input  %      Q1
+Input  %      Q0 
+GND    %     GND
+Output %P>Q OUT
+Output %P<Q OUT
+Input  %P0
+Input  %P1
+Input  %P2
+Input  %P3
+Input  %P4
+Input  %P5
+Input  %P6
+Input  %P7
+Input  %PLE
+VCC    %VCC
 $7490
 DECADE COUNTER
 14
@@ -6284,6 +6392,29 @@ Output %QD
 Output %QA
 NC     %NC
 Input  %A
+$74990
+8-BIT D-TYPE TRANSPARENT READ-BACK LATCH
+20
+Input  %   OERB'
+Input  %      1D
+Input  %      2D
+Input  %      3D
+Input  %      4D
+Input  %      5D
+Input  %      6D
+Input  %      7D
+Input  %      8D
+GND    %     GND
+Input  %C
+Output %8Q
+Output %7Q
+Output %6Q
+Output %5Q
+Input  %4Q
+Output %3Q
+Input  %2Q
+Input  %1Q
+VCC    %VCC
 $7492
 DIVIDE-BY-TWELVE DECODE COUNTERS
 14
@@ -6301,6 +6432,33 @@ Output %QB
 Output %QA
 NC     %NC
 Input  %A
+$74992
+9-BIT D-TYPE TRANSPARENT READ-BACK LATCH WITH 3-STATE OUTPUTS
+24
+Input  %   OERB'
+Input  %      1D
+Input  %      2D
+Input  %      3D
+Input  %      4D
+Input  %      5D
+Input  %      6D
+Input  %      7D
+Input  %      8D
+Input  %      9D
+Input  %  Clear'
+GND    %     GND
+Input  %C
+Input  %OEQ'
+Output %9Q
+Output %8Q
+Output %7Q
+Output %6Q
+Output %5Q
+Input  %4Q
+Output %3Q
+Input  %2Q
+Input  %1Q
+VCC    %VCC
 $7493
 4-BIT BINARY COUNTERS
 14
@@ -6318,6 +6476,33 @@ Output %QD
 Output %QA
 NC     %NC
 Input  %A
+$74994
+10-BIT D-TYPE TRANSPARENT READ-BACK LATCH WITH 3-STATE OUTPUTS
+24
+Input  %   OERB'
+Input  %      1D
+Input  %      2D
+Input  %      3D
+Input  %      4D
+Input  %      5D
+Input  %      6D
+Input  %      7D
+Input  %      8D
+Input  %      9D
+Input  %     10D
+GND    %     GND
+Input  %C
+Output %10Q
+Output %9Q
+Output %8Q
+Output %7Q
+Output %6Q
+Output %5Q
+Input  %4Q
+Output %3Q
+Input  %2Q
+Input  %1Q
+VCC    %VCC
 $7497
 SYNCHRONOUS 6-BIT BINARY RATE MULTIPLIERS
 16
