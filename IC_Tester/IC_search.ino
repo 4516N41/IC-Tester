@@ -67,7 +67,7 @@ void autoSearch(int pins)
           newCase = dataFile.readStringUntil('\n'); ;//Applies test sequences found in the database.txt file        
           newCase.trim();
           
-          if (testCase(newCase, ICpins) == false)//If the chip failed the test it continues
+          if (identificationCase(newCase, ICpins) == false)//If the chip failed the test it continues
           {
             result = false;
            // if(failCount == 1){possibles[count++] = newChip;}
@@ -97,8 +97,7 @@ void autoSearch(int pins)
       }            
       if(switches.fastMode == 0){ tft.setTextColor(BLACK);tft.setTextSize(3); tft.setCursor(80, 75); tft.println(newChip.num);}//clearing Ic's that have been tested
     }
-    //delete(pin);
-    dataFile.close();////here the reading/comparing test phase of SD data ends
+    dataFile.close();//here the reading/comparing test phase of SD data ends
    
     if (count != 0)
     {
@@ -106,12 +105,12 @@ void autoSearch(int pins)
         for(uint8_t r=0; r<count; r++) 
      {
       numberAuto[r].reserve(5);
-      numberAuto[r+1] = ans[r].num;      
-      nameAuto[r+1] = ans[r].name; 
+      numberAuto[r+1] = ans[r].num; //stores the id of each IC(e.g 4040 or 7405)     
+      nameAuto[r+1] = ans[r].name; //stores the description of each IC 
      }
     }
   }
-  else
+  else//If there was a problem opening the database.txt file
   {
     Serial.print(F("error opening ")); Serial.println(fname);
     dataFile.close();

@@ -1,5 +1,5 @@
 //----------------------------------------------------------------------------------------------------------------------//
-// --------------------------------------------------Main Sequence------------------------------------------------------//   
+// --------------------------------------------------Main Sequence------------------------------------------------------//
 //----------------------------------------------------------------------------------------------------------------------//
 void flow()
 {    
@@ -53,9 +53,9 @@ void flow()
         mainScreenDemoScene();//a little graphic functions for the home screen                           
         if (buttonsMenus[4].justPressed())//last test Screen
         {
-          readSaveState();
-          if(screenStatusSD == 32){screenStatus = 72;}
-          if(screenStatusSD == 69){switches.saveStateSD = 1; switches.circumventTFT = 1; screenStatus = 69;}           
+          readSaveState();//Reads the saved state variables from the SD card regarding the last test
+          if(screenStatusSD == 32){screenStatus = 72;}//if the last test was a loop test
+          if(screenStatusSD == 69){switches.saveStateSD = 1; switches.circumventTFT = 1; screenStatus = 69;} //if the last "test" was a truthtable          
         }  
         if (buttonsMenus[0].justPressed()){screenStatus = 2;}  //IC search screen
         if (buttonsMenus[2].justPressed()){screenStatus = 3;}  //Pinout screen
@@ -123,8 +123,8 @@ void flow()
             break;       
             }
           }           
-          lastoutputState[a] = digitalRead(pin[a]); //Updates the last read state of an output                                                                       
-          if (buttonsMenus[0].justPressed()) //the menubuttons are inside the for loop so they can be read faster
+          lastoutputState[a] = digitalRead(pin[a]);//Updates the last read state of an output                                                                       
+          if (buttonsMenus[0].justPressed())//the menubuttons are inside the for loop so they can be read faster
           {           
             for (uint8_t i = 0; i < *pinNumberRoutingPointer; i++) {pinMode(pin[i], INPUT_PULLUP); digitalWrite(pin[i], LOW);} //Clear pin assignments  and return to main menu 
             screenStatus = 0;
@@ -150,9 +150,9 @@ void flow()
   break;
   case 41: //Error screen
         screenSaver();  
-        if (buttonsMenus[3].justPressed()){screenStatus = 42;} 
+        if (buttonsMenus[3].justPressed()){screenStatus = 42;} //Raw data screen
         if (buttonsMenus[4].justPressed()){screenStatus = 45;} //Repeat last test     
-        if (buttonsMenus[0].justPressed()){screenStatus = 0;}  
+        if (buttonsMenus[0].justPressed()){screenStatus = 0;} //main menu
   break;
   case 42: //Raw data screen     
         if (buttonsMenus[0].justPressed()){screenStatus = 0;}//Main menu  
@@ -168,7 +168,7 @@ void flow()
   case 69: // truthtable screen
 //-------------------------------------------------Inputs---------------------------------------------------------------//
           screenSaver();                     
-          for(uint8_t a=0; a<*pinNumberRoutingPointer; a++)//
+          for(uint8_t a=0; a<*pinNumberRoutingPointer; a++)//Polling for input buttons
           {               
             if (buttonsPinout[a].justPressed() && buttonStatus[a] == 0) //Input selected ON
             {
@@ -193,12 +193,13 @@ void flow()
         if (buttonsMenus[0].justPressed()){screenStatus = 0;} //Main menu 
 //-------------------------------------------------Starts clock---------------------------------------------------------//          
         if(switches.clockmenuToggle == 1){if (buttonsMenus[1].justPressed()){switches.clockToggle = 1;}} //turns the clock ON
-//-----------------------------------------------Cycle input routine----------------------------------------------------//     
+  
         if(clockCounter != lastclockCounter)
         {
           getTouch(); //Serial.println("clockCounter != lastclockCounter");
           if(switches.status == 1 && cycle > 0){cycle = 0;}
         }
+//-----------------------------------------------Cycle input routine----------------------------------------------------//          
         if (buttonsMenus[2].justPressed() && clockCounter == lastclockCounter)
         {           
           lastclockCounter = 0; clockCounter = 0; lastOutputCounter = 0; rowsOfValuesCounter = 0; switches.clockToggle = 0;//clearing variables so they wont interfere with the next cycle input
@@ -306,7 +307,7 @@ void flow()
         if(clockCounter >= cycle){switches.clockToggle = 0; cycle = 0; automaticInputButtonPusher = 0;}                                 
         lastOutputCounter = cycle;                                                      
     break;
-    case 72:
+    case 72://loop test if it was a last test(circumvents the keypad inputs)
         screenSaver();  
         testCompleted();           
         if (buttonsMenus[0].justPressed()){screenStatus = 0;}//Main menu
@@ -316,7 +317,7 @@ void flow()
     break; 
     case 73: screenStatus = 69;
     break;  
-    case 80:       
+    case 80: //Config screen buttons monitoring      
         if (buttonsMenus[0].justPressed()){SD.remove(fname5); writeConfig(); screenStatus = 0;} //Main menu 
         if (buttonsMenus[6].justPressed()){screenStatus = 81;} //Clock speed select     
         if (buttonsMenus[4].justPressed())
@@ -381,7 +382,7 @@ void flow()
             screenStatus = previousScreenstatus; 
     break;
   }
-  pinMode(XM, OUTPUT);//check if it should be right after line 44
+  pinMode(XM, OUTPUT);
   digitalWrite(XM, LOW);
   pinMode(YP, OUTPUT);
   digitalWrite(YP, HIGH);

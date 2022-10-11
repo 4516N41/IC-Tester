@@ -1,13 +1,10 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//-----------------------------------------IC test/identification function----------------------------------------------//
+//-------------------------------------------IC Identification function-------------------------------------------------//
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-boolean testCase(const String& test, int pins)//newCase Pins
+boolean identificationCase(const String& test, int pins)//newCase Pins
 {
   boolean result = true;
   int clkPin = -1;
-   // initialize the measurement
-  TCCR1B = bit(CS10);
-  TCNT1 = 0;   
   for (uint8_t i = 0; i < pins; i++)  
   {
     switch (test[i])
@@ -39,7 +36,7 @@ boolean testCase(const String& test, int pins)//newCase Pins
   {
     switch (test[i])
     {
-      case 'H' : //if (digitalRead(pin[i])) { Serial.print("H");}
+      case 'H' : 
       digitalWrite(pin[i], LOW); pinMode(pin[i], INPUT_PULLUP); 
       if (!digitalRead(pin[i])) 
         {
@@ -48,7 +45,7 @@ boolean testCase(const String& test, int pins)//newCase Pins
          storeErrorPlace[i] = 1;
         }
         break;
-      case 'L' : //if (!digitalRead(pin[i])) { Serial.print("L");} 
+      case 'L' : 
       digitalWrite(pin[i], LOW); pinMode(pin[i], INPUT_PULLUP); 
       if (digitalRead(pin[i])) 
       {
@@ -59,19 +56,15 @@ boolean testCase(const String& test, int pins)//newCase Pins
         break;
     }
   }
-  cycles2 = TCNT1;
   return result;
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//-----------------------------------------IC test/identification function----------------------------------------------//
+//-----------------------------------------------IC test function-------------------------------------------------------//
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-boolean testCase2(const String& test, int pins)//newCase Pins
+boolean loopTestCase(const String& test, int pins)//newCase Pins
 {
   boolean result = true;
   int clkPin = -1;
-   // initialize the measurement
-  TCCR1B = bit(CS10);
-  TCNT1 = 0;   
   for (uint8_t i = 0; i < pins; i++)  
   {
     switch (test[i])
@@ -81,7 +74,7 @@ boolean testCase2(const String& test, int pins)//newCase Pins
       case 'G' : if(previousTestPinFunction[i] != 'G'){pinMode(pin[i], OUTPUT); digitalWrite(pin[i], LOW); previousTestPinFunction[i] = 'G';}
         break;
       //Setting Input Signals  
-      case 'X' ://could need a break
+      case 'X' :
       case '0' : if(previousTestPinFunction[i] != '0'){pinMode(pin[i], OUTPUT); digitalWrite(pin[i], LOW); previousTestPinFunction[i] = '0';} 
         break;
       case '1' : if(previousTestPinFunction[i] != '1'){pinMode(pin[i], OUTPUT); digitalWrite(pin[i], HIGH); previousTestPinFunction[i] = '1';}
@@ -103,7 +96,7 @@ boolean testCase2(const String& test, int pins)//newCase Pins
   {
     switch (test[i])
     {
-      case 'H' : //if (digitalRead(pin[i])) { Serial.print("H");}
+      case 'H' : 
       if(previousTestPinFunction[i] != 'H'){digitalWrite(pin[i], LOW); pinMode(pin[i], INPUT_PULLUP); previousTestPinFunction[i] = 'H';} 
       if (!digitalRead(pin[i])) 
         {
@@ -112,7 +105,7 @@ boolean testCase2(const String& test, int pins)//newCase Pins
          storeErrorPlace[i] = 1;
         }
         break;
-      case 'L' : //if (!digitalRead(pin[i])) { Serial.print("L");} 
+      case 'L' : 
       if(previousTestPinFunction[i] != 'L'){digitalWrite(pin[i], LOW); pinMode(pin[i], INPUT_PULLUP); previousTestPinFunction[i] = 'L';} 
       if (digitalRead(pin[i])) 
       {
@@ -123,6 +116,5 @@ boolean testCase2(const String& test, int pins)//newCase Pins
         break;
     }
   }
-  cycles2 = TCNT1;
   return result;
 }

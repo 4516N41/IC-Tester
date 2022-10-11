@@ -4,10 +4,10 @@
 void truthtableData()
 {
   String *refBufferPointer[24];  
-    for(uint8_t w=0; w<24; w++)
-{  
-  refBufferPointer[w] = &tablet.refBuffer[w];
-} 
+  for(uint8_t w=0; w<24; w++)
+  {  
+    refBufferPointer[w] = &tablet.refBuffer[w];
+  } 
   tft.fillScreen(BLACK);//"Clear" the screen
      
   for(uint8_t u=0; u<*pinNumberRoutingPointer; u++) //here we make an numerical index of the output so we can keep track of them when the output references get alphabetized later in the process

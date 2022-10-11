@@ -6,9 +6,9 @@ void repeatTest(const String& number, int numberTest)
   File dataFile = SD.open(fname);// open the file. note that only one file can be open at a time.
   word good = 0;//keeps track of tests that the chip passed
   word bad = 0;//keeps track of the tests that the chip failed
-  byte failedTests = 1;
+  byte failedTests = 0;
   word fail = 0;
-  byte goodTest = 1;
+  byte goodTest = 0;
   word passed = 0;
   word testLoop = 0; //number of tests chosen by user
   String buffer;//the IC numbers on the SD that the program then compares to the IC selected by user input
@@ -19,7 +19,7 @@ void repeatTest(const String& number, int numberTest)
   unsigned long *hardPositionPointer = &hardPosition; ;//this keeps track of start of test lines on the SD card
   byte testSize = 2;  
   byte testPlacer = 0;
-  String linekeepTrack;
+  //String linekeepTrack;
   linecount = 1;//keeps count on the number of test lines for a IC under test
   chip newChip;
   //int pins;
@@ -67,9 +67,7 @@ void repeatTest(const String& number, int numberTest)
         chipDescriptionPointer = &newChip.name; 
         *chipDescriptionPointer = dataFile.readStringUntil('\n'); //this is where the description of the IC is stored
         *pinNumberRoutingPointer = dataFile.readStringUntil('\n').toInt(); //this stores the number of pins the chosen IC has
-        //pin = pins;
-        //*pinNumberRoutingPointer = pins; //so I can use the appropiate number of pins outside the scope
-        
+    
         switch(*pinNumberRoutingPointer)
           {
             case 14:pin = PIN14; testPlacer = 20; testSize = 2;//calls an appropiate array with the pin assignment of the microcontroller
@@ -96,7 +94,7 @@ void repeatTest(const String& number, int numberTest)
         
         if(switches.fastMode == 0)
         {
-          tft.fillRect(164, 150 , 60, 20, BLACK); //
+          tft.fillRect(164, 150 , 60, 20, BLACK); 
           tft.setCursor(10, 150);
           tft.setTextColor(RED);  tft.setTextSize(2);
           tft.print(F("Failed Tests:")); tft.println(fail);        
@@ -132,10 +130,10 @@ void repeatTest(const String& number, int numberTest)
 //----------------------------------------------------------------------------------------------------------------------//        
 //------------------------------------------------Testing starts--------------------------------------------------------//
 //----------------------------------------------------------------------------------------------------------------------//
-        while(testLoop < numberTest*linecount) //testloop is the number of times this loop has been executed and the numberTest is the number of tests chosen by the user
+        while(testLoop < numberTest * (linecount - 1)) //testloop is the number of times this loop has been executed and the numberTest is the number of tests chosen by the user
         {  
                               
-          if(*testSequenceLenghtPointer == linecount){failedTests = 1; goodTest = 1; *testSequenceLenghtPointer = 1;} //this is so the test sequence starts over at the right position on the SD card 
+          if(*testSequenceLenghtPointer == linecount){*testSequenceLenghtPointer = 1;} //this is so the test sequence starts over at the right position on the SD card 
 
           switch(*testSequenceLenghtPointer)
           {
@@ -144,15 +142,17 @@ void repeatTest(const String& number, int numberTest)
           dataFile.seek(*testPositionPointer + (*pinNumberRoutingPointer + 2) * *testSequenceLenghtPointer);//this "scrolls/jumps" through the test lines
           
           newCase = dataFile.readStringUntil('\n'); //Since the original coder made it so that the testcase can only handle one line of test being feed to it at time here it's disected line by line                                     
-         
-          switch (testCase2(newCase, *pinNumberRoutingPointer))
+        
+          switch (loopTestCase(newCase, *pinNumberRoutingPointer))
           {
             case false:  bad++;//keeps track of how many times the test failed                        
             testlineErrorPointer[*testSequenceLenghtPointer] = *testSequenceLenghtPointer;  //here we store the linenumber of the failed tests                       
             storeTestLines[*testSequenceLenghtPointer].reserve(24);
             storeTestLines[*testSequenceLenghtPointer] = newCase;
-            failedTests++; goodTest = 1;
-            if(failedTests == linecount){fail++; failedTests == 1;}
+            failedTests++; goodTest = 0;
+            Serial.print("linecount "); Serial.println(linecount); 
+            Serial.print("failedTests "); Serial.println(failedTests);
+            if(failedTests == linecount - 1){fail++; failedTests = 0;}
             switch(switches.fastMode)                        
             {
               case 0:
@@ -169,14 +169,13 @@ void repeatTest(const String& number, int numberTest)
             }
             resultFix = false;
             break;          
-          }   
-          
+          }          
           switch(resultFix)
           {
             case true:
             good++;//keeps track of how many times the IC passed the test  
-            goodTest++; 
-            if(goodTest == linecount){passed++;}
+            goodTest++; failedTests = 0; 
+            if(goodTest == linecount - 1){passed++; goodTest = 0;}
             switch(switches.fastMode)                        
             {
               case 0:
@@ -200,7 +199,7 @@ void repeatTest(const String& number, int numberTest)
             case 0:        
             tft.setCursor(110, 120);
             tft.setTextColor(BLACK);  tft.setTextSize(2);//here we clear the onscreen count of the tests processed
-            tft.println(testLoop);
+            tft.println(testLoop-1);
             tft.setCursor(110, 120);
             tft.setTextColor(BLUE);  tft.setTextSize(2);//here we display onscreen the number of tests processed 
             tft.println(testLoop);
@@ -213,14 +212,7 @@ void repeatTest(const String& number, int numberTest)
           }                       
           getTouch();//this is so the user can stop the test at any time
         if(switches.status == 1) break;//this is so the user can stop the test at any time
-          // take the measurement          
-        } 
-        /*
-        Serial.print("Cycles: ");
-        Serial.println(cycles2 - 1);
-        Serial.print("Microseconds: ");
-        Serial.println((float)(cycles2 - 1) / 16);
-        */
+       }
        dataFile.close(); break; //breaks out of the loop after finding the right chip and testing otherwise it runs through the rest of the ICs                           
       }    
     }    
@@ -273,18 +265,17 @@ void errorInfo()
         newChip.pins = dataFile.readStringUntil('\n').toInt(); //pin count            
         pin = new int[newChip.pins]; 
         switch(newChip.pins)
-          {
-            case 14:pin = PIN14;
-            break;
-            case 16:pin = PIN16;
-            break;
-            case 20:pin = PIN20;
-            break;
-            case 24:pin = PIN24;
-            break;
-          }      
-    
-       *globalReferencePointer[24] = "";   
+        {
+          case 14:pin = PIN14;
+          break;
+          case 16:pin = PIN16;
+          break;
+          case 20:pin = PIN20;
+          break;
+          case 24:pin = PIN24;
+          break;
+        }         
+        *globalReferencePointer[24] = "";   
         for(uint8_t a=0; a<newChip.pins; a++)
         { 
           *globalpinFunctionPointer[a] = dataFile.readStringUntil('%'); 
@@ -294,7 +285,7 @@ void errorInfo()
       }
     }
   }  
-  byte d = 0;
+  byte d = 0;//increments per line
   tft.fillScreen(BLACK);//"Clear" the screen
   tft.setTextSize(1);
   tft.setCursor(5, 5);
@@ -318,6 +309,7 @@ void errorInfo()
     if(*globalReferencePointer[u] == "+V"){tft.setTextColor(RED);}
     if(*globalReferencePointer[u] == "0V"){tft.setTextColor(GREEN);}
     tft.setCursor(100, 10+(10*(u+1))); tft.print(*globalReferencePointer[u]);
+    
     //functiontype    
     if(*globalpinFunctionPointer[u] == "Output "){tft.setTextColor(YELLOW);}
     if(*globalpinFunctionPointer[u] == "Input  "){tft.setTextColor(NAVY);}
@@ -328,12 +320,13 @@ void errorInfo()
     if(*globalpinFunctionPointer[u] == "Out/In "){tft.setTextColor(PURPLE);}
     if(*globalpinFunctionPointer[u] == "NC     "){tft.setTextColor(OLIVE);}
     tft.setCursor(30, 10+(10*(u+1))); tft.print(*globalpinFunctionPointer[u]);
+    
     //Errortypes
-   // storeErrorLines[u].reserve(1);
     if(storeErrorLines[u]== "L"){tft.setTextColor(PURPLE);}
     if(storeErrorLines[u]== "H"){tft.setTextColor(GREEN);}
     if(storeErrorLines[u]== "0"){tft.setTextColor(BLACK);}
      tft.setCursor(220, 10+(10*(u+1))); tft.print(storeErrorLines[u]);
+    
     //PinType
     if (pinMode == 0) 
     {    
@@ -346,6 +339,7 @@ void errorInfo()
       tft.setCursor(160, 10+(10*(d+1))); tft.print(F("OUTPUT"));  
     }
     d++;
+    
     //Errors
     if(storeErrorPlace[u] == 1)
     {
@@ -365,7 +359,6 @@ void errorInfo()
 //----------------------------------------------------------------------------------------------------------------------//
 void rawData()
 {
-
   String errorLine;
   String errorPlace;
   byte c = 0;
@@ -394,7 +387,7 @@ void rawData()
     tft.setCursor(linePosition+(6*u), 40);
     storeErrorLines[u].reserve(24);
     tft.println(storeErrorLines[u]);
-   errorLine.reserve(25);
+    errorLine.reserve(25);
     errorLine += storeErrorLines[u];
   } 
   String testLinesArray[24];

@@ -12,9 +12,9 @@ void screenSaver()
       tft.fillScreen(BLACK);//"Clear" the screen             
       while(switches.status == 0)
       {            
-        getTouch();//this is so the user can stop the test at any time
+        getTouch();//this is so the user can wake up the screen
       }            
-    if(switches.status == 1) macgyverCounter = 0; screenStatus = 90; switches.status = 0; //this is so the user can stop the test at any time
+    if(switches.status == 1) macgyverCounter = 0; screenStatus = 90; switches.status = 0; 
     }  
   }   
 }           
