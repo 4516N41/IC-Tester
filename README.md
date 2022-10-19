@@ -14,7 +14,7 @@ His Git can be found here https://github.com/akshaybaweja/Smart-IC-Tester
       
 • Truthtable/Timing diagram generation, manually and automaticaly generated. Saves the truthtables as a CSV file.
       
-• Loop testing available, the program keeps track of passed/failed tests and which pins are the most like to be the culprits.
+• Loop testing, the program keeps track of passed/failed tests and which pins are the most like to be the culprits.
       
 • Shortcut for Last test routine so the user can quickly set up a test for a sum of the same IC types.
       
