@@ -2,6 +2,7 @@
 Arduino Mega 4000 &amp; 7400 series IC tester with a 2,4" TFT Touch screen interface
 
 Based on smart IC tester by Baweja Akshay. 
+
 His Git can be found here https://github.com/akshaybaweja/Smart-IC-Tester
 
 
