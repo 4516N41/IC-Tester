@@ -3,37 +3,40 @@
 //----------------------------------------------------------------------------------------------------------------------//
 void repeatTest(const String& number, int numberTest)
 {
-  File dataFile = SD.open(fname);// open the file. note that only one file can be open at a time.
+  chip newChip;
+  boolean result = true;
+  boolean resultFix = true;//Needed to fix the transition from a failed to passed test
+  byte testSize = 2;  
+  byte testPlacer = 0;
+  byte testlineError[24];
+  byte *testlineErrorPointer[24];
+  byte failedTests = 0;
+  byte goodTest = 0;  
   word good = 0;//keeps track of tests that the chip passed
   word bad = 0;//keeps track of the tests that the chip failed
-  byte failedTests = 0;
   word fail = 0;
-  byte goodTest = 0;
   word passed = 0;
   word testLoop = 0; //number of tests chosen by user
   String buffer;//the IC numbers on the SD that the program then compares to the IC selected by user input
-  String newCase;
-  unsigned long testPosition = 0;//this keeps track of test lines on the SD card
-  unsigned long hardPosition = 0;//this keeps track of start of test lines on the SD card
-  unsigned long *testPositionPointer = &testPosition;//this keeps track of test lines on the SD card
-  unsigned long *hardPositionPointer = &hardPosition; ;//this keeps track of start of test lines on the SD card
-  byte testSize = 2;  
-  byte testPlacer = 0;
-  //String linekeepTrack;
-  linecount = 1;//keeps count on the number of test lines for a IC under test
-  chip newChip;
-  //int pins;
-  boolean result = true;
-  boolean resultFix = true;//Needed to fix the transition from a failed to passed test
+  buffer.reserve(6);
+  String newCase;//line of test sequence
+  newCase.reserve(25);
+  unsigned long testPosition = 0;//keeps track of test lines on the SD card
+  unsigned long hardPosition = 0;//keeps track of start of test lines on the SD card
+  unsigned long *testPositionPointer = &testPosition;//keeps track of test lines on the SD card
+  unsigned long *hardPositionPointer = &hardPosition; ;//keeps track of start of test lines on the SD card
   
   byte testSequenceLenght = 1;
   byte *testSequenceLenghtPointer;
   testSequenceLenghtPointer = &testSequenceLenght; 
-  byte testlineError[24];
-  byte *testlineErrorPointer[24];
-  for(uint8_t w=0; w<24; w++){testlineErrorPointer[w] = &testlineError[w];}
-  newCase.reserve(25);
-  //----------Onsceen text-----------------------
+
+  for(uint8_t w=0; w<24; w++)
+  {
+    testlineErrorPointer[w] = &testlineError[w];
+  }
+  linecount = 1;//keeps count on the number of test lines for a IC under test
+  File dataFile = SD.open(fname);// open the file. note that only one file can be open at a time.
+  //----------------------------------------------------Header graphics---------------------------------------------------//
   tft.fillScreen(BLACK);//"Clear" the screen
   tft.setCursor(10, 10);
   tft.setTextColor(BLUE);  tft.setTextSize(4);
@@ -69,16 +72,16 @@ void repeatTest(const String& number, int numberTest)
         *pinNumberRoutingPointer = dataFile.readStringUntil('\n').toInt(); //this stores the number of pins the chosen IC has
     
         switch(*pinNumberRoutingPointer)
-          {
-            case 14:pin = PIN14; testPlacer = 20; testSize = 2;//calls an appropiate array with the pin assignment of the microcontroller
-            break;
-            case 16:pin = PIN16; testPlacer = 15; testSize = 2;//Also sets the graphical shifting for the failed test routines onscreen and size as the 24 pin test is too big for the screen  
-            break;
-            case 20:pin = PIN20; testPlacer = 5;  testSize = 2;
-            break;
-            case 24:pin = PIN24; testPlacer = 40; testSize = 1;
-            break;
-          } 
+        {
+          case 14:pin = PIN14; testPlacer = 20; testSize = 2;//calls an appropiate array with the pin assignment of the microcontroller
+          break;
+          case 16:pin = PIN16; testPlacer = 15; testSize = 2;//Also sets the graphical shifting for the failed test routines onscreen and size as the 24 pin test is too big for the screen  
+          break;
+          case 20:pin = PIN20; testPlacer = 5;  testSize = 2;
+          break;
+          case 24:pin = PIN24; testPlacer = 40; testSize = 1;
+          break;
+        } 
         
         tft.setTextColor(BLUE);tft.setTextSize(3);
         

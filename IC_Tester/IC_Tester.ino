@@ -14,13 +14,13 @@
 //1.Repeat testing,monitoring failed and passed tests + a bit more detailed report -------------------------------------//
 //2.Fast mode || detailed mode so the user can see what chips are being tested.etc -------------------------------------//
 //3.Manual graphical test mode so the user can test individual pins in real time ---------------------------------------//
-//4.Visual Truthtables that cam be saved as csv files ------------------------------------------------------------------//
+//4.Visual Truthtables that can be saved as csv files ------------------------------------------------------------------//
 //5.Saves information about last test making it easier to test same types of ICs ---------------------------------------//
 //6.20 and 24 pin ICs have been added ----------------------------------------------------------------------------------//
 //--------------------------------------------------- Improvements -----------------------------------------------------//
 //1.Device does not need to be restarted after each test or when changing modes ----------------------------------------//
 //---------------------------------------------------- Known bugs ------------------------------------------------------//
-//1.has to run 2-3 test for it to read the arduino pins correctly in IC test mode --------------------------------------//
+//1.The program has to run 2-3 test for it to read the arduino pins correctly in IC test mode --------------------------//
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -106,15 +106,15 @@ Adafruit_GFX_Button buttonsMenus[12];
 //Pin Definitions             1   2   3   4   5   6   7   8   9   10  11  12  13  14  15  16  17  18  19  20  21  22  23  24
  constexpr int PIN24[24]  = { 45, 43, 41, 39, 37, 35, 33, 31, 29, 27, 25, 23, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44 };//digital pins on the Arduino Mega 
 
-File myFile;
 #define chipSelect 10
 
+File myFile;
 //Database File names !!!!!!txt files cane only have 8 characters in their names!!!!!!!!!
 #define fname  "Database.txt"//here the tests for each IC is stored
 #define fname2 "Pinouts.txt"//here is the information about each ICs pinout stored
 #define fname3 "Table.csv"//here the truthtables/timing diagrams are stored
-#define fname4 "State.txt"//Order of data, IC number, ScreenStatus, Number of tests, Cycles, Diagram ON/OFF 
-#define fname5 "Config.txt"//order of data, last IC, enable inputs with clock, Clear CSV, Auto set to diagram, speed, Screensaver
+#define fname4 "State.txt"//Order of data: IC number, ScreenStatus, Number of tests, Cycles, Diagram ON/OFF 
+#define fname5 "Config.txt"//order of data: last IC, enable inputs with clock, Clear CSV, Auto set to diagram, speed, Screensaver
 #define fname6 "Position.txt"//position of an IC
 //Function Headers
 void autoSearchResult(uint8_t mode = 0);
@@ -172,7 +172,7 @@ struct boolSwitches
   bool keypadIC = 0;            : 1;//Keypad last IC toggle       
   bool autosearchEnd = 0;       : 1;
   bool switchCaseFininshed = 0; : 1;
-  bool manualSwitch             : 1;
+  bool manualSwitch             : 1;//
   bool circumvent = 0;          : 1;//used to bypass the rest of the routine(usually the keypad function) and go to main menu 
   bool diagram = 0;             : 1;//timing diagram / truth table switch       
   bool lastDiagram = 0;         : 1;//timing diagram / truth table switch  
@@ -202,7 +202,11 @@ bool inOut[24];//stores the pin information for mux/demux, set as Inputs
 bool outIn[24];//stores the pin information for mux/demux, set as Outputs   
 bool inputPushing[24];//     
 bool lastInputPushing[24];    
-   
+bool buttonStatus[24]; 
+bool buttonNonToggleStatus[24]; 
+bool lastbuttonStatus[24];  //should trim these a bit
+bool lastoutputState[24];//to reduce redundant drawings of graphics on screen 
+
 byte pinSpacer;//space between pins in pinout mode
 byte screenStatus = 0; //switches between states/routines for the program
 byte lastStatus = 0; //switches between states/routines for the program
@@ -224,13 +228,10 @@ byte outputSize = 10; //size of outputs in pinout mode
 byte boxSize = 20;  //size of unchangable pins in pinout mode eg. VCC,GND and NC pins
 byte horizontalNudge = 0;
 byte previousScreenstatus = 0;
-char converter[10]; //used to convert IC numbers into char for button displaying
 byte outputs[24]; //state of the output pins            
 byte clearArray[1]; //used to clear arrays
-bool buttonStatus[24]; //these used to be integers
-bool buttonNonToggleStatus[24]; 
-bool lastbuttonStatus[24];  //should trim these a bit
-bool lastoutputState[24];//to reduce reduntant drawings of graphics on screen could be bool
+char converter[10]; //used to convert IC numbers into char for button displaying
+char previousTestPinFunction[24];
 word macgyverTimingMechanism = 0;//screensaver
 word macgyverCounter = 0;// screensaver
 word fade = 100;//demo graphics
@@ -245,6 +246,7 @@ String numberAuto[10];//stores the ID of the ICs that matched the auto search
 String numberRouting; //stores the name/number of the chip in question e.g 4022 or 74682
 String globalReference[24], globalpinFunction[24], storeTestLines[24], storeErrorLines[24];
 String numberofTests;//stores the number of tests!!!!!!!!!!!why is this a string
+
 byte *pinNumberRoutingPointer = &pinNumberRouting; 
 int8_t *sortedOutputsPointer[24];
 int  *pin, pinCount = 0;
@@ -252,8 +254,6 @@ String *globalReferencePointer[24];
 String *globalpinFunctionPointer[24];
 String *sortReferencePointer[24];
 String *chipDescriptionPointer;
-char previousTestPinFunction[24];
-unsigned int cycles2;
 
 void SD_init()
 {
@@ -264,7 +264,7 @@ void SD_init()
 
 void setup() 
 {  
-  for(uint8_t w=0; w<24; w++)
+ for(uint8_t w=0; w<24; w++)
   {  
     sortedOutputsPointer[w] = &tablet.sortedOutputs[w];  
     globalReferencePointer[w] = &globalReference[w];
@@ -282,12 +282,11 @@ void setup()
 //----------------------------------------------------------------------------------------------------------------------//
 void loop() 
 {    
-  while(lapsCounter < speed/2) {flow();}//Serial.println("inside of loop");}
-  if(switches.clockmenuToggle == 0 && cycle > 0){automateRoutine(1);} 
+  while(lapsCounter < speed/2) {flow();}
+  if(switches.clockmenuToggle == 0 && cycle > 0){automateRoutine(1);} //cycles through inputs ON
   if(switches.clockToggle == 1){clockRoutine(1);} //ClockPulse High, Clock pulse Routine has to be outside the main loop otherwise I have to slow down the loop for it to be sensible  
-  while(lapsCounter < speed) {flow();}//Serial.println("inside of loop");}
+  while(lapsCounter < speed) {flow();}
   lapsCounter = 0; //reset the counter that keeps track of how many times the main loop has passed
-  if(switches.clockmenuToggle == 0 && cycle > 0){automateRoutine(0); automaticInputButtonPusher++;}   
+  if(switches.clockmenuToggle == 0 && cycle > 0){automateRoutine(0); automaticInputButtonPusher++;}  //cycles through inputs OFF 
   if(switches.clockToggle == 1){clockRoutine(0); automaticInputButtonPusher++;} //ClockPulse LOW 
-  //Serial.println("End of loop");
 }

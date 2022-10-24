@@ -3,8 +3,7 @@
 //----------------------------------------------------------------------------------------------------------------------//
 void flow()
 {    
-
-  //----------------------------------------Touch monitoring and responce-----------------------------------------------//
+//------------------------------------------Touch monitoring and responce-----------------------------------------------//
   TSPoint p = ts.getPoint();
   pinMode(XM, OUTPUT);
   pinMode(YP, OUTPUT);
@@ -17,7 +16,7 @@ void flow()
     p.y = map(p.y, TS_MINX, TS_MAXX, tft.height(), 0);
     p.x = map(p.x, TS_MINY, TS_MAXY, 0,tft.width());
 
-    delay(150);//eh...lets see if this is really needed the debounce is shitty even so
+    delay(150);//eh...lets see if this is really needed the debounce is shitty even so...
     pressed = true; switches.pushed = 1;
   }
 
@@ -43,7 +42,6 @@ void flow()
   //Serial.println("(" +  String(p.x) + " , " + String(p.y) + " , " + String(p.z) + ")");//uncomment this line to see the touch values on the serial monitor 
   //Serial.print("screenstatus: "); Serial.println(screenStatus); //uncomment this line to see in what screenStatus the program is 
   //Serial.println(freeMemory());//Uncomment this to see how much memory is left on the device while it´s working
-  //Serial.println(millis());
  //---------------------------------------------ScreenStatus Routines---------------------------------------------------//  
  switch(screenStatus)//every time the program waits for input from the user excluding the keypad one of those cases are in effect 
   {
@@ -88,11 +86,11 @@ void flow()
         {                                                     
           if (buttonsPinout[a].justPressed() && buttonStatus[a] == 0) //Input selected ON
           {      
-          pinMode(pin[a], OUTPUT); digitalWrite(pin[a], HIGH); buttonNonToggleStatus[a] = 1;     
+            pinMode(pin[a], OUTPUT); digitalWrite(pin[a], HIGH); buttonNonToggleStatus[a] = 1;     
           }              
           if (buttonsPinout[a].justPressed() && buttonStatus[a] == 1) //Input selected OFF
           { 
-          pinMode(pin[a], OUTPUT); digitalWrite(pin[a], LOW); buttonNonToggleStatus[a] = 0; 
+            pinMode(pin[a], OUTPUT); digitalWrite(pin[a], LOW); buttonNonToggleStatus[a] = 0; 
           }        
           if (buttonsPinout[a].justReleased() && lastbuttonStatus[a] == 0){ buttonStatus[a] = 1; } 
           if (buttonsPinout[a].justReleased() && lastbuttonStatus[a] == 1){ buttonStatus[a] = 0; }
@@ -182,7 +180,7 @@ void flow()
             if (buttonsPinout[a].justReleased() && lastbuttonStatus[a] == 1){ buttonStatus[a] = 0; }
             if(lastInputPushing[a] == 0 && inputs[a] == 1 && buttonStatus[a] == 0 && inputPushing[a] == 1 ){buttonsPinout[a].drawButton(true);}
             if(lastInputPushing[a] == 1 && inputs[a] == 1 && buttonStatus[a] == 0 && inputPushing[a] == 0 ){ buttonsPinout[a].drawButton();}
-            lastInputPushing[a] = inputPushing[a] ;           
+            lastInputPushing[a] = inputPushing[a];           
             lastbuttonStatus[a] = buttonStatus[a];//Updates the last read state of a button                                        
           }        
 //----------------------------------------------------------------------------------------------------------------------//            
@@ -203,14 +201,14 @@ void flow()
         if (buttonsMenus[2].justPressed() && clockCounter == lastclockCounter)
         {           
           lastclockCounter = 0; clockCounter = 0; lastOutputCounter = 0; rowsOfValuesCounter = 0; switches.clockToggle = 0;//clearing variables so they wont interfere with the next cycle input
-          cycle = getIC(2).toInt();if(switches.circumvent==1)break;            
+          cycle = getIC(2).toInt();if(switches.circumvent==1)break; //user selects the number of cycles           
           tft.fillScreen(BLACK);//clear screen to erase the keypad screen
-          if(switches.diagram == 0){table();}           
+          if(switches.diagram == 0){table();} //switch to truthtable mode if that was the mode previously selected          
           anotherSpacer = 0; outputCounter = 0; 
-          if(switches.config3 == 1){SD.remove(fname3);Serial.println("Clearing Table.csv");}
-          truthtableButtons(); outputText(); writeTableInputs(); if(switches.clockmenuToggle == 1){writeOutputs();} if(switches.clockmenuToggle == 0){writeIOs();}   
-          SD.remove(fname4);
-          saveState();                       
+          if(switches.config3 == 1){SD.remove(fname3);Serial.println("Clearing Table.csv");}//clear the CSV file if it's set so in the config
+          truthtableButtons(); outputText(); writeTableInputs(); if(switches.clockmenuToggle == 1){writeOutputs();} if(switches.clockmenuToggle == 0){writeIOs();} //write graphics to the screen  
+          SD.remove(fname4);//clear State.txt
+          saveState(); //save the state of program                      
           tft.fillRect(208, 260 , 70, 20, BLACK);
           tft.setCursor(210, 267);tft.setTextColor(YELLOW);
           tft.println(cycle);          
@@ -268,7 +266,7 @@ void flow()
           switches.saveStateSD = 1; switches.circumventTFT = 0;
           tableRowCounter = 0; clockCounter = 0; lastclockCounter = 0; anotherSpacer = 0; outputCounter = 0; OutputIndex = 1; cycle = 0; rowsOfValuesCounter = 0; 
           switches.muxdemuxToggleStatus = 0;
-          for(uint8_t i=0; i<24; i++)
+          for(uint8_t i=0; i<24; i++)//Clear variables
           {           
           lastoutputState[i] = clearArray[0];   
           tablet.sortedOutputs[i] = 0;                
@@ -276,7 +274,7 @@ void flow()
           tablet.sortReference[i] = "";
           *globalpinFunctionPointer[i] ="";
           }
-          screenStatus = 3;               
+          screenStatus = 3; //go to pinout mode            
         }                      
 //-----------------------------------refreshes the table when it gets to the end of the table---------------------------//                                                                            
         if(countingOutputs < 14)
@@ -365,7 +363,7 @@ void flow()
     break;
     case 82: screenStatus = 80;
     break;
-    case 90: 
+    case 90: //used to set the program into the mode it was before the screen went to sleep.
             if(previousScreenstatus == 69)
             {
               switches.saveStateSD = 1; switches.circumventTFT = 0;
@@ -395,10 +393,10 @@ void flow()
     {
     case 1://All roads lead to Rome.                                           
 //---------------------------------Debugging and truobleshooting monitoring---------------------------------------------//             
-            //SD.remove(fname5); //!!!!!uncomment this line if the program doesn't load properly after uploading because the config file might be corrupt!!!!!//
-            //readSavedFile();   //reads from the SD card relevent informations regarding previous test and prints it on the serial monitor       
-            //readConfigFile();  //reads from the SD card the last configuration state and prints it on the serial monitor
-            //readICsInPinout(); //prints out all the ICs in pinout.txt
+            //SD.remove(fname5);   //!!!!!uncomment this line if the program doesn't load properly after uploading because the config file might be corrupt!!!!!//
+            //readSavedFile();     //reads from the SD card relevent informations regarding previous test and prints it on the serial monitor       
+            //readConfigFile();    //reads from the SD card the last configuration state and prints it on the serial monitor
+            //readICsInPinout();   //prints out all the ICs in pinout.txt
             //readICsInDatabase(); //prints out all the ICs in database.txt
  //----------------------------------------------------------------------------------------------------------------------//            
               clearingRoutines();//clearing routines so previous tests don't interfere with future tests.  
@@ -416,7 +414,7 @@ void flow()
     case 21:  autoSearch(pinCount); switches.autosearchEnd = 1; autoSearchResult();//Searches the SD card for the right chip
       break;      
     case 32:  numberRouting.reserve(6); numberRouting = getIC(0); if(switches.circumvent == 1)break; 
-              numberofTests.reserve(8);numberofTests = getIC(1); if(switches.circumvent == 1)break;  //cycle = 1; switches.diagram = 0;             
+              numberofTests.reserve(8);numberofTests = getIC(1); if(switches.circumvent == 1)break;             
               SD.remove(fname4); saveState();             
               repeatTest(numberRouting, numberofTests.toInt());//Loop test routine              
       break;

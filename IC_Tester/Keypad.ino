@@ -27,7 +27,6 @@ String getIC(byte keypadText)
  
   String number = "";
   unsigned long numberIC = 0;  
-  //String numberLookup = "";
   int i = 0;
   boolean status = false;
   
@@ -105,7 +104,6 @@ String getIC(byte keypadText)
     digitalWrite(13, LOW);
     pinMode(XM, OUTPUT);
     pinMode(YP, OUTPUT);
-    //Serial.println(keypadText);
     bool pressed = false;
 
     if (p.z > MINPRESSURE && p.z < MAXPRESSURE)
@@ -117,7 +115,7 @@ String getIC(byte keypadText)
       pressed = true;
     }
 
-    // go thru all the buttons, checking if they were pressed
+    // go through all the buttons, checking if they were pressed
     for (uint8_t b = 0; b < 14; b++)
     {
       if (buttonsMenus[b].contains(p.x - 8, p.y - 8) && pressed)
@@ -135,7 +133,6 @@ String getIC(byte keypadText)
     {
       if (buttonsMenus[b].justReleased())
       {
-        //Serial.print("Released: "); Serial.println(b);
         buttonsMenus[b].drawButton();  // draw normal
       }
 
@@ -151,8 +148,7 @@ String getIC(byte keypadText)
             i++;
           }
         }
-
-        // clr button! delete char
+        // clear button delete char
         if (b == 11) {
           tft.setCursor(TEXT_X + 2, TEXT_Y + 10);
           tft.setTextColor(BLACK);
@@ -160,17 +156,13 @@ String getIC(byte keypadText)
           tft.print(number);
           number = "";
           i = 0;
-        }
-        
+        }       
         // update the current text field
-        //Serial.println(textfield);
         tft.setCursor(TEXT_X + 2, TEXT_Y + 10);
         tft.setTextColor(TEXT_TCOLOR, BLACK);
         tft.setTextSize(TEXT_TSIZE);
         tft.print(number);
-
         // we dont really check that the text field makes sense
-        // just try to call
         if(keypadText == 0)
         { 
           numberIC = number.toInt();                    
@@ -178,7 +170,7 @@ String getIC(byte keypadText)
           {
           for(uint8_t i=0; i<24; i++) 
             {
-            buttonsMenus[i].initButton(&tft, 0, 0, 0, 0, BLACK, BLACK, BLACK, "", 1); //CLear the menubuttons otherwise it becomes a mangled mess :(   
+            buttonsMenus[i].initButton(&tft, 0, 0, 0, 0, BLACK, BLACK, BLACK, "", 1); //clear the menubuttons otherwise it becomes a mangled mess :(   
             }
             tft.fillRect(0, 220 , 240, 50, BLACK);
             status = true;
@@ -190,7 +182,7 @@ String getIC(byte keypadText)
           {
           for(uint8_t i=0; i<24; i++) 
             {
-            buttonsMenus[i].initButton(&tft, 0, 0, 0, 0, BLACK, BLACK, BLACK, "", 1); //CLear the menubuttons otherwise it becomes a mangled mess :(   
+            buttonsMenus[i].initButton(&tft, 0, 0, 0, 0, BLACK, BLACK, BLACK, "", 1); //Clear the menubuttons otherwise it becomes a mangled mess :(   
             }
             tft.fillRect(0, 220 , 240, 50, BLACK);
             status = true;
@@ -203,7 +195,7 @@ String getIC(byte keypadText)
           {
           for(uint8_t i=0; i<24; i++) 
             {
-            buttonsMenus[i].initButton(&tft, 0, 0, 0, 0, BLACK, BLACK, BLACK, "", 1); //CLear the menubuttons otherwise it becomes a mangled mess :(   
+            buttonsMenus[i].initButton(&tft, 0, 0, 0, 0, BLACK, BLACK, BLACK, "", 1); //Clear the menubuttons otherwise it becomes a mangled mess :(   
             }
             tft.fillRect(0, 220 , 240, 50, BLACK);
             status = true;
@@ -216,7 +208,7 @@ String getIC(byte keypadText)
           {
           for(uint8_t i=0; i<24; i++) 
             {
-            buttonsMenus[i].initButton(&tft, 0, 0, 0, 0, BLACK, BLACK, BLACK, "", 1); //CLear the menubuttons otherwise it becomes a mangled mess :(   
+            buttonsMenus[i].initButton(&tft, 0, 0, 0, 0, BLACK, BLACK, BLACK, "", 1); //Clear the menubuttons otherwise it becomes a mangled mess :(   
             }
             tft.fillRect(0, 220 , 240, 50, BLACK);
             status = true;
@@ -226,14 +218,13 @@ String getIC(byte keypadText)
         {   
           for(uint8_t i=0; i<24; i++) 
           {
-          buttonsMenus[i].initButton(&tft, 0, 0, 0, 0, BLACK, BLACK, BLACK, "", 1); //CLear the menubuttons otherwise it becomes a mangled mess :(   
+          buttonsMenus[i].initButton(&tft, 0, 0, 0, 0, BLACK, BLACK, BLACK, "", 1); //Clear the menubuttons otherwise it becomes a mangled mess :(   
           }     
           switches.circumvent = 1;
           screenStatus = 0;
           tft.fillRect(0, 220 , 240, 50, BLACK);
           status = true;
-        }             
-        //delay(100); // UI debouncing          
+        }                     
       }    
     }   
   }

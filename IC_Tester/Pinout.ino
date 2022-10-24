@@ -8,13 +8,13 @@ void Test_init(int pins)
   word nudge;
   word buttonHeight = 50; 
   word buttonYaxis = 290;
+  newChip.num.reserve(6);
+  unsigned long testPosition = 0;
+  unsigned long *testPositionPointer = &testPosition;
   buttonSize = 22;
   outputSize = 10;
   boxSize = 20;  
   horizontalNudge = 0;
-  newChip.num.reserve(6);
-  unsigned long testPosition = 0;
-  unsigned long *testPositionPointer = &testPosition;
   tft.fillScreen(BLACK);  //"clear" the screen
   if(numberRouting.toInt() > 7399 && numberRouting.toInt() < 7500 || numberRouting.toInt() > 74000){dataFile.seek(33700);}// this line here speeds up the process of looking for the 7400 series,could cause problems if a IC of the cd4000 series is removed!! 
   if (dataFile)

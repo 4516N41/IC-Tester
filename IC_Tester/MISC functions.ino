@@ -14,7 +14,7 @@ void screenSaver()
       {            
         getTouch();//this is so the user can wake up the screen
       }            
-    if(switches.status == 1) macgyverCounter = 0; screenStatus = 90; switches.status = 0; 
+    if(switches.status == 1) macgyverCounter = 0; screenStatus = 90; switches.status = 0; //reset the timer and load the saved mode the user was in
     }  
   }   
 }           
@@ -70,11 +70,10 @@ void clearingRoutines()
   switches.saveStateSD = 0;  
 }
 //----------------------------------------------------------------------------------------------------------------------//
-// ------------------------Scrolling through clock pins and enable/disableing them--------------------------------------//  
+// ------------------------Clocking the clock pins in Pinout mode & truthtable mode-------------------------------------//  
 //----------------------------------------------------------------------------------------------------------------------//                 
 void clockRoutine(bool state)
 {
- // Serial.println("Im in the clock routine");
 //-------------------------------------------Switching Input buttons----------------------------------------------------//  
    if(switches.pushingButtons == 1)
   {  
@@ -83,7 +82,6 @@ void clockRoutine(bool state)
       if(*globalpinFunctionPointer[a] == "Input  ")
       {
         if(automaticInputButtonPusher >= *pinNumberRoutingPointer){automaticInputButtonPusher = 0;}
-        //if(buttonStatus[automaticInputButtonPusher] == 1){pinMode(pin[automaticInputButtonPusher], OUTPUT); digitalWrite(pin[automaticInputButtonPusher], HIGH);}
         if(inputs[automaticInputButtonPusher] == 1 && buttonStatus[automaticInputButtonPusher] == 0)
         {                    
           pinMode(pin[automaticInputButtonPusher], OUTPUT);
@@ -110,6 +108,9 @@ void clockRoutine(bool state)
     }            
   }   
 }  
+//----------------------------------------------------------------------------------------------------------------------//
+// ------------------------Cycling through the input pins in diagram/truthtable mode------------------------------------//  
+//----------------------------------------------------------------------------------------------------------------------//   
 void automateRoutine(bool state)
 {   
   if(automaticInputButtonPusher >=*pinNumberRoutingPointer){automaticInputButtonPusher = 0;}

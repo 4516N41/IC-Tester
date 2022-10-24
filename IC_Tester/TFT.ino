@@ -8,7 +8,7 @@ void tft_init()
   uint16_t identifier = tft.readID();
   if (identifier == 0x0101) identifier = 0x9341;
   tft.begin(identifier);
-  //Serial.println("TFT initialized!!");
+  Serial.println("TFT initialized!!");
   tft.setRotation(2);//3
   screenStatus = 1;
 }
@@ -324,7 +324,7 @@ void autoSearchResult(uint8_t mode)
   if(numberofIcs == 1)//If only one IC matche a test
   {
     numberAuto[1].toCharArray(converter, sizeof(converter));  //converts the string "number" to Char so it can be used as text on the buttons
-    buttonsMenus[1].initButton(&tft, 120, 180, 200, 30, BLUE, BLACK, WHITE, converter, 2);  
+    buttonsMenus[1].initButton(&tft, 120, 190, 200, 30, BLUE, BLACK, WHITE, converter, 2);  
     buttonsMenus[1].drawButton();     
   }
   

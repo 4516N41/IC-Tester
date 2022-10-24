@@ -472,4 +472,3 @@ tft.setTextSize(1);
     myFile.close();
   }                   
 }
-

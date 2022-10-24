@@ -39,21 +39,21 @@ boolean identificationCase(const String& test, int pins)//newCase Pins
       case 'H' : 
       digitalWrite(pin[i], LOW); pinMode(pin[i], INPUT_PULLUP); 
       if (!digitalRead(pin[i])) 
-        {
-         result = false;
-         storeErrorLines[i] = "L";
-         storeErrorPlace[i] = 1;
-        }
-        break;
+      {
+        result = false;
+        storeErrorLines[i] = "L";
+        storeErrorPlace[i] = 1;
+      }
+      break;
       case 'L' : 
       digitalWrite(pin[i], LOW); pinMode(pin[i], INPUT_PULLUP); 
       if (digitalRead(pin[i])) 
       {
-          result = false;
-          storeErrorLines[i] = "H";
-          storeErrorPlace[i] = 1;
-        }
-        break;
+        result = false;
+        storeErrorLines[i] = "H";
+        storeErrorPlace[i] = 1;
+      }
+      break;
     }
   }
   return result;
@@ -99,21 +99,21 @@ boolean loopTestCase(const String& test, int pins)//newCase Pins
       case 'H' : 
       if(previousTestPinFunction[i] != 'H'){digitalWrite(pin[i], LOW); pinMode(pin[i], INPUT_PULLUP); previousTestPinFunction[i] = 'H';} 
       if (!digitalRead(pin[i])) 
-        {
-         result = false;
-         storeErrorLines[i] = "L";
-         storeErrorPlace[i] = 1;
-        }
-        break;
+      {
+        result = false;
+        storeErrorLines[i] = "L";
+        storeErrorPlace[i] = 1;
+      }
+      break;
       case 'L' : 
       if(previousTestPinFunction[i] != 'L'){digitalWrite(pin[i], LOW); pinMode(pin[i], INPUT_PULLUP); previousTestPinFunction[i] = 'L';} 
       if (digitalRead(pin[i])) 
       {
-          result = false;
-          storeErrorLines[i] = "H";
-          storeErrorPlace[i] = 1;
-        }
-        break;
+        result = false;
+        storeErrorLines[i] = "H";
+        storeErrorPlace[i] = 1;
+      }
+      break;
     }
   }
   return result;
