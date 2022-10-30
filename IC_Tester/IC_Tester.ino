@@ -95,7 +95,7 @@ TouchScreen ts = TouchScreen(XP, YP, XM, YM, 300);
 //Buttons
 Adafruit_GFX_Button buttonsPinout[24]; 
 Adafruit_GFX_Button buttonsClearPinout[1];
-Adafruit_GFX_Button buttonsMenus[12];
+Adafruit_GFX_Button buttonsMenus[13];
 
 //Pin Definitions             1   2   3   4   5   6   7   8   9   10  11  12  13  14  
  constexpr int PIN14[14]  = { 45, 43, 41, 39, 37, 35, 33, 32, 34, 36, 38, 40, 42, 44 };//digital pins on the Arduino Mega 

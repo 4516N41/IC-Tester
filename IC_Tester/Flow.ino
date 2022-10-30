@@ -30,7 +30,7 @@ void flow()
       if (buttonsPinout[a].isPressed()){buttonsPinout[a].drawButton(true);}  // draw invert!      
   }
 // ------------------------------------------------Menu buttons---------------------------------------------------------//  
-  for (uint8_t a = 0; a < 13; a++)
+  for (uint8_t a = 0; a < 14; a++)
   {   
       if (buttonsMenus[a].contains(p.x, p.y) && pressed){ buttonsMenus[a].press(true);}  // tell the button it is pressed    
      else{buttonsMenus[a].press(false);}  // tell the button it is NOT pressed
