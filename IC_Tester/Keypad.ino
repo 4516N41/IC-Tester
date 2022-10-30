@@ -39,13 +39,13 @@ String getIC(byte keypadText)
       buttonsMenus[col + row * 5].drawButton();
     }
   }
-  buttonsMenus[10].initButton(&tft, 40, BUTTON_Y + 2 * (BUTTON_H + BUTTON_SPACING_Y), 50, BUTTON_H, WHITE, WHITE, BLACK, "OK", 2);
+  buttonsMenus[10].initButton(&tft, 35, BUTTON_Y + 2 * (BUTTON_H + BUTTON_SPACING_Y), 50, BUTTON_H, WHITE, WHITE, BLACK, "OK", 2);
   buttonsMenus[10].drawButton();
   buttonsMenus[11].initButton(&tft, 190, BUTTON_Y + 2 * (BUTTON_H + BUTTON_SPACING_Y), 80, BUTTON_H, WHITE, BLACK, WHITE, "Clear", 2);
   buttonsMenus[11].drawButton();
   buttonsMenus[12].initButton(&tft, 120, 290, 200, 40, WHITE, GREY, BLACK, "Main menu", 3);
   buttonsMenus[12].drawButton();
-  buttonsMenus[13].initButton(&tft, 110, BUTTON_Y + 2 * (BUTTON_H + BUTTON_SPACING_Y), 55, BUTTON_H, WHITE, BLACK, RED, "DEL", 2);
+  buttonsMenus[13].initButton(&tft, 105, BUTTON_Y + 2 * (BUTTON_H + BUTTON_SPACING_Y), 60, BUTTON_H, WHITE, BLACK, RED, "DEL", 2);
   buttonsMenus[13].drawButton(); 
   // create 'text field'
   tft.drawRect(TEXT_X, TEXT_Y, TEXT_W, TEXT_H, WHITE);
